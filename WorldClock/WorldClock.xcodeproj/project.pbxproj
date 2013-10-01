@@ -22,6 +22,7 @@
 		4249DAFC17FB7B28007D0200 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4249DADB17FB7B28007D0200 /* UIKit.framework */; };
 		4249DB0417FB7B28007D0200 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4249DB0217FB7B28007D0200 /* InfoPlist.strings */; };
 		4249DB0617FB7B28007D0200 /* WorldClockTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4249DB0517FB7B28007D0200 /* WorldClockTests.m */; };
+		4249DB1117FB860F007D0200 /* ZoomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4249DB1017FB860F007D0200 /* ZoomViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,8 @@
 		4249DB0117FB7B28007D0200 /* WorldClockTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WorldClockTests-Info.plist"; sourceTree = "<group>"; };
 		4249DB0317FB7B28007D0200 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4249DB0517FB7B28007D0200 /* WorldClockTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WorldClockTests.m; sourceTree = "<group>"; };
+		4249DB0F17FB860F007D0200 /* ZoomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZoomViewController.h; sourceTree = "<group>"; };
+		4249DB1017FB860F007D0200 /* ZoomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZoomViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +120,8 @@
 				4249DAE617FB7B28007D0200 /* AppDelegate.h */,
 				4249DAE717FB7B28007D0200 /* AppDelegate.m */,
 				4249DAE917FB7B28007D0200 /* Main_iPhone.storyboard */,
+				4249DB0F17FB860F007D0200 /* ZoomViewController.h */,
+				4249DB1017FB860F007D0200 /* ZoomViewController.m */,
 				4249DAEC17FB7B28007D0200 /* Main_iPad.storyboard */,
 				4249DAEF17FB7B28007D0200 /* ViewController.h */,
 				4249DAF017FB7B28007D0200 /* ViewController.m */,
@@ -256,6 +261,7 @@
 				4249DAF117FB7B28007D0200 /* ViewController.m in Sources */,
 				4249DAE817FB7B28007D0200 /* AppDelegate.m in Sources */,
 				4249DAE417FB7B28007D0200 /* main.m in Sources */,
+				4249DB1117FB860F007D0200 /* ZoomViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

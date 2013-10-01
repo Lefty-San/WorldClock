@@ -9,21 +9,9 @@
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" title="World Clock" id="yn1-Pd-cDs">
-                        <barButtonItem key="leftBarButtonItem" style="plain" id="CXn-DW-86c">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Xv9-3a-TRx">
-                                <rect key="frame" x="16" y="5" width="71" height="33"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="-">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="4gT-4y-6Ub" kind="push" id="0QX-LJ-YeQ"/>
-                                </connections>
-                            </button>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="84o-XM-x2t">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="84o-XM-x2t">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="WKl-O8-5Hc">
-                                <rect key="frame" x="233" y="5" width="71" height="33"/>
+                                <rect key="frame" x="16" y="5" width="71" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="+">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -38,6 +26,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="664" y="74"/>
+        </scene>
+        <!--View Controller - ZoomView-->
+        <scene sceneID="yQZ-5W-slI">
+            <objects>
+                <viewController title="ZoomView" id="GgK-yI-dqR" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gWl-jh-V1j"/>
+                        <viewControllerLayoutGuide type="bottom" id="EhC-ic-SdO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="aXj-7f-KdQ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8gq-JH-oM1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1223" y="522"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="yRW-r7-UfU">
@@ -56,7 +62,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1hy-l6-FLy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1229" y="-17"/>
+            <point key="canvasLocation" x="1223" y="-501"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="2jc-6b-tnG">
@@ -75,7 +81,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Efg-Jl-bR1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1223" y="704"/>
+            <point key="canvasLocation" x="664" y="834"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Ykh-Ie-ABy">
