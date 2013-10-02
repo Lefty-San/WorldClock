@@ -26,7 +26,22 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    
+    [self updateTime];
+}
+
+-(void)updateTime {
+    
+    [updateTime invalidate];
+    updateTime = nil;
+    
+    currentTime = [NSDate date];
+    NSDateFormatter *timeFormat = [[NSDateFormatter alloc]init];
+    [timeFormat setTimeStyle:NSDateFormatterMediumStyle];
+    timeLbl.text = [timeFormat stringFromDate:currentTime];
+    
+    updateTime = [NSTimer scheduledTimerWithTimeInterval:0.01 target:self selector:@selector(updateTime) userInfo:nil repeats:YES];
+    
 }
 
 - (void)didReceiveMemoryWarning
