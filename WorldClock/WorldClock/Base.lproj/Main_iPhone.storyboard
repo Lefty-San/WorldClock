@@ -7,7 +7,7 @@
         <!--View Controller - World Clock-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ClockGrid" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" title="World Clock" id="yn1-Pd-cDs">
                         <barButtonItem key="leftBarButtonItem" style="plain" id="84o-XM-x2t">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="WKl-O8-5Hc">
@@ -43,7 +43,7 @@
         <!--View Controller - ZoomView-->
         <scene sceneID="yQZ-5W-slI">
             <objects>
-                <viewController title="ZoomView" id="GgK-yI-dqR" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ClockEdit" title="ZoomView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="GgK-yI-dqR" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gWl-jh-V1j"/>
                         <viewControllerLayoutGuide type="bottom" id="EhC-ic-SdO"/>
@@ -62,7 +62,7 @@
         <!--View Controller-->
         <scene sceneID="yRW-r7-UfU">
             <objects>
-                <viewController id="qWp-bL-UmE" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ClockAdd" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qWp-bL-UmE" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mix-A4-yqn"/>
                         <viewControllerLayoutGuide type="bottom" id="gib-QK-4vu"/>
