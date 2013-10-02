@@ -1,29 +1,33 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="12F37" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="sc8-0K-4Em">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="12F37" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="L8D-TQ-Cyj">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--View Controller - World Clock-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="yuC-hI-u6s"/>
-                        <viewControllerLayoutGuide type="bottom" id="ybe-wp-GtE"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="1D0-me-v3a">
+                <viewController storyboardIdentifier="ClockGrid" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" title="World Clock" id="1D0-me-v3a">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="IJk-Ad-70S">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Pi1-ln-OSK">
+                                <rect key="frame" x="16" y="5" width="170" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" title="-">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="oaW-ZV-NRC" kind="push" id="gQ9-Yr-qJ6"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" id="786-kV-LFU">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="KNO-mo-Wfe">
                                 <rect key="frame" x="582" y="5" width="170" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <state key="normal" title="Button">
+                                <state key="normal" title="+">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
@@ -37,10 +41,40 @@
             </objects>
             <point key="canvasLocation" x="1023" y="-165"/>
         </scene>
+        <!--Zoom View Controller-->
+        <scene sceneID="HiT-UW-Jo6">
+            <objects>
+                <viewController storyboardIdentifier="ClockZoom" useStoryboardIdentifierAsRestorationIdentifier="YES" id="L8D-TQ-Cyj" customClass="ZoomViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="EM3-bo-YWb"/>
+                        <viewControllerLayoutGuide type="bottom" id="Qod-1M-oDC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qr8-q4-FUF">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nj5-al-wyV">
+                                <rect key="frame" x="20" y="269" width="728" height="486"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="100"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="timeLbl" destination="nj5-al-wyV" id="Y1L-QY-yA0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FDW-fS-GUQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1029" y="1181"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="dMx-h1-cGr">
             <objects>
-                <viewController id="Yl9-WX-3GA" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ClockAdd" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Yl9-WX-3GA" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="WRa-Hc-2L1"/>
                         <viewControllerLayoutGuide type="bottom" id="t85-Jr-lDc"/>
@@ -55,6 +89,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="InN-te-tqP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1993" y="-700"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="SPJ-SA-OjQ">
+            <objects>
+                <viewController storyboardIdentifier="ClockEdit" useStoryboardIdentifierAsRestorationIdentifier="YES" id="oaW-ZV-NRC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2Nl-jo-wfg"/>
+                        <viewControllerLayoutGuide type="bottom" id="rkQ-bZ-3wB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0JM-zm-rpe">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="IQy-Sb-7fd"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b4U-s1-ZFk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1993" y="527"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="f4h-eq-zoF">

@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ZoomViewController : UIViewController
+@interface ZoomViewController : UIViewController {
 
+IBOutlet UILabel *timeLbl;
+
+    NSDate *currentTime;
+    NSTimer *updateTime;
+    
+}
 @end
