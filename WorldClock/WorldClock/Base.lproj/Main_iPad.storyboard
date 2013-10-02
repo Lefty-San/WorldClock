@@ -7,7 +7,7 @@
         <!--View Controller - World Clock-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ClockGrid" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" title="World Clock" id="1D0-me-v3a">
                         <barButtonItem key="leftBarButtonItem" style="plain" id="IJk-Ad-70S">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Pi1-ln-OSK">
@@ -74,7 +74,7 @@
         <!--View Controller-->
         <scene sceneID="dMx-h1-cGr">
             <objects>
-                <viewController id="Yl9-WX-3GA" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ClockAdd" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Yl9-WX-3GA" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="WRa-Hc-2L1"/>
                         <viewControllerLayoutGuide type="bottom" id="t85-Jr-lDc"/>
@@ -93,7 +93,7 @@
         <!--View Controller-->
         <scene sceneID="SPJ-SA-OjQ">
             <objects>
-                <viewController id="oaW-ZV-NRC" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ClockEdit" useStoryboardIdentifierAsRestorationIdentifier="YES" id="oaW-ZV-NRC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2Nl-jo-wfg"/>
                         <viewControllerLayoutGuide type="bottom" id="rkQ-bZ-3wB"/>
