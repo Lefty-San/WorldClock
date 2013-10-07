@@ -10,6 +10,8 @@
 
 @interface ViewController ()
 
+// Smart Message
+
 @end
 
 @implementation ViewController
