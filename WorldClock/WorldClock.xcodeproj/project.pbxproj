@@ -23,6 +23,7 @@
 		4249DB0417FB7B28007D0200 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4249DB0217FB7B28007D0200 /* InfoPlist.strings */; };
 		4249DB0617FB7B28007D0200 /* WorldClockTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4249DB0517FB7B28007D0200 /* WorldClockTests.m */; };
 		4249DB1117FB860F007D0200 /* ZoomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4249DB1017FB860F007D0200 /* ZoomViewController.m */; };
+		CBE1E2E1180358200076BB39 /* addcontroller.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE1E2E0180358200076BB39 /* addcontroller.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,8 @@
 		4249DB0517FB7B28007D0200 /* WorldClockTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WorldClockTests.m; sourceTree = "<group>"; };
 		4249DB0F17FB860F007D0200 /* ZoomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZoomViewController.h; sourceTree = "<group>"; };
 		4249DB1017FB860F007D0200 /* ZoomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZoomViewController.m; sourceTree = "<group>"; };
+		CBE1E2DF180358200076BB39 /* addcontroller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = addcontroller.h; sourceTree = "<group>"; };
+		CBE1E2E0180358200076BB39 /* addcontroller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = addcontroller.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +120,8 @@
 		4249DADD17FB7B28007D0200 /* WorldClock */ = {
 			isa = PBXGroup;
 			children = (
+				CBE1E2DF180358200076BB39 /* addcontroller.h */,
+				CBE1E2E0180358200076BB39 /* addcontroller.m */,
 				4249DAE617FB7B28007D0200 /* AppDelegate.h */,
 				4249DAE717FB7B28007D0200 /* AppDelegate.m */,
 				4249DAE917FB7B28007D0200 /* Main_iPhone.storyboard */,
@@ -261,6 +266,7 @@
 				4249DAF117FB7B28007D0200 /* ViewController.m in Sources */,
 				4249DAE817FB7B28007D0200 /* AppDelegate.m in Sources */,
 				4249DAE417FB7B28007D0200 /* main.m in Sources */,
+				CBE1E2E1180358200076BB39 /* addcontroller.m in Sources */,
 				4249DB1117FB860F007D0200 /* ZoomViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -480,6 +486,7 @@
 				4249DB0B17FB7B28007D0200 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4249DB0C17FB7B28007D0200 /* Build configuration list for PBXNativeTarget "WorldClockTests" */ = {
 			isa = XCConfigurationList;
@@ -488,6 +495,7 @@
 				4249DB0E17FB7B28007D0200 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

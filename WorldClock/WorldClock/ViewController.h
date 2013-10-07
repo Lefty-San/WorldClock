@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "addcontroller.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController                <AddControllerDelegate>
+@property (strong, nonatomic) IBOutlet UILabel *clocklabel;
+
 
 @end

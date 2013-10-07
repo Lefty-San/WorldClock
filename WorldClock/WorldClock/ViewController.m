@@ -16,6 +16,14 @@
 
 @implementation ViewController
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([segue.identifier isEqualToString:@"addcontrollersegue"]){
+        addcontroller *ac = [segue destinationViewController];
+        ac.delegate = self;
+    }
+}
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -27,6 +35,12 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void) didselectwith:(addcontroller *)controller cities:(NSString *)cities{
+    self.clocklabel.text = cities;
+    NSLog(@"%@", cities);
+    [controller dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end
