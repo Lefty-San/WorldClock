@@ -19,6 +19,9 @@ NSString *const ClocksUserSet = @"ClocksUserSetKey";
 NSString *const ClocksUserSet1 = @"ClocksUserSetKey1";
 NSString *const ClocksUserSet2 = @"ClocksUserSetKey2";
 NSString *const ClocksUserSet3 = @"ClocksUserSetKey3";
+NSString *const ClocksUserSet4 = @"ClocksUserSetKey4";
+NSString *const ClocksUserSet5 = @"ClocksUserSetKey5";
+
 
 @implementation ViewController
 
@@ -34,41 +37,131 @@ NSString *const ClocksUserSet3 = @"ClocksUserSetKey3";
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    
-    self.citiesListArray = [[NSMutableArray alloc]initWithCapacity:7];
+
+    self.citiesListArray = [[NSMutableArray alloc]initWithCapacity:6];
    
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-   // NSUserDefaults *defaults1 = [NSUserDefaults standardUserDefaults];
+    NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
+   
 
      NSString *clocklabel1 = [defaults objectForKey:ClocksUserSet];
-   //  NSString *clocklabel2 = [defaults1 objectForKey:ClocksUserSet1];
-   // NSString *clocklabel3 = [defaults objectForKey:ClocksUserSet2];
-   // NSString *clocklabel4 = [defaults objectForKey:ClocksUserSet3];
+    NSString *clocklabel2 = [defaults objectForKey:ClocksUserSet1];
+    NSString *clocklabel3 = [defaults objectForKey:ClocksUserSet2];
+    NSString *clocklabel4 = [defaults objectForKey:ClocksUserSet3];
+    NSString *clocklabel5 = [defaults objectForKey:ClocksUserSet4];
+    NSString *clocklabel6 = [defaults objectForKey:ClocksUserSet5];
+   
 
+   
    self.clocklabel.text = clocklabel1;
-  //  self.clocklabela.text = clocklabel2;
-   // self.clocklabelc.text = clocklabel3;
-   // self.clocklabeld.text = clocklabel4;
+   self.clocklabela.text = clocklabel2;
+     self.clocklabelb.text = clocklabel3;
+     self.clocklabelc.text = clocklabel4;
+     self.clocklabeld.text = clocklabel5;
+     self.clocklabele.text = clocklabel6;
     
-    clocklabel1 = [self.clocklabel text];
-   //  clocklabel2 = [self.clocklabela text];
-   // clocklabel3 = [self.clocklabelc text];
-    // clocklabel4 = [self.clocklabeld text];
+
+   
+    
+   clocklabel1 = [self.clocklabel text];
+   clocklabel2 = [self.clocklabela text];
+    clocklabel3 = [self.clocklabelb text];
+    clocklabel4 = [self.clocklabelc text];
+    clocklabel5 = [self.clocklabeld text];
+    clocklabel6 = [self.clocklabele text];
+   
+   
     defaults = [NSUserDefaults standardUserDefaults];
-   //  defaults1 = [NSUserDefaults standardUserDefaults];
+   // defaults = [NSUserDefaults standardUserDefaults];
     
     [defaults setObject:clocklabel1 forKey:ClocksUserSet];
-   //     [defaults1 setObject:clocklabel2 forKey:ClocksUserSet1];
-   // [defaults setObject:clocklabel3 forKey:ClocksUserSet2];
-   // [defaults setObject:clocklabel4 forKey:ClocksUserSet3];
+     [defaults setObject:clocklabel2 forKey:ClocksUserSet1];
+    [defaults setObject:clocklabel3 forKey:ClocksUserSet2];
+    [defaults setObject:clocklabel4 forKey:ClocksUserSet3];
+    [defaults setObject:clocklabel5 forKey:ClocksUserSet4];
+    [defaults setObject:clocklabel6 forKey:ClocksUserSet5];
+    
+   
     [defaults synchronize];
-  //  [defaults1 synchronize];
+    }
+    
 
 
-   
-   
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    UITouch *touch = [[event allTouches] anyObject];
+    if (CGRectContainsPoint([self.view frame], [touch locationInView:self.view])){
+        //do whatever you want
+        
+        self.clocklabel.userInteractionEnabled = YES;
+        self.clocklabela.userInteractionEnabled = YES;
+        self.clocklabelb.userInteractionEnabled = YES;
+        self.clocklabelc.userInteractionEnabled = YES;
+        self.clocklabeld.userInteractionEnabled = YES;
+        self.clocklabele.userInteractionEnabled = YES;
+        
+        
+        UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc]      initWithTarget:self action:@selector(LabelLongPressed:)];
+        UILongPressGestureRecognizer *longPress1 = [[UILongPressGestureRecognizer alloc]      initWithTarget:self action:@selector(LabelLongPressed1:)];
+        UILongPressGestureRecognizer *longPress2 = [[UILongPressGestureRecognizer alloc]      initWithTarget:self action:@selector(LabelLongPressed2:)];
+        UILongPressGestureRecognizer *longPress3 = [[UILongPressGestureRecognizer alloc]      initWithTarget:self action:@selector(LabelLongPressed3:)];
+        UILongPressGestureRecognizer *longPress4 = [[UILongPressGestureRecognizer alloc]      initWithTarget:self action:@selector(LabelLongPressed4:)];
+        UILongPressGestureRecognizer *longPress5 = [[UILongPressGestureRecognizer alloc]      initWithTarget:self action:@selector(LabelLongPressed5:)];
+        
+        longPress.minimumPressDuration = 0.5;  
+        longPress.numberOfTapsRequired = 0;
+        longPress1.minimumPressDuration = 0.5;
+        longPress1.numberOfTapsRequired = 0;
+        longPress2.minimumPressDuration = 0.5;
+        longPress2.numberOfTapsRequired = 0;
+        longPress3.minimumPressDuration = 0.5;
+        longPress3.numberOfTapsRequired = 0;
+        longPress4.minimumPressDuration = 0.5;
+        longPress4.numberOfTapsRequired = 0;
+        longPress5.minimumPressDuration = 0.5;
+        longPress5.numberOfTapsRequired = 0;
+        
+        
+        [self.clocklabel addGestureRecognizer:longPress];
+        [self.clocklabela addGestureRecognizer:longPress1];
+        [self.clocklabelb addGestureRecognizer:longPress2];
+        [self.clocklabelc addGestureRecognizer:longPress3];
+        [self.clocklabeld addGestureRecognizer:longPress4];
+        [self.clocklabele addGestureRecognizer:longPress5];
+       
+        
+        
+    }
     
 }
+-(void) LabelLongPressed:(UILongPressGestureRecognizer *)recognizer  {
+    [self.clocklabel removeFromSuperview];
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:ClocksUserSet];
+}
+-(void) LabelLongPressed1:(UILongPressGestureRecognizer *)recognizer  {
+    [self.clocklabela removeFromSuperview];
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:ClocksUserSet1];
+}
+-(void) LabelLongPressed2:(UILongPressGestureRecognizer *)recognizer  {
+    [self.clocklabelb removeFromSuperview];
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:ClocksUserSet2];
+}
+-(void) LabelLongPressed3:(UILongPressGestureRecognizer *)recognizer  {
+    [self.clocklabelc removeFromSuperview];
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:ClocksUserSet3];
+}
+-(void) LabelLongPressed4:(UILongPressGestureRecognizer *)recognizer  {
+    [self.clocklabeld removeFromSuperview];
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:ClocksUserSet4];
+}
+-(void) LabelLongPressed5:(UILongPressGestureRecognizer *)recognizer  {
+    [self.clocklabele removeFromSuperview];
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:ClocksUserSet5];
+}
+
+
+
+
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -82,25 +175,39 @@ NSString *const ClocksUserSet3 = @"ClocksUserSetKey3";
     
     if (self.citiesListArray.count == 1) {
         self.clocklabel.text = [self.citiesListArray objectAtIndex:0];
+        //save here
+        
+        [[NSUserDefaults standardUserDefaults]setObject:self.clocklabel.text forKey:ClocksUserSet];
+        [[NSUserDefaults standardUserDefaults]synchronize];
+        
     }
     if (self.citiesListArray.count == 2) {
         self.clocklabela.text = [self.citiesListArray objectAtIndex:1];
+        [[NSUserDefaults standardUserDefaults]setObject:self.clocklabela.text forKey:ClocksUserSet1];
+        [[NSUserDefaults standardUserDefaults]synchronize];
+        
     }
     if (self.citiesListArray.count == 3) {
         self.clocklabelb.text = [self.citiesListArray objectAtIndex:2];
+        [[NSUserDefaults standardUserDefaults]setObject:self.clocklabelb.text forKey:ClocksUserSet2];
+        [[NSUserDefaults standardUserDefaults]synchronize];
     }
     if (self.citiesListArray.count == 4) {
         self.clocklabelc.text = [self.citiesListArray objectAtIndex:3];
+        [[NSUserDefaults standardUserDefaults]setObject:self.clocklabelc.text forKey:ClocksUserSet3];
+        [[NSUserDefaults standardUserDefaults]synchronize];
     }
     if (self.citiesListArray.count == 5) {
         self.clocklabeld.text = [self.citiesListArray objectAtIndex:4];
+        [[NSUserDefaults standardUserDefaults]setObject:self.clocklabeld.text forKey:ClocksUserSet4];
+        [[NSUserDefaults standardUserDefaults]synchronize];
     }
     if (self.citiesListArray.count == 6) {
         self.clocklabele.text = [self.citiesListArray objectAtIndex:5];
+        [[NSUserDefaults standardUserDefaults]setObject:self.clocklabele.text forKey:ClocksUserSet5];
+        [[NSUserDefaults standardUserDefaults]synchronize];
     }
-    if (self.citiesListArray.count == 7) {
-        self.clocklabelf.text = [self.citiesListArray objectAtIndex:6];
-    }
+    
     
     
   // self.clocklabelc.text = cities;
