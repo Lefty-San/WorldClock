@@ -139,23 +139,23 @@ NSString *const ClocksUserSet5 = @"ClocksUserSetKey5";
 }
 -(void) LabelLongPressed1:(UILongPressGestureRecognizer *)recognizer  {
     [self.clocklabela removeFromSuperview];
-    [[NSUserDefaults standardUserDefaults] removeObjectForKey:ClocksUserSet1];
+    
 }
 -(void) LabelLongPressed2:(UILongPressGestureRecognizer *)recognizer  {
     [self.clocklabelb removeFromSuperview];
-    [[NSUserDefaults standardUserDefaults] removeObjectForKey:ClocksUserSet2];
+   
 }
 -(void) LabelLongPressed3:(UILongPressGestureRecognizer *)recognizer  {
     [self.clocklabelc removeFromSuperview];
-    [[NSUserDefaults standardUserDefaults] removeObjectForKey:ClocksUserSet3];
+    
 }
 -(void) LabelLongPressed4:(UILongPressGestureRecognizer *)recognizer  {
     [self.clocklabeld removeFromSuperview];
-    [[NSUserDefaults standardUserDefaults] removeObjectForKey:ClocksUserSet4];
+    
 }
 -(void) LabelLongPressed5:(UILongPressGestureRecognizer *)recognizer  {
     [self.clocklabele removeFromSuperview];
-    [[NSUserDefaults standardUserDefaults] removeObjectForKey:ClocksUserSet5];
+    
 }
 
 
@@ -208,10 +208,6 @@ NSString *const ClocksUserSet5 = @"ClocksUserSetKey5";
         [[NSUserDefaults standardUserDefaults]synchronize];
     }
     
-    
-    
-  // self.clocklabelc.text = cities;
-    //self.clocklabela.text = cities;
     
     NSLog(@"%@", cities);
     [controller dismissViewControllerAnimated:YES completion:nil];
