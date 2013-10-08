@@ -225,6 +225,7 @@
     //[self.delegate passItemBack:self didFinishWithItem:[selectedValue]];
     //NSLog(selectedValue);
     [self.delegate didselectwith:self cities:[self.tableView cellForRowAtIndexPath:indexPath ].textLabel.text];
+    //[self.delegate didselectwith1:self cities:[self.tableView cellForRowAtIndexPath:indexPath ].textLabel.text];
     //[self dismissViewControllerAnimated:YES completion:nil];
     
     

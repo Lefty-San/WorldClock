@@ -11,6 +11,12 @@
 
 @interface ViewController : UIViewController                <AddControllerDelegate>
 @property (strong, nonatomic) IBOutlet UILabel *clocklabel;
+@property (strong, nonatomic) IBOutlet UILabel *clocklabela;
+@property (strong, nonatomic) IBOutlet UILabel *clocklabelb;
+@property (strong, nonatomic) IBOutlet UILabel *clocklabelc;
+@property (strong, nonatomic) IBOutlet UILabel *clocklabeld;
+@property (strong, nonatomic) IBOutlet UILabel *clocklabele;
+@property (strong, nonatomic) IBOutlet UILabel *clocklabelf;
 
 
 @end
