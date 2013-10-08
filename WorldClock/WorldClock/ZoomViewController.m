@@ -8,39 +8,49 @@
 
 #import "ZoomViewController.h"
 
-@interface ZoomViewController ()
-
-@end
-
 @implementation ZoomViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
+@synthesize clockView;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    [self updateTime];
+    //Clock images for view
+    [clockView setClockBackgroundImage:[UIImage imageNamed:@"ClockFaceAlpha.png"].CGImage];
+	[clockView setHourHandImage:[UIImage imageNamed:@"ClockHourHand.png"].CGImage];
+	[clockView setMinHandImage:[UIImage imageNamed:@"ClockMinuteHand.png"].CGImage];
+	[clockView setSecHandImage:[UIImage imageNamed:@"ClockSecondHand.png"].CGImage];
+    
+    
+    // [self.clockView setClockBackgroundImage:[UIImage imageNamed:@"ClockFaceAlpha.png"].CGImage];
+    
 }
 
--(void)updateTime {
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+	//start the clock at current time
+	[clockView start];
     
-    [updateTime invalidate];
-    updateTime = nil;
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+	//stop the clock
+	[clockView stop];
     
-    currentTime = [NSDate date];
-    NSDateFormatter *timeFormat = [[NSDateFormatter alloc]init];
-    [timeFormat setTimeStyle:NSDateFormatterMediumStyle];
-    timeLbl.text = [timeFormat stringFromDate:currentTime];
-    
-    updateTime = [NSTimer scheduledTimerWithTimeInterval:0.01 target:self selector:@selector(updateTime) userInfo:nil repeats:YES];
+}
+
+- (void)viewDidUnload
+{
+	[super viewDidUnload];
+	self.clockView = nil;
     
 }
 
@@ -49,10 +59,25 @@
 	return YES;
 }
 
-- (void)didReceiveMemoryWarning
+- (void)viewWillLayoutSubviews
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+	[super viewWillLayoutSubviews];
+    
+	const CGSize size1 = self.clockView.frame.size;
+    
+    if (UIInterfaceOrientationIsPortrait(self.interfaceOrientation)) {
+		float verticalSeparation = (self.view.bounds.size.height - size1.height)/3.0;
+		self.clockView.frame = CGRectMake((self.view.bounds.size.width - size1.width)/2,
+                                          verticalSeparation,
+                                          size1.width,
+                                          size1.height);
+	} else {
+		float horizontalSeparation = (self.view.bounds.size.width - size1.width)/3;
+		self.clockView.frame = CGRectMake(horizontalSeparation,
+                                          (self.view.bounds.size.height - size1.height)/2,
+                                          size1.width,
+                                          size1.height);
+	}
 }
 
 @end
