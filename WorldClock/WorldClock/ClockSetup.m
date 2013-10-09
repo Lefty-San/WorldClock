@@ -29,7 +29,7 @@ float Degrees2Radians(float degrees) { return degrees * M_PI / 180; }
     NSDate *timenow = [NSDate date];
     NSDateFormatter *df = [[NSDateFormatter alloc] init];
     [df setTimeStyle:NSDateFormatterLongStyle];
-    [df setTimeZone:[NSTimeZone timeZoneWithName:@"US/Denver"]];
+    [df setTimeZone:[NSTimeZone timeZoneWithName:@"US/Chicago"]];
     NSString *konJikan = [df stringFromDate:timenow];
     NSDate *melbournecurrenttime = [df dateFromString:konJikan];
     NSLog(@"%@", konJikan);
@@ -136,13 +136,13 @@ float Degrees2Radians(float degrees) { return degrees * M_PI / 180; }
 
 //Default sizes of hands:
 //in percentage (0.0 - 1.0)
-#define HOURS_HAND_LENGTH 0.65
-#define MIN_HAND_LENGTH 0.75
-#define SEC_HAND_LENGTH 0.8
+//#define HOURS_HAND_LENGTH 0.65
+//#define MIN_HAND_LENGTH 0.75
+//#define SEC_HAND_LENGTH 0.8
 //in pixels
-#define HOURS_HAND_WIDTH 10
-#define MIN_HAND_WIDTH 8
-#define SEC_HAND_WIDTH 4
+//#define HOURS_HAND_WIDTH 10
+//#define MIN_HAND_WIDTH 8
+//#define SEC_HAND_WIDTH 4
 
 - (void) layoutSubviews
 {
@@ -160,31 +160,31 @@ float Degrees2Radians(float degrees) { return degrees * M_PI / 180; }
 		scale = [UIScreen mainScreen].scale;
 	}
 	
-	if (hourHand.contents == NULL){
-		w = HOURS_HAND_WIDTH;
-		h = length*HOURS_HAND_LENGTH;
-	}else{
+//	if (hourHand.contents == NULL){
+//		w = HOURS_HAND_WIDTH;
+//		h = length*HOURS_HAND_LENGTH;
+//	}else{
 		w = CGImageGetWidth((__bridge CGImageRef)hourHand.contents)/scale;
 		h = CGImageGetHeight((__bridge CGImageRef)hourHand.contents)/scale;
-	}
+//	}
 	hourHand.bounds = CGRectMake(0,0,w,h);
 	
-	if (minHand.contents == NULL){
-		w = MIN_HAND_WIDTH;
-		h = length*MIN_HAND_LENGTH;
-	}else{
+//	if (minHand.contents == NULL){
+//		w = MIN_HAND_WIDTH;
+//		h = length*MIN_HAND_LENGTH;
+//	}else{
 		w = CGImageGetWidth((__bridge CGImageRef)minHand.contents)/scale;
 		h = CGImageGetHeight((__bridge CGImageRef)minHand.contents)/scale;
-	}
+//	}
 	minHand.bounds = CGRectMake(0,0,w,h);
 	
-	if (secHand.contents == NULL){
-		w = SEC_HAND_WIDTH;
-		h = length*SEC_HAND_LENGTH;
-	}else{
+//	if (secHand.contents == NULL){
+//		w = SEC_HAND_WIDTH;
+//		h = length*SEC_HAND_LENGTH;
+//	}else{
 		w = CGImageGetWidth((__bridge CGImageRef)secHand.contents)/scale;
 		h = CGImageGetHeight((__bridge CGImageRef)secHand.contents)/scale;
-	}
+//	}
 	secHand.bounds = CGRectMake(0,0,w,h);
     
 	hourHand.anchorPoint = CGPointMake(0.5,0);
