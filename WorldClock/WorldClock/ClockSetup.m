@@ -25,23 +25,30 @@ float Degrees2Radians(float degrees) { return degrees * M_PI / 180; }
 
 - (void) updateClock:(NSTimer *)theTimer{
     
-	//get whole melbourne time hh:mm:ss
-    NSDate *timenow = [NSDate date];
-    NSDateFormatter *df = [[NSDateFormatter alloc] init];
-    [df setTimeStyle:NSDateFormatterLongStyle];
-    [df setTimeZone:[NSTimeZone timeZoneWithName:@"Asia/Tokyo"]];
-    NSString *konJikan = [df stringFromDate:timenow];
-    NSDate *melbournecurrenttime = [df dateFromString:konJikan];
+	//get the whole time hh:mm:ss
+//    NSDate *timenow = [NSDate date];
+//    NSDateFormatter *df = [[NSDateFormatter alloc] init];
+//    [df setTimeStyle:NSDateFormatterLongStyle];
+//    [df setTimeZone:[NSTimeZone timeZoneWithName:@"Asia/Tokyo"]];
+//    NSString *konJikan = [df stringFromDate:timenow];
+    
+//    NSDate *convertedTime = [df dateFromString:konJikan];
+//    NSLog(@"%@", convertedTime);
 //    NSLog(@"%@", konJikan);
+    
+    NSDate *newYorkTime = [NSDate dateWithTimeIntervalSinceNow:2*60*60];
+    //    NSLog(@"%@",newYorkTime);
     
     //break apart the time hh  mm   ss
     NSCalendar *calendar = [NSCalendar currentCalendar];
-    NSDateComponents *dateComponents = [calendar components:(NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit)fromDate:melbournecurrenttime];
+//    NSDateComponents *dateComponents = [calendar components:(NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit)fromDate:convertedTime];
+    
+    NSDateComponents *dateComponents = [calendar components:(NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit)fromDate:newYorkTime];
     
 	NSInteger seconds = [dateComponents second];
 	NSInteger minutes = [dateComponents minute];
 	NSInteger hours = [dateComponents hour];
-	//NSLog(@"raw: hours:%d min:%d secs:%d", hours, minutes, seconds);
+//	NSLog(@"raw: hours:%d min:%d secs:%d", hours, minutes, seconds);
 	if (hours > 12) hours -=12; //PM
     
 	//set angles for each of the hands
