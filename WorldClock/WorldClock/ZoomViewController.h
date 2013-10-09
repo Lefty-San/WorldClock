@@ -7,13 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ClockSetup.h"
 
 @interface ZoomViewController : UIViewController {
 
-IBOutlet UILabel *timeLbl;
-
-    NSDate *currentTime;
-    NSTimer *updateTime;
-    
 }
-@end
+    @property (nonatomic, strong) IBOutlet ClockSetup *clockView;
+
+    @end
+

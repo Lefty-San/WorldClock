@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		42052BAA1804B1E0009B0D33 /* ClockSetup.m in Sources */ = {isa = PBXBuildFile; fileRef = 42052BA91804B1E0009B0D33 /* ClockSetup.m */; };
+		42052BAF1804B35A009B0D33 /* ClockFaceAlpha.png in Resources */ = {isa = PBXBuildFile; fileRef = 42052BAB1804B35A009B0D33 /* ClockFaceAlpha.png */; };
+		42052BB01804B35A009B0D33 /* ClockHourHand.png in Resources */ = {isa = PBXBuildFile; fileRef = 42052BAC1804B35A009B0D33 /* ClockHourHand.png */; };
+		42052BB11804B35A009B0D33 /* ClockMinuteHand.png in Resources */ = {isa = PBXBuildFile; fileRef = 42052BAD1804B35A009B0D33 /* ClockMinuteHand.png */; };
+		42052BB21804B35A009B0D33 /* ClockSecondHand.png in Resources */ = {isa = PBXBuildFile; fileRef = 42052BAE1804B35A009B0D33 /* ClockSecondHand.png */; };
 		4249DAD817FB7B28007D0200 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4249DAD717FB7B28007D0200 /* Foundation.framework */; };
 		4249DADA17FB7B28007D0200 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4249DAD917FB7B28007D0200 /* CoreGraphics.framework */; };
 		4249DADC17FB7B28007D0200 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4249DADB17FB7B28007D0200 /* UIKit.framework */; };
@@ -37,6 +42,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		42052BA81804B1E0009B0D33 /* ClockSetup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClockSetup.h; sourceTree = "<group>"; };
+		42052BA91804B1E0009B0D33 /* ClockSetup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClockSetup.m; sourceTree = "<group>"; };
+		42052BAB1804B35A009B0D33 /* ClockFaceAlpha.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ClockFaceAlpha.png; sourceTree = "<group>"; };
+		42052BAC1804B35A009B0D33 /* ClockHourHand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ClockHourHand.png; sourceTree = "<group>"; };
+		42052BAD1804B35A009B0D33 /* ClockMinuteHand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ClockMinuteHand.png; sourceTree = "<group>"; };
+		42052BAE1804B35A009B0D33 /* ClockSecondHand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ClockSecondHand.png; sourceTree = "<group>"; };
 		4249DAD417FB7B28007D0200 /* WorldClock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorldClock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4249DAD717FB7B28007D0200 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4249DAD917FB7B28007D0200 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -125,8 +136,14 @@
 				4249DAE617FB7B28007D0200 /* AppDelegate.h */,
 				4249DAE717FB7B28007D0200 /* AppDelegate.m */,
 				4249DAE917FB7B28007D0200 /* Main_iPhone.storyboard */,
+				42052BA81804B1E0009B0D33 /* ClockSetup.h */,
+				42052BA91804B1E0009B0D33 /* ClockSetup.m */,
 				4249DB0F17FB860F007D0200 /* ZoomViewController.h */,
 				4249DB1017FB860F007D0200 /* ZoomViewController.m */,
+				42052BAB1804B35A009B0D33 /* ClockFaceAlpha.png */,
+				42052BAC1804B35A009B0D33 /* ClockHourHand.png */,
+				42052BAD1804B35A009B0D33 /* ClockMinuteHand.png */,
+				42052BAE1804B35A009B0D33 /* ClockSecondHand.png */,
 				4249DAEC17FB7B28007D0200 /* Main_iPad.storyboard */,
 				4249DAEF17FB7B28007D0200 /* ViewController.h */,
 				4249DAF017FB7B28007D0200 /* ViewController.m */,
@@ -242,8 +259,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				4249DAEE17FB7B28007D0200 /* Main_iPad.storyboard in Resources */,
+				42052BB21804B35A009B0D33 /* ClockSecondHand.png in Resources */,
+				42052BB01804B35A009B0D33 /* ClockHourHand.png in Resources */,
 				4249DAF317FB7B28007D0200 /* Images.xcassets in Resources */,
 				4249DAEB17FB7B28007D0200 /* Main_iPhone.storyboard in Resources */,
+				42052BB11804B35A009B0D33 /* ClockMinuteHand.png in Resources */,
+				42052BAF1804B35A009B0D33 /* ClockFaceAlpha.png in Resources */,
 				4249DAE217FB7B28007D0200 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -263,6 +284,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42052BAA1804B1E0009B0D33 /* ClockSetup.m in Sources */,
 				4249DAF117FB7B28007D0200 /* ViewController.m in Sources */,
 				4249DAE817FB7B28007D0200 /* AppDelegate.m in Sources */,
 				4249DAE417FB7B28007D0200 /* main.m in Sources */,
