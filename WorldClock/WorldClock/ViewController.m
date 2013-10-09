@@ -52,8 +52,8 @@ NSString *const ClocksUserSet5 = @"ClocksUserSetKey5";
    
 
    
-   self.clocklabel.text = clocklabel1;
-   self.clocklabela.text = clocklabel2;
+    self.clocklabel.text = clocklabel1;
+    self.clocklabela.text = clocklabel2;
      self.clocklabelb.text = clocklabel3;
      self.clocklabelc.text = clocklabel4;
      self.clocklabeld.text = clocklabel5;
@@ -62,8 +62,8 @@ NSString *const ClocksUserSet5 = @"ClocksUserSetKey5";
 
    
     
-   clocklabel1 = [self.clocklabel text];
-   clocklabel2 = [self.clocklabela text];
+    clocklabel1 = [self.clocklabel text];
+    clocklabel2 = [self.clocklabela text];
     clocklabel3 = [self.clocklabelb text];
     clocklabel4 = [self.clocklabelc text];
     clocklabel5 = [self.clocklabeld text];
@@ -135,26 +135,58 @@ NSString *const ClocksUserSet5 = @"ClocksUserSetKey5";
 }
 -(void) LabelLongPressed:(UILongPressGestureRecognizer *)recognizer  {
     [self.clocklabel removeFromSuperview];
-    [[NSUserDefaults standardUserDefaults] removeObjectForKey:ClocksUserSet];
+    
+    //Deletes user default
+    NSDictionary *defaultsDict = [[NSUserDefaults standardUserDefaults] dictionaryRepresentation];
+    for (NSString *key in [defaultsDict allKeys])
+        [[NSUserDefaults standardUserDefaults] removeObjectForKey:ClocksUserSet];
+    
+    [[NSUserDefaults standardUserDefaults] synchronize];
+   
 }
 -(void) LabelLongPressed1:(UILongPressGestureRecognizer *)recognizer  {
     [self.clocklabela removeFromSuperview];
+    NSDictionary *defaultsDict = [[NSUserDefaults standardUserDefaults] dictionaryRepresentation];
+    for (NSString *key in [defaultsDict allKeys])
+        [[NSUserDefaults standardUserDefaults] removeObjectForKey:ClocksUserSet1];
+    
+    [[NSUserDefaults standardUserDefaults] synchronize];
     
 }
 -(void) LabelLongPressed2:(UILongPressGestureRecognizer *)recognizer  {
     [self.clocklabelb removeFromSuperview];
+    NSDictionary *defaultsDict = [[NSUserDefaults standardUserDefaults] dictionaryRepresentation];
+    for (NSString *key in [defaultsDict allKeys])
+        [[NSUserDefaults standardUserDefaults] removeObjectForKey:ClocksUserSet2];
+    
+    [[NSUserDefaults standardUserDefaults] synchronize];
    
 }
 -(void) LabelLongPressed3:(UILongPressGestureRecognizer *)recognizer  {
     [self.clocklabelc removeFromSuperview];
+    NSDictionary *defaultsDict = [[NSUserDefaults standardUserDefaults] dictionaryRepresentation];
+    for (NSString *key in [defaultsDict allKeys])
+        [[NSUserDefaults standardUserDefaults] removeObjectForKey:ClocksUserSet3];
+    
+    [[NSUserDefaults standardUserDefaults] synchronize];
     
 }
 -(void) LabelLongPressed4:(UILongPressGestureRecognizer *)recognizer  {
     [self.clocklabeld removeFromSuperview];
+    NSDictionary *defaultsDict = [[NSUserDefaults standardUserDefaults] dictionaryRepresentation];
+    for (NSString *key in [defaultsDict allKeys])
+        [[NSUserDefaults standardUserDefaults] removeObjectForKey:ClocksUserSet4];
+    
+    [[NSUserDefaults standardUserDefaults] synchronize];
     
 }
 -(void) LabelLongPressed5:(UILongPressGestureRecognizer *)recognizer  {
     [self.clocklabele removeFromSuperview];
+    NSDictionary *defaultsDict = [[NSUserDefaults standardUserDefaults] dictionaryRepresentation];
+    for (NSString *key in [defaultsDict allKeys])
+        [[NSUserDefaults standardUserDefaults] removeObjectForKey:ClocksUserSet5];
+    
+    [[NSUserDefaults standardUserDefaults] synchronize];
     
 }
 
@@ -172,40 +204,68 @@ NSString *const ClocksUserSet5 = @"ClocksUserSetKey5";
 -(void) didselectwith:(addcontroller *)controller cities:(NSString *)cities{
     
     [self.citiesListArray addObject:cities];
+   
     
     if (self.citiesListArray.count == 1) {
-        self.clocklabel.text = [self.citiesListArray objectAtIndex:0];
-        //save here
         
-        [[NSUserDefaults standardUserDefaults]setObject:self.clocklabel.text forKey:ClocksUserSet];
-        [[NSUserDefaults standardUserDefaults]synchronize];
+        if(self.clocklabel.text !=nil && self.clocklabela.text !=nil && self.clocklabelb.text != nil && self.clocklabelc.text != nil && self.clocklabeld.text != nil && self.clocklabele.text != nil){
+            UIAlertView *alert1 = [[UIAlertView alloc] initWithTitle:@"Can not add any more cities" message:@"Press and hold to delete one city" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+            [alert1 show];
+        }
+        
+        if(self.clocklabel.text == nil){
+            self.clocklabel.text = [self.citiesListArray objectAtIndex:0];
+            //save here
+            
+            [[NSUserDefaults standardUserDefaults]setObject:self.clocklabel.text forKey:ClocksUserSet];
+            [[NSUserDefaults standardUserDefaults]synchronize];
+        }
         
     }
     if (self.citiesListArray.count == 2) {
+        if(self.clocklabela.text == nil){
         self.clocklabela.text = [self.citiesListArray objectAtIndex:1];
         [[NSUserDefaults standardUserDefaults]setObject:self.clocklabela.text forKey:ClocksUserSet1];
         [[NSUserDefaults standardUserDefaults]synchronize];
-        
+        }
     }
     if (self.citiesListArray.count == 3) {
+        if(self.clocklabelb.text == nil){
         self.clocklabelb.text = [self.citiesListArray objectAtIndex:2];
         [[NSUserDefaults standardUserDefaults]setObject:self.clocklabelb.text forKey:ClocksUserSet2];
         [[NSUserDefaults standardUserDefaults]synchronize];
+    
+        }
     }
     if (self.citiesListArray.count == 4) {
+        if(self.clocklabelc.text == nil){
         self.clocklabelc.text = [self.citiesListArray objectAtIndex:3];
         [[NSUserDefaults standardUserDefaults]setObject:self.clocklabelc.text forKey:ClocksUserSet3];
         [[NSUserDefaults standardUserDefaults]synchronize];
+        }
     }
     if (self.citiesListArray.count == 5) {
+        if(self.clocklabeld.text == nil){
         self.clocklabeld.text = [self.citiesListArray objectAtIndex:4];
         [[NSUserDefaults standardUserDefaults]setObject:self.clocklabeld.text forKey:ClocksUserSet4];
         [[NSUserDefaults standardUserDefaults]synchronize];
+        }
     }
     if (self.citiesListArray.count == 6) {
+        if(self.clocklabele.text == nil){
         self.clocklabele.text = [self.citiesListArray objectAtIndex:5];
         [[NSUserDefaults standardUserDefaults]setObject:self.clocklabele.text forKey:ClocksUserSet5];
         [[NSUserDefaults standardUserDefaults]synchronize];
+        }
+    }
+    else if (self.citiesListArray.count > 6){
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Can not add more cities"
+                                                          message:@"press and hold to delete one City"
+                                                         delegate:self
+                                                cancelButtonTitle:@"Ok"
+                                                otherButtonTitles: nil];
+        
+        [alert show];
     }
     
     
