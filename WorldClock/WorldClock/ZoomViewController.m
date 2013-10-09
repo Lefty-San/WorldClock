@@ -18,8 +18,8 @@
     
     //Clock images for view
     [clockView setClockBackgroundImage:[UIImage imageNamed:@"ClockFaceAlpha.png"].CGImage];
-	[clockView setHourHandImage:[UIImage imageNamed:@"ClockMinuteHand.png"].CGImage];
-	[clockView setMinHandImage:[UIImage imageNamed:@"ClockHourHand.png"].CGImage];
+	[clockView setHourHandImage:[UIImage imageNamed:@"ClockHourHand.png"].CGImage];
+	[clockView setMinHandImage:[UIImage imageNamed:@"ClockMinuteHand.png"].CGImage];
 	[clockView setSecHandImage:[UIImage imageNamed:@"ClockSecondHand.png"].CGImage];
     
 }

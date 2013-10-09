@@ -29,7 +29,7 @@ float Degrees2Radians(float degrees) { return degrees * M_PI / 180; }
     NSDate *timenow = [NSDate date];
     NSDateFormatter *df = [[NSDateFormatter alloc] init];
     [df setTimeStyle:NSDateFormatterLongStyle];
-    [df setTimeZone:[NSTimeZone timeZoneWithName:@"US/Chicago"]];
+    [df setTimeZone:[NSTimeZone timeZoneWithName:@"Asia/Tokyo"]];
     NSString *konJikan = [df stringFromDate:timenow];
     NSDate *melbournecurrenttime = [df dateFromString:konJikan];
 //    NSLog(@"%@", konJikan);
