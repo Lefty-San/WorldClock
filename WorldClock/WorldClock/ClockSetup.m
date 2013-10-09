@@ -32,7 +32,7 @@ float Degrees2Radians(float degrees) { return degrees * M_PI / 180; }
     [df setTimeZone:[NSTimeZone timeZoneWithName:@"US/Chicago"]];
     NSString *konJikan = [df stringFromDate:timenow];
     NSDate *melbournecurrenttime = [df dateFromString:konJikan];
-    NSLog(@"%@", konJikan);
+//    NSLog(@"%@", konJikan);
     
     //break apart the time hh  mm   ss
     NSCalendar *calendar = [NSCalendar currentCalendar];
@@ -150,7 +150,7 @@ float Degrees2Radians(float degrees) { return degrees * M_PI / 180; }
     
 	containerLayer.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
     
-	float length = MIN(self.frame.size.width, self.frame.size.height)/2;
+//	float length = MIN(self.frame.size.width, self.frame.size.height)/2;
 	CGPoint c = CGPointMake(self.frame.size.width/2, self.frame.size.height/2);
 	hourHand.position = minHand.position = secHand.position = c;
     

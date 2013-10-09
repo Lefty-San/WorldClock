@@ -63,13 +63,13 @@
 	const CGSize size1 = self.clockView.frame.size;
     
     if (UIInterfaceOrientationIsPortrait(self.interfaceOrientation)) {
-		float verticalSeparation = (self.view.bounds.size.height - size1.height)/3.0;
+		float verticalSeparation = (self.view.bounds.size.height - size1.height)/2.0;
 		self.clockView.frame = CGRectMake((self.view.bounds.size.width - size1.width)/2,
                                           verticalSeparation,
                                           size1.width,
                                           size1.height);
 	} else {
-		float horizontalSeparation = (self.view.bounds.size.width - size1.width)/3;
+		float horizontalSeparation = (self.view.bounds.size.width - size1.width)/2;
 		self.clockView.frame = CGRectMake(horizontalSeparation,
                                           (self.view.bounds.size.height - size1.height)/2,
                                           size1.width,
