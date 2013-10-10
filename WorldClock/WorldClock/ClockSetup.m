@@ -37,14 +37,18 @@ float Degrees2Radians(float degrees) { return degrees * M_PI / 180; }
     NSLog(@"%@", convertedTime);
     NSLog(@"%@", konJikan);
 */
+
     
-    NSDate *newYorkTime = [NSDate dateWithTimeIntervalSinceNow:2*60*60];
+    /* This is an example of setting the time interval externally  */
+    double when = 2*60*60;
+    /*  *  */
+    
+    
+    NSDate *newYorkTime = [NSDate dateWithTimeIntervalSinceNow:when];
     //    NSLog(@"%@",newYorkTime);
     
     //break apart the time hh  mm   ss
-    NSCalendar *calendar = [NSCalendar currentCalendar];
-//    NSDateComponents *dateComponents = [calendar components:(NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit)fromDate:convertedTime];
-    
+    NSCalendar *calendar = [NSCalendar currentCalendar];    
     NSDateComponents *dateComponents = [calendar components:(NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit)fromDate:newYorkTime];
     
 	NSInteger seconds = [dateComponents second];
