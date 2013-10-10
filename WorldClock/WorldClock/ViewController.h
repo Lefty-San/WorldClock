@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "addcontroller.h"
 
-@interface ViewController : UIViewController                <AddControllerDelegate>
+@interface ViewController : UICollectionViewController                <AddControllerDelegate>
 @property (strong, nonatomic) IBOutlet UILabel *clocklabel;
 @property (strong, nonatomic) IBOutlet UILabel *clocklabela;
 @property (strong, nonatomic) IBOutlet UILabel *clocklabelb;

@@ -94,4 +94,5 @@
 	[clockView setMinHandImage:[UIImage imageNamed:@"ClockMinuteHand.png"].CGImage];
 	[clockView setSecHandImage:[UIImage imageNamed:@"ClockSecondHand.png"].CGImage];
 }
+    
 @end
