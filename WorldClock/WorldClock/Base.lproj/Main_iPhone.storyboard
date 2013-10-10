@@ -162,8 +162,8 @@
                                     <outlet property="delegate" destination="qWp-bL-UmE" id="HPq-1J-DZu"/>
                                 </connections>
                             </tableView>
-                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fVV-cR-Vmt">
-                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                            <searchBar contentMode="redraw" id="fVV-cR-Vmt">
+                                <rect key="frame" x="0.0" y="37" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
