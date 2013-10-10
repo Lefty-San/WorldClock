@@ -66,6 +66,7 @@ float Degrees2Radians(float degrees) { return degrees * M_PI / 180; }
 	secHand.transform = CATransform3DMakeRotation (secAngle+M_PI, 0, 0, 1);
 	minHand.transform = CATransform3DMakeRotation (minAngle+M_PI, 0, 0, 1);
 	hourHand.transform = CATransform3DMakeRotation (hourAngle+M_PI, 0, 0, 1);
+    
 }
 
 
