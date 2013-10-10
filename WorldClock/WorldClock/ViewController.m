@@ -8,7 +8,11 @@
 
 #import "ViewController.h"
 
-@interface ViewController ()
+@interface ViewController () {
+    
+    NSArray *clockArray;
+
+}
 
 // Smart Message
 @property NSMutableArray *citiesListArray;
@@ -24,6 +28,15 @@ NSString *const ClocksUserSet5 = @"ClocksUserSetKey5";
 
 
 @implementation ViewController
+    
+    - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+    {
+        self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+        if (self) {
+            // Custom initialization
+        }
+        return self;
+    }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if([segue.identifier isEqualToString:@"addcontrollersegue"]){
@@ -36,6 +49,8 @@ NSString *const ClocksUserSet5 = @"ClocksUserSetKey5";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    clockArray = [NSArray arrayWithObjects:@"clock.png", @"clock.png", @"clock.png", @"clock.png", @"clock.png", @"clock.png", @"clock.png", @"clock.png", @"clock.png", @"clock.png", @"clock.png", @"clock.png", nil];
+
 	// Do any additional setup after loading the view, typically from a nib.
 
     self.citiesListArray = [[NSMutableArray alloc]initWithCapacity:6];
@@ -52,7 +67,7 @@ NSString *const ClocksUserSet5 = @"ClocksUserSetKey5";
    
 
    
-    self.clocklabel.text = clocklabel1;
+  /*  self.clocklabel.text = clocklabel1;
     self.clocklabela.text = clocklabel2;
      self.clocklabelb.text = clocklabel3;
      self.clocklabelc.text = clocklabel4;
@@ -67,7 +82,7 @@ NSString *const ClocksUserSet5 = @"ClocksUserSetKey5";
     clocklabel3 = [self.clocklabelb text];
     clocklabel4 = [self.clocklabelc text];
     clocklabel5 = [self.clocklabeld text];
-    clocklabel6 = [self.clocklabele text];
+    clocklabel6 = [self.clocklabele text]; */
    
    
     defaults = [NSUserDefaults standardUserDefaults];
@@ -276,6 +291,22 @@ NSString *const ClocksUserSet5 = @"ClocksUserSetKey5";
     NSLog(@"%@", cities);
     [controller dismissViewControllerAnimated:YES completion:nil];
 }
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
+    return clockArray.count;
+}
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+    static NSString *identifier = @"Cell";
+    //   [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"cell"];
+    
+    UICollectionViewCell *Cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
+    
+    UIImageView *imageView = (UIImageView *)[Cell viewWithTag:100];
+    imageView.image = [UIImage imageNamed:[clockArray objectAtIndex:indexPath.row]];
+    // cell.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"photo-frame.png"]];
+    
+    return Cell;
+}
+
 
 
 @end
