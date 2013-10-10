@@ -24,17 +24,19 @@
 float Degrees2Radians(float degrees) { return degrees * M_PI / 180; }
 
 - (void) updateClock:(NSTimer *)theTimer{
-    
+
+/*
 	//get the whole time hh:mm:ss
-//    NSDate *timenow = [NSDate date];
-//    NSDateFormatter *df = [[NSDateFormatter alloc] init];
-//    [df setTimeStyle:NSDateFormatterLongStyle];
-//    [df setTimeZone:[NSTimeZone timeZoneWithName:@"Asia/Tokyo"]];
-//    NSString *konJikan = [df stringFromDate:timenow];
-    
-//    NSDate *convertedTime = [df dateFromString:konJikan];
-//    NSLog(@"%@", convertedTime);
-//    NSLog(@"%@", konJikan);
+    NSDate *timenow = [NSDate date];
+    NSDateFormatter *df = [[NSDateFormatter alloc] init];
+    [df setTimeStyle:NSDateFormatterLongStyle];
+    [df setTimeZone:[NSTimeZone timeZoneWithName:@"Asia/Tokyo"]];
+    NSString *konJikan = [df stringFromDate:timenow];
+ 
+    NSDate *convertedTime = [df dateFromString:konJikan];
+    NSLog(@"%@", convertedTime);
+    NSLog(@"%@", konJikan);
+*/
     
     NSDate *newYorkTime = [NSDate dateWithTimeIntervalSinceNow:2*60*60];
     //    NSLog(@"%@",newYorkTime);
