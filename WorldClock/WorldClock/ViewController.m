@@ -51,6 +51,9 @@ NSString *const ClocksUserSet5 = @"ClocksUserSetKey5";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.collectionView.backgroundColor = [UIColor whiteColor];
+    
     clockArray = [NSArray arrayWithObjects:@"clock.png", @"clock.png", @"clock.png", @"clock.png", @"clock.png", @"clock.png", @"clock.png", @"clock.png", @"clock.png", @"clock.png", @"clock.png", @"clock.png", nil];
 
 	// Do any additional setup after loading the view, typically from a nib.
@@ -324,7 +327,7 @@ NSString *const ClocksUserSet5 = @"ClocksUserSetKey5";
     
     ClockCell *cell = (ClockCell*)[collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
    
-   [cell.clockView setClockBackgroundImage:[UIImage imageNamed:@"ClockFaceAlpha.png"].CGImage];
+    [cell.clockView setClockBackgroundImage:[UIImage imageNamed:@"ClockFaceAlpha.png"].CGImage];
 	[cell.clockView setHourHandImage:[UIImage imageNamed:@"ClockHourHand.png"].CGImage];
 	[cell.clockView setMinHandImage:[UIImage imageNamed:@"ClockMinuteHand.png"].CGImage];
 	[cell.clockView setSecHandImage:[UIImage imageNamed:@"ClockSecondHand.png"].CGImage];
