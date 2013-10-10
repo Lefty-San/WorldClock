@@ -44,13 +44,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="uEO-aP-1uQ"/>
                     <connections>
                         <outlet property="clockView" destination="ALN-C8-wC0" id="IXO-Pq-giI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y72-f8-NDD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="928" y="648"/>
+            <point key="canvasLocation" x="1976" y="464"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="wRs-mq-otj">
@@ -83,6 +84,7 @@
                                 </view>
                                 <connections>
                                     <outlet property="clockView" destination="8Vr-n7-T6X" id="wDl-rv-6qY"/>
+                                    <segue destination="T40-ef-KFQ" kind="push" id="gyw-bY-ggu"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
