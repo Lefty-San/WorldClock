@@ -134,8 +134,8 @@ NSString *const ClocksUserSet5 = @"ClocksUserSetKey5";
     
 }
 -(void) LabelLongPressed:(UILongPressGestureRecognizer *)recognizer  {
-    [self.clocklabel removeFromSuperview];
-    
+    //[self.clocklabel removeFromSuperview];
+    self.clocklabel.text = @"";
     //Deletes user default
     NSDictionary *defaultsDict = [[NSUserDefaults standardUserDefaults] dictionaryRepresentation];
     for (NSString *key in [defaultsDict allKeys])
@@ -145,7 +145,8 @@ NSString *const ClocksUserSet5 = @"ClocksUserSetKey5";
    
 }
 -(void) LabelLongPressed1:(UILongPressGestureRecognizer *)recognizer  {
-    [self.clocklabela removeFromSuperview];
+    //[self.clocklabela removeFromSuperview];
+    self.clocklabela.text = @"";
     NSDictionary *defaultsDict = [[NSUserDefaults standardUserDefaults] dictionaryRepresentation];
     for (NSString *key in [defaultsDict allKeys])
         [[NSUserDefaults standardUserDefaults] removeObjectForKey:ClocksUserSet1];
@@ -154,7 +155,8 @@ NSString *const ClocksUserSet5 = @"ClocksUserSetKey5";
     
 }
 -(void) LabelLongPressed2:(UILongPressGestureRecognizer *)recognizer  {
-    [self.clocklabelb removeFromSuperview];
+    //[self.clocklabelb removeFromSuperview];
+    self.clocklabelb.text = @"";
     NSDictionary *defaultsDict = [[NSUserDefaults standardUserDefaults] dictionaryRepresentation];
     for (NSString *key in [defaultsDict allKeys])
         [[NSUserDefaults standardUserDefaults] removeObjectForKey:ClocksUserSet2];
@@ -163,7 +165,8 @@ NSString *const ClocksUserSet5 = @"ClocksUserSetKey5";
    
 }
 -(void) LabelLongPressed3:(UILongPressGestureRecognizer *)recognizer  {
-    [self.clocklabelc removeFromSuperview];
+   // [self.clocklabelc removeFromSuperview];
+    self.clocklabelc.text = @"";
     NSDictionary *defaultsDict = [[NSUserDefaults standardUserDefaults] dictionaryRepresentation];
     for (NSString *key in [defaultsDict allKeys])
         [[NSUserDefaults standardUserDefaults] removeObjectForKey:ClocksUserSet3];
@@ -172,7 +175,8 @@ NSString *const ClocksUserSet5 = @"ClocksUserSetKey5";
     
 }
 -(void) LabelLongPressed4:(UILongPressGestureRecognizer *)recognizer  {
-    [self.clocklabeld removeFromSuperview];
+  //  [self.clocklabeld removeFromSuperview];
+    self.clocklabeld.text = @"";
     NSDictionary *defaultsDict = [[NSUserDefaults standardUserDefaults] dictionaryRepresentation];
     for (NSString *key in [defaultsDict allKeys])
         [[NSUserDefaults standardUserDefaults] removeObjectForKey:ClocksUserSet4];
@@ -181,7 +185,8 @@ NSString *const ClocksUserSet5 = @"ClocksUserSetKey5";
     
 }
 -(void) LabelLongPressed5:(UILongPressGestureRecognizer *)recognizer  {
-    [self.clocklabele removeFromSuperview];
+   // [self.clocklabele removeFromSuperview];
+    self.clocklabele.text = @"";
     NSDictionary *defaultsDict = [[NSUserDefaults standardUserDefaults] dictionaryRepresentation];
     for (NSString *key in [defaultsDict allKeys])
         [[NSUserDefaults standardUserDefaults] removeObjectForKey:ClocksUserSet5];
@@ -200,7 +205,6 @@ NSString *const ClocksUserSet5 = @"ClocksUserSetKey5";
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 -(void) didselectwith:(addcontroller *)controller cities:(NSString *)cities{
     
     [self.citiesListArray addObject:cities];

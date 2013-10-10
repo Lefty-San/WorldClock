@@ -485,6 +485,28 @@
     return cell;
     
 }
+- (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView
+{
+    NSMutableArray *sectionedArray = [[NSMutableArray alloc]init];
+    for(char c ='A' ; c <= 'Z' ;  c++)
+    {
+        [sectionedArray addObject:[NSString stringWithFormat:@"%c",c]];
+    }
+    return sectionedArray;
+}
+- (NSInteger)tableView:(UITableView *)tableView sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index
+{
+    NSInteger count = 0;
+    for(NSString *character in cities)
+    {
+        if([character isEqualToString:title])
+        {
+            return count;
+        }
+        count ++;
+    }
+    return 0;
+}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {

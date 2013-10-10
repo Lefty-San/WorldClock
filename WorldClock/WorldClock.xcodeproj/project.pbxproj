@@ -145,8 +145,8 @@
 				42052BAD1804B35A009B0D33 /* ClockMinuteHand.png */,
 				42052BAE1804B35A009B0D33 /* ClockSecondHand.png */,
 				4249DAEC17FB7B28007D0200 /* Main_iPad.storyboard */,
-				4249DAEF17FB7B28007D0200 /* ViewController.h */,
 				4249DAF017FB7B28007D0200 /* ViewController.m */,
+				4249DAEF17FB7B28007D0200 /* ViewController.h */,
 				4249DAF217FB7B28007D0200 /* Images.xcassets */,
 				4249DADE17FB7B28007D0200 /* Supporting Files */,
 			);
