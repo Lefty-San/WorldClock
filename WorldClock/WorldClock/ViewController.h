@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "addcontroller.h"
+#import "ZoomViewController.h"
 
 @interface ViewController : UICollectionViewController                <AddControllerDelegate>
 @property (strong, nonatomic) IBOutlet UILabel *clocklabel;
@@ -17,6 +18,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *clocklabeld;
 @property (strong, nonatomic) IBOutlet UILabel *clocklabele;
 @property (strong, nonatomic) IBOutlet UILabel *clocklabelf;
+@property (nonatomic, retain) IBOutlet ZoomViewController *zoomView; 
 
 
 @end

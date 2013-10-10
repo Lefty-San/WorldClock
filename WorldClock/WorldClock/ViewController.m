@@ -7,6 +7,8 @@
 //
 
 #import "ViewController.h"
+#import "ZoomViewController.h"
+#import  "ClockCell.h"
 
 @interface ViewController () {
     
@@ -292,19 +294,28 @@ NSString *const ClocksUserSet5 = @"ClocksUserSetKey5";
     [controller dismissViewControllerAnimated:YES completion:nil];
 }
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return clockArray.count;
+    return 6;
 }
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *identifier = @"Cell";
-    //   [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"cell"];
     
-    UICollectionViewCell *Cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
     
-    UIImageView *imageView = (UIImageView *)[Cell viewWithTag:100];
-    imageView.image = [UIImage imageNamed:[clockArray objectAtIndex:indexPath.row]];
+
+    
+    ClockCell *cell = (ClockCell*)[collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
+   
+   [cell.clockView setClockBackgroundImage:[UIImage imageNamed:@"ClockFaceAlpha.png"].CGImage];
+	[cell.clockView setHourHandImage:[UIImage imageNamed:@"ClockHourHand.png"].CGImage];
+	[cell.clockView setMinHandImage:[UIImage imageNamed:@"ClockMinuteHand.png"].CGImage];
+	[cell.clockView setSecHandImage:[UIImage imageNamed:@"ClockSecondHand.png"].CGImage];
+    
+    [cell.clockView start];
+   // _zoomView = (UIView *)[Cell viewWithTag:100];
+    
+  //  _zoomView = [objectAtIndex:indexPath.row];
     // cell.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"photo-frame.png"]];
     
-    return Cell;
+    return cell;
 }
 
 
