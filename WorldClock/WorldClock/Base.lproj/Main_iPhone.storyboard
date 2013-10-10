@@ -75,7 +75,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="qWp-bL-UmE" kind="modal" identifier="addcontrollersegue" id="rxi-VD-VKK"/>
+                                    <segue destination="qWp-bL-UmE" kind="modal" identifier="addcontrollersegue" id="i61-8A-7Ay"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -170,6 +170,16 @@
                                     <outlet property="delegate" destination="qWp-bL-UmE" id="cGa-oF-ZRX"/>
                                 </connections>
                             </searchBar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="A8M-1S-8Ef">
+                                <rect key="frame" x="14" y="12" width="71" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="&lt;&lt; Back">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="backbutton:" destination="qWp-bL-UmE" eventType="touchUpInside" id="AAn-w0-Cnb"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -191,7 +201,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="1223" y="-496"/>
+            <point key="canvasLocation" x="1246" y="-492"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Ykh-Ie-ABy">
