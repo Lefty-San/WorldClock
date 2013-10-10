@@ -227,6 +227,10 @@ NSString *const ClocksUserSet5 = @"ClocksUserSetKey5";
         
     }
     if (self.citiesListArray.count == 2) {
+        if(self.clocklabel.text !=nil && self.clocklabela.text !=nil && self.clocklabelb.text != nil && self.clocklabelc.text != nil && self.clocklabeld.text != nil && self.clocklabele.text != nil){
+            UIAlertView *alert1 = [[UIAlertView alloc] initWithTitle:@"Can not add any more cities" message:@"Press and hold to delete one city" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+            [alert1 show];
+        }
         if(self.clocklabela.text == nil){
         self.clocklabela.text = [self.citiesListArray objectAtIndex:1];
         [[NSUserDefaults standardUserDefaults]setObject:self.clocklabela.text forKey:ClocksUserSet1];
@@ -234,6 +238,10 @@ NSString *const ClocksUserSet5 = @"ClocksUserSetKey5";
         }
     }
     if (self.citiesListArray.count == 3) {
+        if(self.clocklabel.text !=nil && self.clocklabela.text !=nil && self.clocklabelb.text != nil && self.clocklabelc.text != nil && self.clocklabeld.text != nil && self.clocklabele.text != nil){
+            UIAlertView *alert1 = [[UIAlertView alloc] initWithTitle:@"Can not add any more cities" message:@"Press and hold to delete one city" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+            [alert1 show];
+        }
         if(self.clocklabelb.text == nil){
         self.clocklabelb.text = [self.citiesListArray objectAtIndex:2];
         [[NSUserDefaults standardUserDefaults]setObject:self.clocklabelb.text forKey:ClocksUserSet2];
@@ -242,6 +250,10 @@ NSString *const ClocksUserSet5 = @"ClocksUserSetKey5";
         }
     }
     if (self.citiesListArray.count == 4) {
+        if(self.clocklabel.text !=nil && self.clocklabela.text !=nil && self.clocklabelb.text != nil && self.clocklabelc.text != nil && self.clocklabeld.text != nil && self.clocklabele.text != nil){
+            UIAlertView *alert1 = [[UIAlertView alloc] initWithTitle:@"Can not add any more cities" message:@"Press and hold to delete one city" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+            [alert1 show];
+        }
         if(self.clocklabelc.text == nil){
         self.clocklabelc.text = [self.citiesListArray objectAtIndex:3];
         [[NSUserDefaults standardUserDefaults]setObject:self.clocklabelc.text forKey:ClocksUserSet3];
@@ -249,6 +261,10 @@ NSString *const ClocksUserSet5 = @"ClocksUserSetKey5";
         }
     }
     if (self.citiesListArray.count == 5) {
+        if(self.clocklabel.text !=nil && self.clocklabela.text !=nil && self.clocklabelb.text != nil && self.clocklabelc.text != nil && self.clocklabeld.text != nil && self.clocklabele.text != nil){
+            UIAlertView *alert1 = [[UIAlertView alloc] initWithTitle:@"Can not add any more cities" message:@"Press and hold to delete one city" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+            [alert1 show];
+        }
         if(self.clocklabeld.text == nil){
         self.clocklabeld.text = [self.citiesListArray objectAtIndex:4];
         [[NSUserDefaults standardUserDefaults]setObject:self.clocklabeld.text forKey:ClocksUserSet4];
@@ -256,6 +272,10 @@ NSString *const ClocksUserSet5 = @"ClocksUserSetKey5";
         }
     }
     if (self.citiesListArray.count == 6) {
+        if(self.clocklabel.text !=nil && self.clocklabela.text !=nil && self.clocklabelb.text != nil && self.clocklabelc.text != nil && self.clocklabeld.text != nil && self.clocklabele.text != nil){
+            UIAlertView *alert1 = [[UIAlertView alloc] initWithTitle:@"Can not add any more cities" message:@"Press and hold to delete one city" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+            [alert1 show];
+        }
         if(self.clocklabele.text == nil){
         self.clocklabele.text = [self.citiesListArray objectAtIndex:5];
         [[NSUserDefaults standardUserDefaults]setObject:self.clocklabele.text forKey:ClocksUserSet5];

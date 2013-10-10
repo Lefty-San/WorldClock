@@ -14,6 +14,7 @@
 
 @implementation addcontroller{
     NSArray *cities;
+    NSArray *citytimezones;
     NSArray *searchResults;
 }
 
@@ -28,13 +29,20 @@
 
 - (void)viewDidLoad
 {
+    
+       
     [super viewDidLoad];
+    citytimezones = [NSArray arrayWithObjects:@"GMT +1",
+                     @"GMT+2",
+                     @"GMT+3",
+                     @"GMT+4",
+                     nil];
 	// Do any additional setup after loading the view.
     cities = [NSArray arrayWithObjects:@    "Africa/Abidjan",
               @    "Africa/Accra",
               @    "Africa/Addis_Ababa",
               @    "Africa/Algiers",
-              @    "Africa/Asmara",
+             /* @    "Africa/Asmara",
               @    "Africa/Bamako",
               @    "Africa/Bangui",
               @    "Africa/Banjul",
@@ -450,7 +458,7 @@
               @    "Pacific/Tongatapu",
               @    "Pacific/Truk",
               @    "Pacific/Wake",
-              @    "Pacific/Wallis",
+              @    "Pacific/Wallis", */
               nil];
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -460,6 +468,7 @@
         
     } else {
         return [cities count];
+        return [citytimezones count];
         
     }
 }
@@ -469,18 +478,22 @@
     static NSString *simpleTableIdentifier = @"citycell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    
+    //cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
     
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:simpleTableIdentifier];
+       // cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     }
     
     if (tableView == self.searchDisplayController.searchResultsTableView) {
         cell.textLabel.text = [searchResults objectAtIndex:indexPath.row];
     } else {
         cell.textLabel.text = [cities objectAtIndex:indexPath.row];
-    }
+        cell.detailTextLabel.text = [citytimezones objectAtIndex:indexPath.row];
+   }
+    
     
     return cell;
     
@@ -538,6 +551,7 @@
                                     searchText];
     
     searchResults = [cities filteredArrayUsingPredicate:resultPredicate];
+    //searchResults = [citytimezones filteredArrayUsingPredicate:resultPredicate];
 }
 
 -(BOOL)searchDisplayController:(UISearchDisplayController *)controller
@@ -562,4 +576,7 @@ shouldReloadTableForSearchString:(NSString *)searchString
 
 
 
+- (IBAction)backbutton:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 @end
