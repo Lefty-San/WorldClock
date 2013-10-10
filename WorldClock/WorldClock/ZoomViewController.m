@@ -21,7 +21,6 @@
 	[clockView setHourHandImage:[UIImage imageNamed:@"ClockHourHand.png"].CGImage];
 	[clockView setMinHandImage:[UIImage imageNamed:@"ClockMinuteHand.png"].CGImage];
 	[clockView setSecHandImage:[UIImage imageNamed:@"ClockSecondHand.png"].CGImage];
-    
 }
 
 - (void)didReceiveMemoryWarning
@@ -77,4 +76,22 @@
 	}
 }
 
+- (IBAction)Style1:(id)sender {
+    
+    [clockView setClockBackgroundImage:[UIImage imageNamed:@"ClockFaceAlpha.png"].CGImage];
+	[clockView setHourHandImage:[UIImage imageNamed:@"ClockHourHand.png"].CGImage];
+	[clockView setMinHandImage:[UIImage imageNamed:@"ClockMinuteHand.png"].CGImage];
+	[clockView setSecHandImage:[UIImage imageNamed:@"ClockSecondHand.png"].CGImage];
+    
+}
+
+- (IBAction)Style2:(id)sender {
+    
+/* TODO - make new clock/s */
+
+    [clockView setClockBackgroundImage:[UIImage imageNamed:@"ClockFaceAlpha.png"].CGImage];
+	[clockView setHourHandImage:[UIImage imageNamed:@"ClockHourHand.png"].CGImage];
+	[clockView setMinHandImage:[UIImage imageNamed:@"ClockMinuteHand.png"].CGImage];
+	[clockView setSecHandImage:[UIImage imageNamed:@"ClockSecondHand.png"].CGImage];
+}
 @end

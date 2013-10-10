@@ -8,10 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		42052BAA1804B1E0009B0D33 /* ClockSetup.m in Sources */ = {isa = PBXBuildFile; fileRef = 42052BA91804B1E0009B0D33 /* ClockSetup.m */; };
-		42052BAF1804B35A009B0D33 /* ClockFaceAlpha.png in Resources */ = {isa = PBXBuildFile; fileRef = 42052BAB1804B35A009B0D33 /* ClockFaceAlpha.png */; };
-		42052BB01804B35A009B0D33 /* ClockHourHand.png in Resources */ = {isa = PBXBuildFile; fileRef = 42052BAC1804B35A009B0D33 /* ClockHourHand.png */; };
-		42052BB11804B35A009B0D33 /* ClockMinuteHand.png in Resources */ = {isa = PBXBuildFile; fileRef = 42052BAD1804B35A009B0D33 /* ClockMinuteHand.png */; };
-		42052BB21804B35A009B0D33 /* ClockSecondHand.png in Resources */ = {isa = PBXBuildFile; fileRef = 42052BAE1804B35A009B0D33 /* ClockSecondHand.png */; };
+		4229ABFD1806EEAA004FDAE8 /* ClockFaceAlpha.png in Resources */ = {isa = PBXBuildFile; fileRef = 4229ABF91806EEAA004FDAE8 /* ClockFaceAlpha.png */; };
+		4229ABFE1806EEAA004FDAE8 /* ClockHourHand.png in Resources */ = {isa = PBXBuildFile; fileRef = 4229ABFA1806EEAA004FDAE8 /* ClockHourHand.png */; };
+		4229ABFF1806EEAA004FDAE8 /* ClockMinuteHand.png in Resources */ = {isa = PBXBuildFile; fileRef = 4229ABFB1806EEAA004FDAE8 /* ClockMinuteHand.png */; };
+		4229AC001806EEAA004FDAE8 /* ClockSecondHand.png in Resources */ = {isa = PBXBuildFile; fileRef = 4229ABFC1806EEAA004FDAE8 /* ClockSecondHand.png */; };
 		4249DAD817FB7B28007D0200 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4249DAD717FB7B28007D0200 /* Foundation.framework */; };
 		4249DADA17FB7B28007D0200 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4249DAD917FB7B28007D0200 /* CoreGraphics.framework */; };
 		4249DADC17FB7B28007D0200 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4249DADB17FB7B28007D0200 /* UIKit.framework */; };
@@ -44,10 +44,10 @@
 /* Begin PBXFileReference section */
 		42052BA81804B1E0009B0D33 /* ClockSetup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClockSetup.h; sourceTree = "<group>"; };
 		42052BA91804B1E0009B0D33 /* ClockSetup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClockSetup.m; sourceTree = "<group>"; };
-		42052BAB1804B35A009B0D33 /* ClockFaceAlpha.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ClockFaceAlpha.png; sourceTree = "<group>"; };
-		42052BAC1804B35A009B0D33 /* ClockHourHand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ClockHourHand.png; sourceTree = "<group>"; };
-		42052BAD1804B35A009B0D33 /* ClockMinuteHand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ClockMinuteHand.png; sourceTree = "<group>"; };
-		42052BAE1804B35A009B0D33 /* ClockSecondHand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ClockSecondHand.png; sourceTree = "<group>"; };
+		4229ABF91806EEAA004FDAE8 /* ClockFaceAlpha.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ClockFaceAlpha.png; sourceTree = "<group>"; };
+		4229ABFA1806EEAA004FDAE8 /* ClockHourHand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ClockHourHand.png; sourceTree = "<group>"; };
+		4229ABFB1806EEAA004FDAE8 /* ClockMinuteHand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ClockMinuteHand.png; sourceTree = "<group>"; };
+		4229ABFC1806EEAA004FDAE8 /* ClockSecondHand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ClockSecondHand.png; sourceTree = "<group>"; };
 		4249DAD417FB7B28007D0200 /* WorldClock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorldClock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4249DAD717FB7B28007D0200 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4249DAD917FB7B28007D0200 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -98,6 +98,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4229ABF81806EEAA004FDAE8 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				4229ABF91806EEAA004FDAE8 /* ClockFaceAlpha.png */,
+				4229ABFA1806EEAA004FDAE8 /* ClockHourHand.png */,
+				4229ABFB1806EEAA004FDAE8 /* ClockMinuteHand.png */,
+				4229ABFC1806EEAA004FDAE8 /* ClockSecondHand.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
 		4249DACB17FB7B28007D0200 = {
 			isa = PBXGroup;
 			children = (
@@ -140,10 +151,7 @@
 				42052BA91804B1E0009B0D33 /* ClockSetup.m */,
 				4249DB0F17FB860F007D0200 /* ZoomViewController.h */,
 				4249DB1017FB860F007D0200 /* ZoomViewController.m */,
-				42052BAB1804B35A009B0D33 /* ClockFaceAlpha.png */,
-				42052BAC1804B35A009B0D33 /* ClockHourHand.png */,
-				42052BAD1804B35A009B0D33 /* ClockMinuteHand.png */,
-				42052BAE1804B35A009B0D33 /* ClockSecondHand.png */,
+				4229ABF81806EEAA004FDAE8 /* images */,
 				4249DAEC17FB7B28007D0200 /* Main_iPad.storyboard */,
 				4249DAEF17FB7B28007D0200 /* ViewController.h */,
 				4249DAF017FB7B28007D0200 /* ViewController.m */,
@@ -259,13 +267,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				4249DAEE17FB7B28007D0200 /* Main_iPad.storyboard in Resources */,
-				42052BB21804B35A009B0D33 /* ClockSecondHand.png in Resources */,
-				42052BB01804B35A009B0D33 /* ClockHourHand.png in Resources */,
+				4229ABFF1806EEAA004FDAE8 /* ClockMinuteHand.png in Resources */,
+				4229ABFE1806EEAA004FDAE8 /* ClockHourHand.png in Resources */,
 				4249DAF317FB7B28007D0200 /* Images.xcassets in Resources */,
 				4249DAEB17FB7B28007D0200 /* Main_iPhone.storyboard in Resources */,
-				42052BB11804B35A009B0D33 /* ClockMinuteHand.png in Resources */,
-				42052BAF1804B35A009B0D33 /* ClockFaceAlpha.png in Resources */,
+				4229AC001806EEAA004FDAE8 /* ClockSecondHand.png in Resources */,
 				4249DAE217FB7B28007D0200 /* InfoPlist.strings in Resources */,
+				4229ABFD1806EEAA004FDAE8 /* ClockFaceAlpha.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
