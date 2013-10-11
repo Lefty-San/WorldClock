@@ -29,6 +29,10 @@
 		4249DB0417FB7B28007D0200 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4249DB0217FB7B28007D0200 /* InfoPlist.strings */; };
 		4249DB0617FB7B28007D0200 /* WorldClockTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4249DB0517FB7B28007D0200 /* WorldClockTests.m */; };
 		4249DB1117FB860F007D0200 /* ZoomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4249DB1017FB860F007D0200 /* ZoomViewController.m */; };
+		42F5C59A1808486B00C2A732 /* clock-v2Alpha.png in Resources */ = {isa = PBXBuildFile; fileRef = 42F5C5961808486B00C2A732 /* clock-v2Alpha.png */; };
+		42F5C5A118084E9400C2A732 /* hour-handV3.png in Resources */ = {isa = PBXBuildFile; fileRef = 42F5C59E18084E9400C2A732 /* hour-handV3.png */; };
+		42F5C5A218084E9400C2A732 /* minute-handV3.png in Resources */ = {isa = PBXBuildFile; fileRef = 42F5C59F18084E9400C2A732 /* minute-handV3.png */; };
+		42F5C5A318084E9400C2A732 /* second-handV3.png in Resources */ = {isa = PBXBuildFile; fileRef = 42F5C5A018084E9400C2A732 /* second-handV3.png */; };
 		CBE1E2E1180358200076BB39 /* addcontroller.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE1E2E0180358200076BB39 /* addcontroller.m */; };
 /* End PBXBuildFile section */
 
@@ -73,6 +77,10 @@
 		4249DB0517FB7B28007D0200 /* WorldClockTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WorldClockTests.m; sourceTree = "<group>"; };
 		4249DB0F17FB860F007D0200 /* ZoomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZoomViewController.h; sourceTree = "<group>"; };
 		4249DB1017FB860F007D0200 /* ZoomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZoomViewController.m; sourceTree = "<group>"; };
+		42F5C5961808486B00C2A732 /* clock-v2Alpha.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "clock-v2Alpha.png"; path = "../../clock-v2Alpha.png"; sourceTree = "<group>"; };
+		42F5C59E18084E9400C2A732 /* hour-handV3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "hour-handV3.png"; path = "../../hour-handV3.png"; sourceTree = "<group>"; };
+		42F5C59F18084E9400C2A732 /* minute-handV3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "minute-handV3.png"; path = "../../minute-handV3.png"; sourceTree = "<group>"; };
+		42F5C5A018084E9400C2A732 /* second-handV3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "second-handV3.png"; path = "../../second-handV3.png"; sourceTree = "<group>"; };
 		CBE1E2DF180358200076BB39 /* addcontroller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = addcontroller.h; sourceTree = "<group>"; };
 		CBE1E2E0180358200076BB39 /* addcontroller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = addcontroller.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -104,6 +112,10 @@
 		4229ABF81806EEAA004FDAE8 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				42F5C59E18084E9400C2A732 /* hour-handV3.png */,
+				42F5C59F18084E9400C2A732 /* minute-handV3.png */,
+				42F5C5A018084E9400C2A732 /* second-handV3.png */,
+				42F5C5961808486B00C2A732 /* clock-v2Alpha.png */,
 				4229ABF91806EEAA004FDAE8 /* ClockFaceAlpha.png */,
 				4229ABFA1806EEAA004FDAE8 /* ClockHourHand.png */,
 				4229ABFB1806EEAA004FDAE8 /* ClockMinuteHand.png */,
@@ -273,10 +285,14 @@
 			files = (
 				4249DAEE17FB7B28007D0200 /* Main_iPad.storyboard in Resources */,
 				4229ABFF1806EEAA004FDAE8 /* ClockMinuteHand.png in Resources */,
+				42F5C59A1808486B00C2A732 /* clock-v2Alpha.png in Resources */,
+				42F5C5A118084E9400C2A732 /* hour-handV3.png in Resources */,
 				4229ABFE1806EEAA004FDAE8 /* ClockHourHand.png in Resources */,
+				42F5C5A318084E9400C2A732 /* second-handV3.png in Resources */,
 				4249DAF317FB7B28007D0200 /* Images.xcassets in Resources */,
 				4249DAEB17FB7B28007D0200 /* Main_iPhone.storyboard in Resources */,
 				4229AC001806EEAA004FDAE8 /* ClockSecondHand.png in Resources */,
+				42F5C5A218084E9400C2A732 /* minute-handV3.png in Resources */,
 				4249DAE217FB7B28007D0200 /* InfoPlist.strings in Resources */,
 				4229ABFD1806EEAA004FDAE8 /* ClockFaceAlpha.png in Resources */,
 			);

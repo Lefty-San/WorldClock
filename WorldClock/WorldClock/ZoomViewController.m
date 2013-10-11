@@ -89,10 +89,10 @@
     
 /* TODO - make new clock/s */
 
-    [clockView setClockBackgroundImage:[UIImage imageNamed:@"ClockFaceAlpha.png"].CGImage];
-	[clockView setHourHandImage:[UIImage imageNamed:@"ClockHourHand.png"].CGImage];
-	[clockView setMinHandImage:[UIImage imageNamed:@"ClockMinuteHand.png"].CGImage];
-	[clockView setSecHandImage:[UIImage imageNamed:@"ClockSecondHand.png"].CGImage];
+    [clockView setClockBackgroundImage:[UIImage imageNamed:@"clock-v2Alpha.png"].CGImage];
+	[clockView setHourHandImage:[UIImage imageNamed:@"hour-handV3.png"].CGImage];
+	[clockView setMinHandImage:[UIImage imageNamed:@"minute-handV3.png"].CGImage];
+	[clockView setSecHandImage:[UIImage imageNamed:@"second-handV3.png"].CGImage];
 }
     
 @end
