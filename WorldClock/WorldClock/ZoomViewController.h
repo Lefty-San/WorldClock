@@ -12,6 +12,7 @@
 @interface ZoomViewController : UIViewController {
 
 }
+@property (weak, nonatomic) IBOutlet UILabel *clockLabel;
     @property (nonatomic, strong) IBOutlet ClockSetup *clockView;
 - (IBAction)Style1:(id)sender;
 - (IBAction)Style2:(id)sender;

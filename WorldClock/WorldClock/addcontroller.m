@@ -32,6 +32,10 @@
     
        
     [super viewDidLoad];
+    
+    _defaults = [NSUserDefaults standardUserDefaults];
+    
+    
     citytimezones = [NSArray arrayWithObjects:
                      @"(GMT)",
                      @"(GMT)",

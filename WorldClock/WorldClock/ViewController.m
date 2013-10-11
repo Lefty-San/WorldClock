@@ -40,12 +40,7 @@ NSString *const ClocksUserSet5 = @"ClocksUserSetKey5";
         return self;
     }
 
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    if([segue.identifier isEqualToString:@"addcontrollersegue"]){
-        addcontroller *ac = [segue destinationViewController];
-        ac.delegate = self;
-    }
-}
+
 
 
 - (void)viewDidLoad
@@ -67,47 +62,17 @@ NSString *const ClocksUserSet5 = @"ClocksUserSetKey5";
    
     NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
    
-    int count = [[[NSUserDefaults standardUserDefaults] dictionaryRepresentation] count];
-    NSLog(@"%d", count);
-     NSString *clocklabel1 = [defaults objectForKey:ClocksUserSet];
-    NSString *clocklabel2 = [defaults objectForKey:ClocksUserSet1];
-    NSString *clocklabel3 = [defaults objectForKey:ClocksUserSet2];
-    NSString *clocklabel4 = [defaults objectForKey:ClocksUserSet3];
-    NSString *clocklabel5 = [defaults objectForKey:ClocksUserSet4];
-    NSString *clocklabel6 = [defaults objectForKey:ClocksUserSet5];
-   
+   // int count = [[[NSUserDefaults standardUserDefaults] dictionaryRepresentation] count];
+   // NSLog(@"%d", count);
+    _clocklabel1 = [defaults objectForKey:ClocksUserSet];
+    _clocklabel2 = [defaults objectForKey:ClocksUserSet1];
+    _clocklabel3 = [defaults objectForKey:ClocksUserSet2];
+    _clocklabel4 = [defaults objectForKey:ClocksUserSet3];
+    _clocklabel5 = [defaults objectForKey:ClocksUserSet4];
+    _clocklabel6 = [defaults objectForKey:ClocksUserSet5];
 
    
-  /*  self.clocklabel.text = clocklabel1;
-    self.clocklabela.text = clocklabel2;
-     self.clocklabelb.text = clocklabel3;
-     self.clocklabelc.text = clocklabel4;
-     self.clocklabeld.text = clocklabel5;
-     self.clocklabele.text = clocklabel6;
-    
-
    
-    
-    clocklabel1 = [self.clocklabel text];
-    clocklabel2 = [self.clocklabela text];
-    clocklabel3 = [self.clocklabelb text];
-    clocklabel4 = [self.clocklabelc text];
-    clocklabel5 = [self.clocklabeld text];
-    clocklabel6 = [self.clocklabele text]; */
-   
-   
-    defaults = [NSUserDefaults standardUserDefaults];
-   // defaults = [NSUserDefaults standardUserDefaults];
-    
-    [defaults setObject:clocklabel1 forKey:ClocksUserSet];
-     [defaults setObject:clocklabel2 forKey:ClocksUserSet1];
-    [defaults setObject:clocklabel3 forKey:ClocksUserSet2];
-    [defaults setObject:clocklabel4 forKey:ClocksUserSet3];
-    [defaults setObject:clocklabel5 forKey:ClocksUserSet4];
-    [defaults setObject:clocklabel6 forKey:ClocksUserSet5];
-    
-   
-    [defaults synchronize];
     }
     
 -(void)handleLongPress:(UILongPressGestureRecognizer *)gestureRecognizer
@@ -367,11 +332,27 @@ NSString *const ClocksUserSet5 = @"ClocksUserSetKey5";
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *identifier = @"Cell";
     
-    
-
-    
     ClockCell *cell = (ClockCell*)[collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
-   
+    if (indexPath.row == 0) {
+        cell.clockLabel.text = _clocklabel1;
+    }
+    else if (indexPath.row==1) {
+        cell.clockLabel.text = _clocklabel2;
+    }
+    else if (indexPath.row==2) {
+        cell.clockLabel.text = _clocklabel3;
+    }
+    else if (indexPath.row==3) {
+        cell.clockLabel.text = _clocklabel4;
+    }
+    else if (indexPath.row==4) {
+        cell.clockLabel.text = _clocklabel5;
+    }
+    else if (indexPath.row==5) {
+        cell.clockLabel.text = _clocklabel6;
+    }
+   // cell.clockLabel.text = [@"objectAtIndex:indexPath.row];
+    
     [cell.clockView setClockBackgroundImage:[UIImage imageNamed:@"ClockFaceAlpha.png"].CGImage];
 	[cell.clockView setHourHandImage:[UIImage imageNamed:@"ClockHourHand.png"].CGImage];
 	[cell.clockView setMinHandImage:[UIImage imageNamed:@"ClockMinuteHand.png"].CGImage];
@@ -380,6 +361,7 @@ NSString *const ClocksUserSet5 = @"ClocksUserSetKey5";
     
     
     [cell.clockView start];
+   // [cell.clockView clockLabel];
    // _zoomView = (UIView *)[Cell viewWithTag:100];
     
   //  _zoomView = [objectAtIndex:indexPath.row];
@@ -392,6 +374,30 @@ NSString *const ClocksUserSet5 = @"ClocksUserSetKey5";
     NSLog(@"didselect");
 }
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([segue.identifier isEqualToString:@"addcontrollersegue"]){
+        addcontroller *ac = [segue destinationViewController];
+        ac.delegate = self;
+    }
+ /*   else  if ([segue.identifier isEqualToString:@"bigClock"]) {
+        NSString *indexPaths = [self.collectionView indexPathsForSelectedItems];
+        ZoomViewController *destViewController = segue.destinationViewController;
+        NSIndexPath *indexPath = [indexPaths objectAtIndex:0];
+        destViewController.clockLabel = [_clocklabel1[indexPath.section] objectAtIndex:indexPath.row];
+        [self.collectionView deselectItemAtIndexPath:indexPath animated:NO];
+    } */
+
+}
+
+- (void)collectionView:(UICollectionViewCell *)collectionView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+
+    if (indexPath.row == 0) {
+        NSString *value =_clocklabel1;
+     //   [self.delegate didselectwith: self.valuevalue];
+
+    }
+}
 
 
 @end

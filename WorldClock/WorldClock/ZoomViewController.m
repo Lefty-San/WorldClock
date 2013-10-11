@@ -21,6 +21,28 @@
 	[clockView setHourHandImage:[UIImage imageNamed:@"ClockHourHand.png"].CGImage];
 	[clockView setMinHandImage:[UIImage imageNamed:@"ClockMinuteHand.png"].CGImage];
 	[clockView setSecHandImage:[UIImage imageNamed:@"ClockSecondHand.png"].CGImage];
+    
+    NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
+    
+    NSString *const ClocksUserSet = @"ClocksUserSetKey";
+    NSString *const ClocksUserSet1 = @"ClocksUserSetKey1";
+    NSString *const ClocksUserSet2 = @"ClocksUserSetKey2";
+    NSString *const ClocksUserSet3 = @"ClocksUserSetKey3";
+    NSString *const ClocksUserSet4 = @"ClocksUserSetKey4";
+    NSString *const ClocksUserSet5 = @"ClocksUserSetKey5";
+    
+    NSString *clockLabel = [defaults objectForKey:ClocksUserSet];
+    NSString *clockLabel1 = [defaults objectForKey:ClocksUserSet1];
+    NSString *clockLabel2 = [defaults objectForKey:ClocksUserSet2];
+    NSString *clockLabel3 = [defaults objectForKey:ClocksUserSet3];
+    NSString *clockLabel4 = [defaults objectForKey:ClocksUserSet4];
+    NSString *clockLabel5 = [defaults objectForKey:ClocksUserSet5];
+    
+    self.clockLabel.text = clockLabel;
+    clockLabel = [self.clockLabel text];
+
+    
+    
 }
 
 - (void)didReceiveMemoryWarning

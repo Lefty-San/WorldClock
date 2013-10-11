@@ -130,11 +130,18 @@
                                     <action selector="Style2:" destination="T40-ef-KFQ" eventType="touchUpInside" id="KyP-TH-pxw"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iky-Cs-vfN">
+                                <rect key="frame" x="20" y="140" width="280" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="uEO-aP-1uQ"/>
                     <connections>
+                        <outlet property="clockLabel" destination="iky-Cs-vfN" id="QOv-br-IzC"/>
                         <outlet property="clockView" destination="ALN-C8-wC0" id="IXO-Pq-giI"/>
                     </connections>
                 </viewController>
@@ -168,19 +175,20 @@
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                         </view>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="23g-9u-wbK">
-                                            <rect key="frame" x="6" y="0.0" width="134" height="21"/>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="htk-v9-k2Q">
+                                            <rect key="frame" x="12" y="0.0" width="122" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <connections>
-                                    <outlet property="cityLabel2" destination="23g-9u-wbK" id="US4-8N-Lxf"/>
+                                    <outlet property="clockLabel" destination="htk-v9-k2Q" id="jUQ-gG-dV9"/>
                                     <outlet property="clockView" destination="8Vr-n7-T6X" id="wDl-rv-6qY"/>
-                                    <segue destination="T40-ef-KFQ" kind="push" id="gyw-bY-ggu"/>
+                                    <segue destination="T40-ef-KFQ" kind="push" id="PDt-xe-NtG"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>

@@ -11,6 +11,6 @@
 
 @interface ClockCell : UICollectionViewCell
 @property (weak, nonatomic) IBOutlet ClockSetup *clockView;
-@property (weak, nonatomic) IBOutlet UILabel *cityLabel2;
+@property (weak, nonatomic) IBOutlet UILabel *clockLabel;
 
 @end

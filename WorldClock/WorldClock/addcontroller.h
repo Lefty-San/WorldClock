@@ -20,6 +20,7 @@
 
 @property (weak, nonatomic) IBOutlet UISearchBar *search;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic, retain) NSUserDefaults *defaults; 
 - (IBAction)backbutton:(id)sender;
 
 @property (weak, nonatomic) id<AddControllerDelegate>delegate;
