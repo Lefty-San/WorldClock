@@ -124,9 +124,32 @@ NSString *const ClocksUserSet5 = @"ClocksUserSetKey5";
         // get the cell at indexPath (the one you long pressed)
         UICollectionViewCell* cell = [self.collectionView cellForItemAtIndexPath:indexPath];
         // do stuff with the cell
+        
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Clock Deleted"
+                                                          message:@""
+                                                         delegate:self
+                                             cancelButtonTitle:@"Ok"
+                                                otherButtonTitles:nil];
+        
+        [alert show];
+        
+        
+        
         [cell removeFromSuperview];
     }
 }
+/*- (void)alertView:(UIAlertView *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    // the user clicked one of the OK/Cancel buttons
+    if (buttonIndex == 0)
+    {
+        [self dismissViewControllerAnimated:true completion:nil];
+    }
+    else
+    {
+       //[cell removeFromSuperview];
+    }
+}
+*/
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
@@ -353,6 +376,8 @@ NSString *const ClocksUserSet5 = @"ClocksUserSetKey5";
 	[cell.clockView setHourHandImage:[UIImage imageNamed:@"ClockHourHand.png"].CGImage];
 	[cell.clockView setMinHandImage:[UIImage imageNamed:@"ClockMinuteHand.png"].CGImage];
 	[cell.clockView setSecHandImage:[UIImage imageNamed:@"ClockSecondHand.png"].CGImage];
+    
+    
     
     [cell.clockView start];
    // _zoomView = (UIView *)[Cell viewWithTag:100];
