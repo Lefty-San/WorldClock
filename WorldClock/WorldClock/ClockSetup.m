@@ -25,26 +25,77 @@ float Degrees2Radians(float degrees) { return degrees * M_PI / 180; }
 
 - (void) updateClock:(NSTimer *)theTimer{
 
+        /*************** Begin Switch ***************/
+    
 /*
-	//get the whole time hh:mm:ss
-    NSDate *timenow = [NSDate date];
-    NSDateFormatter *df = [[NSDateFormatter alloc] init];
-    [df setTimeStyle:NSDateFormatterLongStyle];
-    [df setTimeZone:[NSTimeZone timeZoneWithName:@"Asia/Tokyo"]];
-    NSString *konJikan = [df stringFromDate:timenow];
- 
-    NSDate *convertedTime = [df dateFromString:konJikan];
-    NSLog(@"%@", convertedTime);
-    NSLog(@"%@", konJikan);
+    switch (citytimezones) {
+        case @"(GMT)":
+            zone = 7*60*60;
+            break;
+        case @"GMT-1)":
+            zone = 6*60*60;
+            break;
+        case @"(GMT-2)":
+            zone = 5*60*60;
+            break;
+        case @"(GMT-3)":
+            zone = 4*60*60;
+            break;
+        case @"(GMT-4)":
+            zone = 3*60*60:
+            break;
+        case @"(GMT-5)":
+            zone = 2*60*60;
+            break;
+        case @"(GMT-6)":
+            zone = 60*60;
+            break;
+        case @"(MDT)":
+            zone = 0;
+            break;
+        case @"(GMT+1":
+            zone = 8*60*60;
+            break;
+        case @"(GMT+2)":
+            zone = 9*60*60;
+            break;
+        case @"(GMT+3)":
+            zone = 10*60*60;
+            break;
+        case @"(GMT+4)":
+            zone = 11*60*60;
+            break;
+        case @"(GMT+5)":
+            zone = 12*60*60;
+            break;
+        case @"(GMT+6)":
+            zone = 13*60*60;
+            break;
+        case @"(GMT+7)":
+            zone = 14*60*60;
+            break;
+        case @"(GMT+8)":
+            zone = 15*60*60;
+            break;
+        case @"(GMT+9)":
+            zone = 16*60*60;
+            break
+        case @"(GMT+10)":
+            zone = 17*60*60;
+            break;
+        default:
+            zone = 7*60*60;
+            break;
+    }
+    
 */
-
     
     /* This is an example of setting the time interval externally  */
-    double when = 2*60*60;
+    zone = 2*60*60;
     /*  *  */
     
     
-    NSDate *newYorkTime = [NSDate dateWithTimeIntervalSinceNow:when];
+    NSDate *newYorkTime = [NSDate dateWithTimeIntervalSinceNow:zone];
     //    NSLog(@"%@",newYorkTime);
     
     //break apart the time hh  mm   ss

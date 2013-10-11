@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
 
+double zone;
+
 @interface ClockSetup : UIView {
     
     CALayer *containerLayer;
@@ -17,6 +19,7 @@
     CALayer *secHand;
     NSTimer *timer;
 }
+
 
 //basic methods
 - (void)start;
