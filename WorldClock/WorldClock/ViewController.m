@@ -54,6 +54,12 @@ NSString *const ClocksUserSet5 = @"ClocksUserSetKey5";
     
     self.collectionView.backgroundColor = [UIColor whiteColor];
     
+   //long press
+    UILongPressGestureRecognizer *lpgr = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(handleLongPress:)];
+    lpgr.minimumPressDuration = .5; //seconds
+    lpgr.delegate = self;
+    [self.collectionView addGestureRecognizer:lpgr];
+    
 
 	// Do any additional setup after loading the view, typically from a nib.
 
@@ -104,7 +110,46 @@ NSString *const ClocksUserSet5 = @"ClocksUserSetKey5";
     [defaults synchronize];
     }
     
-
+-(void)handleLongPress:(UILongPressGestureRecognizer *)gestureRecognizer
+{
+    if (gestureRecognizer.state != UIGestureRecognizerStateEnded) {
+        return;
+    }
+    CGPoint p = [gestureRecognizer locationInView:self.collectionView];
+    
+    NSIndexPath *indexPath = [self.collectionView indexPathForItemAtPoint:p];
+    if (indexPath == nil){
+        NSLog(@"couldn't find index path");
+    } else {
+        // get the cell at indexPath (the one you long pressed)
+        UICollectionViewCell* cell = [self.collectionView cellForItemAtIndexPath:indexPath];
+        // do stuff with the cell
+        
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Clock Deleted"
+                                                          message:@""
+                                                         delegate:self
+                                             cancelButtonTitle:@"Ok"
+                                                otherButtonTitles:nil];
+        
+        [alert show];
+        
+        
+        
+        [cell removeFromSuperview];
+    }
+}
+/*- (void)alertView:(UIAlertView *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    // the user clicked one of the OK/Cancel buttons
+    if (buttonIndex == 0)
+    {
+        [self dismissViewControllerAnimated:true completion:nil];
+    }
+    else
+    {
+       //[cell removeFromSuperview];
+    }
+}
+*/
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
@@ -332,6 +377,8 @@ NSString *const ClocksUserSet5 = @"ClocksUserSetKey5";
 	[cell.clockView setMinHandImage:[UIImage imageNamed:@"ClockMinuteHand.png"].CGImage];
 	[cell.clockView setSecHandImage:[UIImage imageNamed:@"ClockSecondHand.png"].CGImage];
     
+    
+    
     [cell.clockView start];
    // _zoomView = (UIView *)[Cell viewWithTag:100];
     
@@ -339,6 +386,10 @@ NSString *const ClocksUserSet5 = @"ClocksUserSetKey5";
     // cell.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"photo-frame.png"]];
     
     return cell;
+}
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"didselect");
 }
 
 

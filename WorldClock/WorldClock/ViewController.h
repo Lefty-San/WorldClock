@@ -10,7 +10,7 @@
 #import "addcontroller.h"
 #import "ZoomViewController.h"
 
-@interface ViewController : UICollectionViewController                <AddControllerDelegate>
+@interface ViewController : UICollectionViewController                <AddControllerDelegate, UIGestureRecognizerDelegate>
 @property (strong, nonatomic) IBOutlet UILabel *clocklabel;
 @property (strong, nonatomic) IBOutlet UILabel *clocklabela;
 @property (strong, nonatomic) IBOutlet UILabel *clocklabelb;
