@@ -322,9 +322,6 @@ NSString *const ClocksUserSet5 = @"ClocksUserSetKey5";
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *identifier = @"Cell";
     
-    
-
-    
     ClockCell *cell = (ClockCell*)[collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
    
     [cell.clockView setClockBackgroundImage:[UIImage imageNamed:@"ClockFaceAlpha.png"].CGImage];
@@ -333,6 +330,7 @@ NSString *const ClocksUserSet5 = @"ClocksUserSetKey5";
 	[cell.clockView setSecHandImage:[UIImage imageNamed:@"ClockSecondHand.png"].CGImage];
     
     [cell.clockView start];
+   // [cell.clockView clockLabel];
    // _zoomView = (UIView *)[Cell viewWithTag:100];
     
   //  _zoomView = [objectAtIndex:indexPath.row];

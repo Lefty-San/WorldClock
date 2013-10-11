@@ -18,6 +18,8 @@
 @property (strong, nonatomic) IBOutlet UILabel *clocklabeld;
 @property (strong, nonatomic) IBOutlet UILabel *clocklabele;
 @property (strong, nonatomic) IBOutlet UILabel *clocklabelf;
+//@property (nonatomic, retain)
+@property (weak, nonatomic) IBOutlet UILabel *clockLabel;
 
 
 @end
