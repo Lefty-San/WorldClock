@@ -9,6 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "addcontroller.h"
 #import "ZoomViewController.h"
+@class ViewController;
+
+@protocol ViewControllerDelegate <NSObject>
+
+-(void) didselectwith:(addcontroller *)controller cities: (NSString *) cities;
+@end
 
 @interface ViewController : UICollectionViewController                <AddControllerDelegate>
 @property (strong, nonatomic) IBOutlet UILabel *clocklabel;
@@ -28,6 +34,8 @@
 
 //@property (nonatomic, retain)
 @property (weak, nonatomic) IBOutlet UILabel *clockLabel;
+@property (weak, nonatomic) id<ViewControllerDelegate>delegate;
+
 
 
 @end

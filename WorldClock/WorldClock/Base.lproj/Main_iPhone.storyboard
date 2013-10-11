@@ -188,7 +188,7 @@
                                 <connections>
                                     <outlet property="clockLabel" destination="htk-v9-k2Q" id="jUQ-gG-dV9"/>
                                     <outlet property="clockView" destination="8Vr-n7-T6X" id="wDl-rv-6qY"/>
-                                    <segue destination="T40-ef-KFQ" kind="modal" identifier="bigClock" id="sEA-uM-VwD"/>
+                                    <segue destination="T40-ef-KFQ" kind="push" id="PDt-xe-NtG"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>

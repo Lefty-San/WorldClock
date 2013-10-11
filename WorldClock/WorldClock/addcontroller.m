@@ -966,22 +966,22 @@
     NSString *clocklabel5 = [_defaults objectForKey:@"ClocksUserSet4"];
     NSString *clocklabel6 = [_defaults objectForKey:@"ClocksUserSet5"];
 
-    if ([clocklabel1 isEqualToString: @""]) {
+    if (clocklabel1==NULL) {
         [_defaults setObject:value forKey:@"ClocksUserSetKey"];
     }
-    else if([clocklabel2 isEqualToString: @""]) {
+    if(clocklabel2==NULL) {
         [_defaults setObject:value forKey:@"ClocksUserSetKey1"];
     }
-    else if([clocklabel3 isEqualToString: @""]) {
+    if(clocklabel3==NULL) {
         [_defaults setObject:value forKey:@"ClocksUserSetKey2"];
     }
-    else if([clocklabel4 isEqualToString:@""]) {
+    if(clocklabel4==NULL) {
         [_defaults setObject:value forKey:@"ClocksUserSetKey3"];
     }
-    else if([clocklabel5 isEqualToString:@""]) {
+    if(clocklabel5==NULL) {
         [_defaults setObject:value forKey:@"ClocksUserSetKey4"];
     }
-    else if([clocklabel6 isEqualToString:@""]) {
+    if(clocklabel6==NULL) {
         [_defaults setObject:value forKey:@"ClocksUserSetKey5"];
     }
         [_defaults synchronize];

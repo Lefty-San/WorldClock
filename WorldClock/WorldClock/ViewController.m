@@ -63,39 +63,15 @@ NSString *const ClocksUserSet5 = @"ClocksUserSetKey5";
     _clocklabel4 = [defaults objectForKey:ClocksUserSet3];
     _clocklabel5 = [defaults objectForKey:ClocksUserSet4];
     _clocklabel6 = [defaults objectForKey:ClocksUserSet5];
-   
-
-   
-  /*  self.clocklabel.text = clocklabel1;
-    self.clocklabela.text = clocklabel2;
-     self.clocklabelb.text = clocklabel3;
-     self.clocklabelc.text = clocklabel4;
-     self.clocklabeld.text = clocklabel5;
-     self.clocklabele.text = clocklabel6;
     
-
-   
-    
-    clocklabel1 = [self.clocklabel text];
-    clocklabel2 = [self.clocklabela text];
-    clocklabel3 = [self.clocklabelb text];
-    clocklabel4 = [self.clocklabelc text];
-    clocklabel5 = [self.clocklabeld text];
-    clocklabel6 = [self.clocklabele text]; */
+    NSLog(@"%@", _clocklabel1);
+    NSLog(@"%@", _clocklabel2);
+    NSLog(@"%@", _clocklabel3);
+    NSLog(@"%@", _clocklabel4);
+    NSLog(@"%@", _clocklabel5);
+    NSLog(@"%@", _clocklabel6);
    
    
-    defaults = [NSUserDefaults standardUserDefaults];
-   // defaults = [NSUserDefaults standardUserDefaults];
-    
-    [defaults setObject:_clocklabel1 forKey:ClocksUserSet];
-     [defaults setObject:_clocklabel2 forKey:ClocksUserSet1];
-    [defaults setObject:_clocklabel3 forKey:ClocksUserSet2];
-    [defaults setObject:_clocklabel4 forKey:ClocksUserSet3];
-    [defaults setObject:_clocklabel5 forKey:ClocksUserSet4];
-    [defaults setObject:_clocklabel6 forKey:ClocksUserSet5];
-    
-   
-    [defaults synchronize];
     }
     
 
@@ -369,11 +345,12 @@ NSString *const ClocksUserSet5 = @"ClocksUserSetKey5";
 
 - (void)collectionView:(UICollectionViewCell *)collectionView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    ZoomViewController *detailVC = [[ZoomViewController alloc] initWithNibName:@"Cell" bundle:[NSBundle mainBundle]];
+
     if (indexPath.row == 0) {
-        _clocklabel1;
+        NSString *value =_clocklabel1;
+     //   [self.delegate didselectwith: self.valuevalue];
+
     }
-    [self presentViewController:detailVC animated:YES completion:nil];
 }
 
 
