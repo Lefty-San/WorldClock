@@ -54,6 +54,12 @@ NSString *const ClocksUserSet5 = @"ClocksUserSetKey5";
     
     self.collectionView.backgroundColor = [UIColor whiteColor];
     
+   //long press
+    UILongPressGestureRecognizer *lpgr = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(handleLongPress:)];
+    lpgr.minimumPressDuration = .5; //seconds
+    lpgr.delegate = self;
+    [self.collectionView addGestureRecognizer:lpgr];
+    
 
 	// Do any additional setup after loading the view, typically from a nib.
 
@@ -104,7 +110,23 @@ NSString *const ClocksUserSet5 = @"ClocksUserSetKey5";
     [defaults synchronize];
     }
     
-
+-(void)handleLongPress:(UILongPressGestureRecognizer *)gestureRecognizer
+{
+    if (gestureRecognizer.state != UIGestureRecognizerStateEnded) {
+        return;
+    }
+    CGPoint p = [gestureRecognizer locationInView:self.collectionView];
+    
+    NSIndexPath *indexPath = [self.collectionView indexPathForItemAtPoint:p];
+    if (indexPath == nil){
+        NSLog(@"couldn't find index path");
+    } else {
+        // get the cell at indexPath (the one you long pressed)
+        UICollectionViewCell* cell = [self.collectionView cellForItemAtIndexPath:indexPath];
+        // do stuff with the cell
+        [cell removeFromSuperview];
+    }
+}
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
@@ -339,6 +361,10 @@ NSString *const ClocksUserSet5 = @"ClocksUserSetKey5";
     // cell.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"photo-frame.png"]];
     
     return cell;
+}
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"didselect");
 }
 
 
