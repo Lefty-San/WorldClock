@@ -63,13 +63,7 @@ NSString *const ClocksUserSet5 = @"ClocksUserSetKey5";
     _clocklabel4 = [defaults objectForKey:ClocksUserSet3];
     _clocklabel5 = [defaults objectForKey:ClocksUserSet4];
     _clocklabel6 = [defaults objectForKey:ClocksUserSet5];
-    
-    NSLog(@"%@", _clocklabel1);
-    NSLog(@"%@", _clocklabel2);
-    NSLog(@"%@", _clocklabel3);
-    NSLog(@"%@", _clocklabel4);
-    NSLog(@"%@", _clocklabel5);
-    NSLog(@"%@", _clocklabel6);
+
    
    
     }

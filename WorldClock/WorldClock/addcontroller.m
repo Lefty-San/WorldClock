@@ -35,6 +35,7 @@
     
     _defaults = [NSUserDefaults standardUserDefaults];
     
+    
     citytimezones = [NSArray arrayWithObjects:
                      @"(GMT) ",
                      @"(GMT) ",
@@ -957,35 +958,11 @@
     //  NSString *selectedValue = [cities objectAtIndex:indexPath.row];
     //[self.delegate passItemBack:self didFinishWithItem:[selectedValue]];
     //NSLog(selectedValue);
-    NSString *value = [cities objectAtIndex:indexPath.row];
+   // NSString *value = [cities objectAtIndex:indexPath.row];
     
-    NSString *clocklabel1 = [_defaults objectForKey:@"ClocksUserSet"];
-    NSString *clocklabel2 = [_defaults objectForKey:@"ClocksUserSet1"];
-    NSString *clocklabel3 = [_defaults objectForKey:@"ClocksUserSet2"];
-    NSString *clocklabel4 = [_defaults objectForKey:@"ClocksUserSet3"];
-    NSString *clocklabel5 = [_defaults objectForKey:@"ClocksUserSet4"];
-    NSString *clocklabel6 = [_defaults objectForKey:@"ClocksUserSet5"];
 
-    if (clocklabel1==NULL) {
-        [_defaults setObject:value forKey:@"ClocksUserSetKey"];
-    }
-    if(clocklabel2==NULL) {
-        [_defaults setObject:value forKey:@"ClocksUserSetKey1"];
-    }
-    if(clocklabel3==NULL) {
-        [_defaults setObject:value forKey:@"ClocksUserSetKey2"];
-    }
-    if(clocklabel4==NULL) {
-        [_defaults setObject:value forKey:@"ClocksUserSetKey3"];
-    }
-    if(clocklabel5==NULL) {
-        [_defaults setObject:value forKey:@"ClocksUserSetKey4"];
-    }
-    if(clocklabel6==NULL) {
-        [_defaults setObject:value forKey:@"ClocksUserSetKey5"];
-    }
-        [_defaults synchronize];
-    //[self.delegate didselectwith:self cities:[self.tableView cellForRowAtIndexPath:indexPath ].textLabel.text];
+
+    [self.delegate didselectwith:self cities:[self.tableView cellForRowAtIndexPath:indexPath ].textLabel.text];
     
     //[self.delegate didselectwith1:self cities:[self.tableView cellForRowAtIndexPath:indexPath ].textLabel.text];
     //[self dismissViewControllerAnimated:YES completion:nil];

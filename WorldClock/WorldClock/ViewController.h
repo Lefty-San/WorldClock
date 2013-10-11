@@ -30,7 +30,6 @@
 @property (nonatomic, retain) NSString * clocklabel4;
 @property (nonatomic, retain) NSString * clocklabel5;
 @property (nonatomic, retain) NSString * clocklabel6;
-@property (nonatomic) int x; 
 
 //@property (nonatomic, retain)
 @property (weak, nonatomic) IBOutlet UILabel *clockLabel;
