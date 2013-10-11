@@ -4,43 +4,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
     </dependencies>
     <scenes>
-        <!--View Controller - World Clock-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController storyboardIdentifier="ClockGrid" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" title="World Clock" id="1D0-me-v3a">
-                        <barButtonItem key="leftBarButtonItem" style="plain" id="IJk-Ad-70S">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Pi1-ln-OSK">
-                                <rect key="frame" x="16" y="5" width="170" height="33"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <state key="normal" title="-">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="oaW-ZV-NRC" kind="push" id="gQ9-Yr-qJ6"/>
-                                </connections>
-                            </button>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="786-kV-LFU">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="KNO-mo-Wfe">
-                                <rect key="frame" x="582" y="5" width="170" height="33"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <state key="normal" title="+">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <connections>
-                                <segue destination="Yl9-WX-3GA" kind="push" id="JFW-BT-hga"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1023" y="-165"/>
-        </scene>
         <!--Zoom View Controller-->
         <scene sceneID="HiT-UW-Jo6">
             <objects>
@@ -71,6 +34,61 @@
             </objects>
             <point key="canvasLocation" x="1029" y="1181"/>
         </scene>
+        <!--Collection View Controller - World Clock-->
+        <scene sceneID="Icg-ha-6J0">
+            <objects>
+                <collectionViewController autoresizesArchivedViewToFullSize="NO" id="5I1-LD-v5a" sceneMemberID="viewController">
+                    <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="rle-L3-kYl">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="fEq-3Y-UrB">
+                            <size key="itemSize" width="238" height="227"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="HMh-aS-bB4">
+                                <rect key="frame" x="0.0" y="64" width="238" height="227"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="238" height="227"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1We-iy-4Cy">
+                                            <rect key="frame" x="0.0" y="30" width="238" height="197"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                        </view>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aKk-YK-18h">
+                                            <rect key="frame" x="91" y="3" width="42" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="5I1-LD-v5a" id="SHU-Sz-Ip5"/>
+                            <outlet property="delegate" destination="5I1-LD-v5a" id="gdJ-Ky-ZQW"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" title="World Clock" id="jri-Bd-DIL">
+                        <barButtonItem key="rightBarButtonItem" title="+" id="dcH-Zf-5aJ">
+                            <connections>
+                                <segue destination="Yl9-WX-3GA" kind="modal" id="Lx1-hZ-Yfl"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EcS-2d-qGW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1988" y="-141"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="dMx-h1-cGr">
             <objects>
@@ -88,7 +106,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="InN-te-tqP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1993" y="-700"/>
+            <point key="canvasLocation" x="2967" y="-700"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="SPJ-SA-OjQ">
@@ -107,25 +125,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b4U-s1-ZFk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1993" y="527"/>
+            <point key="canvasLocation" x="2967" y="527"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="f4h-eq-zoF">
+        <scene sceneID="Gp1-6P-r9b">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sc8-0K-4Em" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="AGc-GX-kfZ" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="o8i-Wd-eKy">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="WrG-hc-7vg">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="1v2-Cm-Ysh"/>
+                        <segue destination="5I1-LD-v5a" kind="relationship" relationship="rootViewController" id="Q15-ny-XMq"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xAU-Uz-6gf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="F84-Hx-Bk6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="86" y="-165"/>
+            <point key="canvasLocation" x="1014" y="-141"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
