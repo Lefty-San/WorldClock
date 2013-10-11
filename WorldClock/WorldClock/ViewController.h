@@ -18,7 +18,6 @@
 @property (strong, nonatomic) IBOutlet UILabel *clocklabeld;
 @property (strong, nonatomic) IBOutlet UILabel *clocklabele;
 @property (strong, nonatomic) IBOutlet UILabel *clocklabelf;
-@property (nonatomic, retain) IBOutlet ZoomViewController *zoomView;
 
 
 @end

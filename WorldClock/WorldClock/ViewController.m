@@ -54,7 +54,6 @@ NSString *const ClocksUserSet5 = @"ClocksUserSetKey5";
     
     self.collectionView.backgroundColor = [UIColor whiteColor];
     
-    clockArray = [NSArray arrayWithObjects:@"clock.png", @"clock.png", @"clock.png", @"clock.png", @"clock.png", @"clock.png", @"clock.png", @"clock.png", @"clock.png", @"clock.png", @"clock.png", @"clock.png", nil];
 
 	// Do any additional setup after loading the view, typically from a nib.
 
@@ -62,7 +61,8 @@ NSString *const ClocksUserSet5 = @"ClocksUserSetKey5";
    
     NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
    
-
+    int count = [[[NSUserDefaults standardUserDefaults] dictionaryRepresentation] count];
+    NSLog(@"%d", count);
      NSString *clocklabel1 = [defaults objectForKey:ClocksUserSet];
     NSString *clocklabel2 = [defaults objectForKey:ClocksUserSet1];
     NSString *clocklabel3 = [defaults objectForKey:ClocksUserSet2];
