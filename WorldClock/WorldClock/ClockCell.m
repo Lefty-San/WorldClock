@@ -15,24 +15,24 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        NSString *clock = @"Afghanistan";
-        _clockLabel.text = clock;
-        clock = [self.clockLabel text];
-        NSLog(@"kfldsfsl");
+//        NSString *clock = @"Afghanistan";
+//        _clockLabel.text = clock;
+//        clock = [self.clockLabel text];
+//        NSLog(@"kfldsfsl");
     }
     return self;
 }
--(void)viewDidLoad {
-    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    int row = appDelegate.row;
-    NSLog(@"%d", row);
-    NSLog(@"lksjdflsf"); 
-    
-  //  NSString *clock = @"Afghanistan";
-    
-  //  _clockLabel.text = clock;
-  //  clock = [self.clockLabel text];
-}
+//-(void)viewDidLoad {
+//    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+//    int row = appDelegate.row;
+//    NSLog(@"%d", row);
+//    NSLog(@"lksjdflsf"); 
+//    
+//  //  NSString *clock = @"Afghanistan";
+//    
+//  //  _clockLabel.text = clock;
+//  //  clock = [self.clockLabel text];
+//}
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.

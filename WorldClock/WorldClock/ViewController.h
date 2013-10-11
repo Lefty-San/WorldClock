@@ -18,6 +18,14 @@
 @property (strong, nonatomic) IBOutlet UILabel *clocklabeld;
 @property (strong, nonatomic) IBOutlet UILabel *clocklabele;
 @property (strong, nonatomic) IBOutlet UILabel *clocklabelf;
+@property (nonatomic, retain) NSString * clocklabel1;
+@property (nonatomic, retain) NSString * clocklabel2;
+@property (nonatomic, retain) NSString * clocklabel3;
+@property (nonatomic, retain) NSString * clocklabel4;
+@property (nonatomic, retain) NSString * clocklabel5;
+@property (nonatomic, retain) NSString * clocklabel6;
+@property (nonatomic) int x; 
+
 //@property (nonatomic, retain)
 @property (weak, nonatomic) IBOutlet UILabel *clockLabel;
 

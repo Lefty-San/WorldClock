@@ -32,6 +32,9 @@
     
        
     [super viewDidLoad];
+    
+    _defaults = [NSUserDefaults standardUserDefaults];
+    
     citytimezones = [NSArray arrayWithObjects:
                      @"(GMT) ",
                      @"(GMT) ",
@@ -954,7 +957,36 @@
     //  NSString *selectedValue = [cities objectAtIndex:indexPath.row];
     //[self.delegate passItemBack:self didFinishWithItem:[selectedValue]];
     //NSLog(selectedValue);
-    [self.delegate didselectwith:self cities:[self.tableView cellForRowAtIndexPath:indexPath ].textLabel.text];
+    NSString *value = [cities objectAtIndex:indexPath.row];
+    
+    NSString *clocklabel1 = [_defaults objectForKey:@"ClocksUserSet"];
+    NSString *clocklabel2 = [_defaults objectForKey:@"ClocksUserSet1"];
+    NSString *clocklabel3 = [_defaults objectForKey:@"ClocksUserSet2"];
+    NSString *clocklabel4 = [_defaults objectForKey:@"ClocksUserSet3"];
+    NSString *clocklabel5 = [_defaults objectForKey:@"ClocksUserSet4"];
+    NSString *clocklabel6 = [_defaults objectForKey:@"ClocksUserSet5"];
+
+    if ([clocklabel1 isEqualToString: @""]) {
+        [_defaults setObject:value forKey:@"ClocksUserSetKey"];
+    }
+    else if([clocklabel2 isEqualToString: @""]) {
+        [_defaults setObject:value forKey:@"ClocksUserSetKey1"];
+    }
+    else if([clocklabel3 isEqualToString: @""]) {
+        [_defaults setObject:value forKey:@"ClocksUserSetKey2"];
+    }
+    else if([clocklabel4 isEqualToString:@""]) {
+        [_defaults setObject:value forKey:@"ClocksUserSetKey3"];
+    }
+    else if([clocklabel5 isEqualToString:@""]) {
+        [_defaults setObject:value forKey:@"ClocksUserSetKey4"];
+    }
+    else if([clocklabel6 isEqualToString:@""]) {
+        [_defaults setObject:value forKey:@"ClocksUserSetKey5"];
+    }
+        [_defaults synchronize];
+    //[self.delegate didselectwith:self cities:[self.tableView cellForRowAtIndexPath:indexPath ].textLabel.text];
+    
     //[self.delegate didselectwith1:self cities:[self.tableView cellForRowAtIndexPath:indexPath ].textLabel.text];
     //[self dismissViewControllerAnimated:YES completion:nil];
     
