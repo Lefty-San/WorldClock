@@ -1027,9 +1027,9 @@
     _clocklabel5 = [_defaults objectForKey:@"ClocksUserSet4"];
     _clocklabel6 = [_defaults objectForKey:@"ClocksUserSet5"];
     
-    if (_clocklabel1==_clocklabel2) {
-        [_defaults setObject:@"" forKey:@"ClocksUserSet"];
-    }
+  //  if (_clocklabel1==_clocklabel2) {
+   //     [_defaults setObject:@"" forKey:@"ClocksUserSet"];
+  //  }
     if (_clocklabel2==_clocklabel1) {
         [_defaults setObject:@"" forKey:@"ClocksUserSet1"];
     }
@@ -1046,9 +1046,9 @@
     if (_clocklabel6==_clocklabel5) {
         [_defaults setObject:@"" forKey:@"ClocksUserSet5"];
     }
-    if ([_clocklabel1 isEqual:@""]) {
-        [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"ClocksUserSet"];
-    }
+ //   if ([_clocklabel1 isEqual:@""]) {
+  //      [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"ClocksUserSet"];
+  //  }
     if ([_clocklabel2 isEqual:@""]) {
         [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"ClocksUserSet1"];
     }

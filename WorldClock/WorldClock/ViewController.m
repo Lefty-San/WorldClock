@@ -113,7 +113,7 @@ NSString *const ClocksUserSet5 = @"ClocksUserSetKey5";
 }
 */
 
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+/*- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     UITouch *touch = [[event allTouches] anyObject];
     if (CGRectContainsPoint([self.view frame], [touch locationInView:self.view])){
@@ -158,9 +158,9 @@ NSString *const ClocksUserSet5 = @"ClocksUserSetKey5";
         
         
     }
-    
-}
--(void) LabelLongPressed:(UILongPressGestureRecognizer *)recognizer  {
+ 
+}*/
+/*-(void) LabelLongPressed:(UILongPressGestureRecognizer *)recognizer  {
     //[self.clocklabel removeFromSuperview];
     self.clocklabel.text = @"";
     //Deletes user default
@@ -220,7 +220,7 @@ NSString *const ClocksUserSet5 = @"ClocksUserSetKey5";
     
   //  [[NSUserDefaults standardUserDefaults] synchronize];
     
-}
+} */
 
 
 
@@ -232,7 +232,7 @@ NSString *const ClocksUserSet5 = @"ClocksUserSetKey5";
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
--(void) didselectwith:(addcontroller *)controller cities:(NSString *)cities{
+//-(void) didselectwith:(addcontroller *)controller cities:(NSString *)cities{
     
   //  [self.citiesListArray addObject:cities];
    
@@ -309,7 +309,7 @@ NSString *const ClocksUserSet5 = @"ClocksUserSetKey5";
         [[NSUserDefaults standardUserDefaults]synchronize];
         }
     } */
-    if (self.citiesListArray.count > 6){
+ /*   if (self.citiesListArray.count > 6){
         UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Can not add more cities"
                                                           message:@"press and hold to delete one City"
                                                          delegate:self
@@ -322,7 +322,7 @@ NSString *const ClocksUserSet5 = @"ClocksUserSetKey5";
     
     NSLog(@"%@", cities);
     [controller dismissViewControllerAnimated:YES completion:nil];
-}
+} */
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     return _count;
 }
