@@ -16,7 +16,7 @@
 -(void) didselectwith:(addcontroller *)controller cities: (NSString *) cities;
 @end
 
-@interface ViewController : UICollectionViewController                <AddControllerDelegate, UIGestureRecognizerDelegate>
+@interface ViewController : UICollectionViewController                <AddControllerDelegate, ViewControllerDelegate>
 @property (strong, nonatomic) IBOutlet UILabel *clocklabel;
 @property (strong, nonatomic) IBOutlet UILabel *clocklabela;
 @property (strong, nonatomic) IBOutlet UILabel *clocklabelb;
@@ -30,10 +30,10 @@
 @property (nonatomic, retain) NSString * clocklabel4;
 @property (nonatomic, retain) NSString * clocklabel5;
 @property (nonatomic, retain) NSString * clocklabel6;
+@property (nonatomic) int count; 
 
 //@property (nonatomic, retain)
 @property (weak, nonatomic) IBOutlet UILabel *clockLabel;
-@property (weak, nonatomic) id<ViewControllerDelegate>delegate;
 
 
 

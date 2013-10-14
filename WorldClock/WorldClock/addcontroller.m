@@ -35,6 +35,7 @@
     
     _defaults = [NSUserDefaults standardUserDefaults];
     
+
     
     citytimezones = [NSArray arrayWithObjects:
                      @"(GMT)",
@@ -958,9 +959,120 @@
     //  NSString *selectedValue = [cities objectAtIndex:indexPath.row];
     //[self.delegate passItemBack:self didFinishWithItem:[selectedValue]];
     //NSLog(selectedValue);
+   // NSString *value = [cities objectAtIndex:indexPath.row];
+    NSString *value = [cities objectAtIndex:indexPath.row];
+   
+    _clocklabel1 = [_defaults objectForKey:@"ClocksUserSet"];
+    _clocklabel2 = [_defaults objectForKey:@"ClocksUserSet1"];
+    _clocklabel3 = [_defaults objectForKey:@"ClocksUserSet2"];
+    _clocklabel4 = [_defaults objectForKey:@"ClocksUserSet3"];
+    _clocklabel5 = [_defaults objectForKey:@"ClocksUserSet4"];
+    _clocklabel6 = [_defaults objectForKey:@"ClocksUserSet5"];
+    NSLog(@"trial %@", _clocklabel4);
+    
+  //  NSLog(@"%@", value);
+    if (_clocklabel1 != NULL) {
+        if ([_clocklabel1 isEqual:@""]) {
+            [_defaults setObject:value forKey:@"ClocksUserSet"];
+        }
+    }
+    else {
+        [_defaults setObject:value forKey:@"ClocksUserSet"];
+    }
+    if (_clocklabel2 != NULL) {
+        if ([_clocklabel2 isEqual:@""]) {
+            [_defaults setObject:value forKey:@"ClocksUserSet1"];
+        }
+    }
+    else {
+        [_defaults setObject:value forKey:@"ClocksUserSet1"];
+    }
+    if (_clocklabel3 != NULL){
+        if ([_clocklabel3 isEqual:@""]) {
+            [_defaults setObject:value forKey:@"ClocksUserSet2"];
+        }
+    }
+    else {
+        [_defaults setObject:value forKey:@"ClocksUserSet2"];
+    }
+    if (_clocklabel4 != NULL) {
+        if ([_clocklabel4 isEqual:@""]) {
+            [_defaults setObject:value forKey:@"ClocksUserSet3"];
+            NSLog(@"sldfj");
+        }
+    }
+    else {
+        [_defaults setObject:value forKey:@"ClocksUserSet3"];
+    }
+    if (_clocklabel5 != NULL) {
+        if ([_clocklabel5 isEqual:@""]) {
+            [_defaults setObject:value forKey:@"ClocksUserSet4"];
+        }
+    }
+    else {
+        [_defaults setObject:value forKey:@"ClocksUserSet4"];
+    }
+    if (_clocklabel6 != NULL) {
+        if ([_clocklabel6 isEqual:@""]) {
+            [_defaults setObject:value forKey:@"ClocksUserSet5"];
+        }
+    }
+    else {
+        [_defaults setObject:value forKey:@"ClocksUserSet5"];
+    }
+    _clocklabel1 = [_defaults objectForKey:@"ClocksUserSet"];
+    _clocklabel2 = [_defaults objectForKey:@"ClocksUserSet1"];
+    _clocklabel3 = [_defaults objectForKey:@"ClocksUserSet2"];
+    _clocklabel4 = [_defaults objectForKey:@"ClocksUserSet3"];
+    _clocklabel5 = [_defaults objectForKey:@"ClocksUserSet4"];
+    _clocklabel6 = [_defaults objectForKey:@"ClocksUserSet5"];
+    
+    if (_clocklabel1==_clocklabel2) {
+        [_defaults setObject:@"" forKey:@"ClocksUserSet"];
+    }
+    if (_clocklabel2==_clocklabel1) {
+        [_defaults setObject:@"" forKey:@"ClocksUserSet1"];
+    }
+    if (_clocklabel3==_clocklabel2) {
+        [_defaults setObject:@"" forKey:@"ClocksUserSet2"];
+    }
+    if (_clocklabel4==_clocklabel3) {
+        [_defaults setObject:@"" forKey:@"ClocksUserSet3"];
+        NSLog(@"other");
+    }
+    if (_clocklabel5==_clocklabel4) {
+        [_defaults setObject:@"" forKey:@"ClocksUserSet4"];
+    }
+    if (_clocklabel6==_clocklabel5) {
+        [_defaults setObject:@"" forKey:@"ClocksUserSet5"];
+    }
+    if ([_clocklabel1 isEqual:@""]) {
+        [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"ClocksUserSet"];
+    }
+    if ([_clocklabel2 isEqual:@""]) {
+        [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"ClocksUserSet1"];
+    }
+    if ([_clocklabel3 isEqual:@""]) {
+        [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"ClocksUserSet2"];
+    }
+    if ([_clocklabel4 isEqual:@""]) {
+        [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"ClocksUserSet3"];
+    }
+    if ([_clocklabel5 isEqual:@""]) {
+        [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"ClocksUserSet4"];
+    }
+    if ([_clocklabel6 isEqual:@""]) {
+        [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"ClocksUserSet5"];
+    }
     
     
-    [self.delegate didselectwith:self cities:[self.tableView cellForRowAtIndexPath:indexPath ].textLabel.text];
+    NSLog(@"%@", _clocklabel4);
+
+     [_defaults synchronize];
+  //  NSString *test = [_defaults objectForKey:@"ClocksUserSet1"];
+  //  NSLog(@"%@", test);
+  
+//   [self.delegate didselectwith:self cities:[self.tableView cellForRowAtIndexPath:indexPath ].textLabel.text];
     
     
     //[self.delegate didselectwith1:self cities:[self.tableView cellForRowAtIndexPath:indexPath ].textLabel.text];

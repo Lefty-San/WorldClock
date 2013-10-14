@@ -28,8 +28,8 @@ NSString *const ClocksUserSet3 = @"ClocksUserSetKey3";
 NSString *const ClocksUserSet4 = @"ClocksUserSetKey4";
 NSString *const ClocksUserSet5 = @"ClocksUserSetKey5";
 
-
 @implementation ViewController
+//@synthesize delegate;
     
     - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
     {
@@ -55,23 +55,20 @@ NSString *const ClocksUserSet5 = @"ClocksUserSetKey5";
     lpgr.delegate = self;
     [self.collectionView addGestureRecognizer:lpgr];
     
-
 	// Do any additional setup after loading the view, typically from a nib.
 
-    self.citiesListArray = [[NSMutableArray alloc]initWithCapacity:6];
+   // self.citiesListArray = [[NSMutableArray alloc]initWithCapacity:6];
    
     NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
    
-   // int count = [[[NSUserDefaults standardUserDefaults] dictionaryRepresentation] count];
+    _count = [[[NSUserDefaults standardUserDefaults] dictionaryRepresentation] count];
    // NSLog(@"%d", count);
-    _clocklabel1 = [defaults objectForKey:ClocksUserSet];
-    _clocklabel2 = [defaults objectForKey:ClocksUserSet1];
-    _clocklabel3 = [defaults objectForKey:ClocksUserSet2];
-    _clocklabel4 = [defaults objectForKey:ClocksUserSet3];
-    _clocklabel5 = [defaults objectForKey:ClocksUserSet4];
-    _clocklabel6 = [defaults objectForKey:ClocksUserSet5];
-
-   
+    _clocklabel1 = [defaults objectForKey:@"ClocksUserSet"];
+    _clocklabel2 = [defaults objectForKey:@"ClocksUserSet1"];
+    _clocklabel3 = [defaults objectForKey:@"ClocksUserSet2"];
+    _clocklabel4 = [defaults objectForKey:@"ClocksUserSet3"];
+    _clocklabel5 = [defaults objectForKey:@"ClocksUserSet4"];
+    _clocklabel6 = [defaults objectForKey:@"ClocksUserSet5"];
    
     }
     
@@ -171,7 +168,7 @@ NSString *const ClocksUserSet5 = @"ClocksUserSetKey5";
     for (NSString *key in [defaultsDict allKeys])
         [[NSUserDefaults standardUserDefaults] removeObjectForKey:ClocksUserSet];
     
-    [[NSUserDefaults standardUserDefaults] synchronize];
+ //   [[NSUserDefaults standardUserDefaults] synchronize];
    
 }
 -(void) LabelLongPressed1:(UILongPressGestureRecognizer *)recognizer  {
@@ -181,7 +178,7 @@ NSString *const ClocksUserSet5 = @"ClocksUserSetKey5";
     for (NSString *key in [defaultsDict allKeys])
         [[NSUserDefaults standardUserDefaults] removeObjectForKey:ClocksUserSet1];
     
-    [[NSUserDefaults standardUserDefaults] synchronize];
+   // [[NSUserDefaults standardUserDefaults] synchronize];
     
 }
 -(void) LabelLongPressed2:(UILongPressGestureRecognizer *)recognizer  {
@@ -191,7 +188,7 @@ NSString *const ClocksUserSet5 = @"ClocksUserSetKey5";
     for (NSString *key in [defaultsDict allKeys])
         [[NSUserDefaults standardUserDefaults] removeObjectForKey:ClocksUserSet2];
     
-    [[NSUserDefaults standardUserDefaults] synchronize];
+   // [[NSUserDefaults standardUserDefaults] synchronize];
    
 }
 -(void) LabelLongPressed3:(UILongPressGestureRecognizer *)recognizer  {
@@ -201,7 +198,7 @@ NSString *const ClocksUserSet5 = @"ClocksUserSetKey5";
     for (NSString *key in [defaultsDict allKeys])
         [[NSUserDefaults standardUserDefaults] removeObjectForKey:ClocksUserSet3];
     
-    [[NSUserDefaults standardUserDefaults] synchronize];
+ //   [[NSUserDefaults standardUserDefaults] synchronize];
     
 }
 -(void) LabelLongPressed4:(UILongPressGestureRecognizer *)recognizer  {
@@ -211,7 +208,7 @@ NSString *const ClocksUserSet5 = @"ClocksUserSetKey5";
     for (NSString *key in [defaultsDict allKeys])
         [[NSUserDefaults standardUserDefaults] removeObjectForKey:ClocksUserSet4];
     
-    [[NSUserDefaults standardUserDefaults] synchronize];
+ //   [[NSUserDefaults standardUserDefaults] synchronize];
     
 }
 -(void) LabelLongPressed5:(UILongPressGestureRecognizer *)recognizer  {
@@ -221,7 +218,7 @@ NSString *const ClocksUserSet5 = @"ClocksUserSetKey5";
     for (NSString *key in [defaultsDict allKeys])
         [[NSUserDefaults standardUserDefaults] removeObjectForKey:ClocksUserSet5];
     
-    [[NSUserDefaults standardUserDefaults] synchronize];
+  //  [[NSUserDefaults standardUserDefaults] synchronize];
     
 }
 
@@ -237,10 +234,10 @@ NSString *const ClocksUserSet5 = @"ClocksUserSetKey5";
 }
 -(void) didselectwith:(addcontroller *)controller cities:(NSString *)cities{
     
-    [self.citiesListArray addObject:cities];
+  //  [self.citiesListArray addObject:cities];
    
     
-    if (self.citiesListArray.count == 1) {
+/*    if (self.citiesListArray.count == 1) {
         
         if(self.clocklabel.text !=nil && self.clocklabela.text !=nil && self.clocklabelb.text != nil && self.clocklabelc.text != nil && self.clocklabeld.text != nil && self.clocklabele.text != nil){
             UIAlertView *alert1 = [[UIAlertView alloc] initWithTitle:@"Can not add any more cities" message:@"Press and hold to delete one city" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
@@ -311,8 +308,8 @@ NSString *const ClocksUserSet5 = @"ClocksUserSetKey5";
         [[NSUserDefaults standardUserDefaults]setObject:self.clocklabele.text forKey:ClocksUserSet5];
         [[NSUserDefaults standardUserDefaults]synchronize];
         }
-    }
-    else if (self.citiesListArray.count > 6){
+    } */
+    if (self.citiesListArray.count > 6){
         UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Can not add more cities"
                                                           message:@"press and hold to delete one City"
                                                          delegate:self
@@ -327,7 +324,7 @@ NSString *const ClocksUserSet5 = @"ClocksUserSetKey5";
     [controller dismissViewControllerAnimated:YES completion:nil];
 }
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return 6;
+    return _count;
 }
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *identifier = @"Cell";
@@ -350,7 +347,7 @@ NSString *const ClocksUserSet5 = @"ClocksUserSetKey5";
     }
     else if (indexPath.row==5) {
         cell.clockLabel.text = _clocklabel6;
-    }
+    } 
    // cell.clockLabel.text = [@"objectAtIndex:indexPath.row];
     
     [cell.clockView setClockBackgroundImage:[UIImage imageNamed:@"ClockFaceAlpha.png"].CGImage];
@@ -371,7 +368,20 @@ NSString *const ClocksUserSet5 = @"ClocksUserSetKey5";
 }
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"didselect");
+   // [self.delegate passItemBack:self didFinishWithItem:[_clocklabel1]];
+    if (indexPath.row==0) {
+        
+    } else if (indexPath.row == 1) {
+        
+    } else if (indexPath.row == 2) {
+        
+    } else if (indexPath.row == 3) {
+        
+    } else if (indexPath.row == 4) {
+        
+    } else if (indexPath.row == 5) {
+        
+    }
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
