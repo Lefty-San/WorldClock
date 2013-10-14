@@ -10,16 +10,13 @@
 #import "ClockSetup.h"
 #import "ViewController.h"
 
-@protocol ViewControllerDelegate;
 
 @interface ZoomViewController : UIViewController {
     
-    id<ViewControllerDelegate>delegate;
 
 }
 @property (weak, nonatomic) IBOutlet UILabel *clockLabel;
 @property (nonatomic, strong) IBOutlet ClockSetup *clockView;
-@property (weak, nonatomic) id<ViewControllerDelegate>delegate;
 
 - (IBAction)Style1:(id)sender;
 - (IBAction)Style2:(id)sender;

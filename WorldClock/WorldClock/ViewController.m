@@ -61,7 +61,6 @@ NSString *const ClocksUserSet5 = @"ClocksUserSetKey5";
    
     NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
    
-    _count = [[[NSUserDefaults standardUserDefaults] dictionaryRepresentation] count];
    // NSLog(@"%d", count);
     _clocklabel1 = [defaults objectForKey:@"ClocksUserSet"];
     _clocklabel2 = [defaults objectForKey:@"ClocksUserSet1"];
@@ -69,8 +68,33 @@ NSString *const ClocksUserSet5 = @"ClocksUserSetKey5";
     _clocklabel4 = [defaults objectForKey:@"ClocksUserSet3"];
     _clocklabel5 = [defaults objectForKey:@"ClocksUserSet4"];
     _clocklabel6 = [defaults objectForKey:@"ClocksUserSet5"];
-   
+    
+    _gmt1 = [defaults objectForKey:@"ClocksUserSetGMT"];
+    _gmt2 = [defaults objectForKey:@"ClocksUserSet1GMT"];
+    _gmt3 = [defaults objectForKey:@"ClocksUserSet2GMT"];
+    _gmt4 = [defaults objectForKey:@"ClocksUserSet3GMT"];
+    _gmt5 = [defaults objectForKey:@"ClocksUserSet4GMT"];
+    _gmt6 = [defaults objectForKey:@"ClocksUserSet5GMT"];
+    _z = 0;
+    if ((_clocklabel1 != NULL) && (!([_clocklabel1 isEqual:@""]))) {
+        _z++;
     }
+    if ((_clocklabel2 != NULL) && (!([_clocklabel2 isEqual:@""]))) {
+        _z++;
+    }
+    if ((_clocklabel3 != NULL) && (!([_clocklabel3 isEqual:@""]))) {
+        _z++;
+    }
+    if ((_clocklabel4 != NULL) && (!([_clocklabel4 isEqual:@""]))) {
+        _z++;
+    }
+    if ((_clocklabel5 != NULL) && (!([_clocklabel5 isEqual:@""]))) {
+        _z++;
+    }
+    if ((_clocklabel6 != NULL) && (!([_clocklabel6 isEqual:@""]))) {
+        _z++;
+    }
+}
     
 -(void)handleLongPress:(UILongPressGestureRecognizer *)gestureRecognizer
 {
@@ -324,7 +348,7 @@ NSString *const ClocksUserSet5 = @"ClocksUserSetKey5";
     [controller dismissViewControllerAnimated:YES completion:nil];
 } */
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return _count;
+    return _z;
 }
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *identifier = @"Cell";
@@ -332,6 +356,7 @@ NSString *const ClocksUserSet5 = @"ClocksUserSetKey5";
     ClockCell *cell = (ClockCell*)[collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
     if (indexPath.row == 0) {
         cell.clockLabel.text = _clocklabel1;
+
     }
     else if (indexPath.row==1) {
         cell.clockLabel.text = _clocklabel2;
@@ -372,6 +397,8 @@ NSString *const ClocksUserSet5 = @"ClocksUserSetKey5";
     if (indexPath.row==0) {
         
     } else if (indexPath.row == 1) {
+        ZoomViewController *zoom = [[ZoomViewController alloc] initWithNibName:nil bundle:nil];
+    
         
     } else if (indexPath.row == 2) {
         

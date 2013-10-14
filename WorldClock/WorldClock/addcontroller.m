@@ -1038,12 +1038,6 @@
     _clocklabel4 = [_defaults objectForKey:@"ClocksUserSet3"];
     _clocklabel5 = [_defaults objectForKey:@"ClocksUserSet4"];
     _clocklabel6 = [_defaults objectForKey:@"ClocksUserSet5"];
-    NSString *gmt1 = [_defaults objectForKey:@"ClocksUserSetGMT"];
-    NSString *gmt2 = [_defaults objectForKey:@"ClocksUserSet1GMT"];
-    NSString *gmt3 = [_defaults objectForKey:@"ClocksUserSet2GMT"];
-    NSString *gmt4 = [_defaults objectForKey:@"ClocksUserSet3GMT"];
-    NSString *gmt5 = [_defaults objectForKey:@"ClocksUserSet4GMT"];
-    NSString *gmt6 = [_defaults objectForKey:@"ClocksUserSet5GMT"];
     
   //  if (_clocklabel1==_clocklabel2) {
    //     [_defaults setObject:@"" forKey:@"ClocksUserSet"];
