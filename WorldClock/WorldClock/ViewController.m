@@ -152,7 +152,7 @@ NSString *const ClocksUserSet5 = @"ClocksUserSetKey5"; */
 	[cell.clockView setHourHandImage:[UIImage imageNamed:@"ClockHourHand.png"].CGImage];
 	[cell.clockView setMinHandImage:[UIImage imageNamed:@"ClockMinuteHand.png"].CGImage];
 	[cell.clockView setSecHandImage:[UIImage imageNamed:@"ClockSecondHand.png"].CGImage];
-    [cell.clockView start:labels];
+    [cell.clockView start:timezonelabels];
     
     
     return cell;
