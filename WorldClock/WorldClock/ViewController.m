@@ -76,25 +76,7 @@ NSString *const ClocksUserSet5 = @"ClocksUserSetKey5";
     _gmt4 = [defaults objectForKey:@"ClocksUserSet3GMT"];
     _gmt5 = [defaults objectForKey:@"ClocksUserSet4GMT"];
     _gmt6 = [defaults objectForKey:@"ClocksUserSet5GMT"];
-    _z = 0;
-    if ((_clocklabel1 != NULL) && (!([_clocklabel1 isEqual:@""]))) {
-        _z++;
-    }
-    if ((_clocklabel2 != NULL) && (!([_clocklabel2 isEqual:@""]))) {
-        _z++;
-    }
-    if ((_clocklabel3 != NULL) && (!([_clocklabel3 isEqual:@""]))) {
-        _z++;
-    }
-    if ((_clocklabel4 != NULL) && (!([_clocklabel4 isEqual:@""]))) {
-        _z++;
-    }
-    if ((_clocklabel5 != NULL) && (!([_clocklabel5 isEqual:@""]))) {
-        _z++;
-    }
-    if ((_clocklabel6 != NULL) && (!([_clocklabel6 isEqual:@""]))) {
-        _z++;
-    }
+   
 }
     
 -(void)handleLongPress:(UILongPressGestureRecognizer *)gestureRecognizer
@@ -125,18 +107,7 @@ NSString *const ClocksUserSet5 = @"ClocksUserSetKey5";
         [cell removeFromSuperview];
     }
 }
-/*- (void)alertView:(UIAlertView *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
-    // the user clicked one of the OK/Cancel buttons
-    if (buttonIndex == 0)
-    {
-        [self dismissViewControllerAnimated:true completion:nil];
-    }
-    else
-    {
-       //[cell removeFromSuperview];
-    }
-}
-*/
+
 
 /*- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
