@@ -37,7 +37,6 @@
 @property (nonatomic, retain) NSString * gmt4;
 @property (nonatomic, retain) NSString * gmt5;
 @property (nonatomic, retain) NSString * gmt6; 
-@property (nonatomic) int z;
 
 //@property (nonatomic, retain)
 @property (weak, nonatomic) IBOutlet UILabel *clockLabel;

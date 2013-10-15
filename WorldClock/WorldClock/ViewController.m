@@ -19,6 +19,7 @@
 
 // Smart Message
 @property NSMutableArray *citiesListArray;
+@property NSMutableArray *array;
 
 @end
 
@@ -366,22 +367,9 @@ NSString *const ClocksUserSet5 = @"ClocksUserSetKey5";
 }
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-   // [self.delegate passItemBack:self didFinishWithItem:[_clocklabel1]];
-    if (indexPath.row==0) {
-        
-    } else if (indexPath.row == 1) {
-       // ZoomViewController *zoom = [[ZoomViewController alloc] initWithNibName:nil bundle:nil];
-    
-        
-    } else if (indexPath.row == 2) {
-        
-    } else if (indexPath.row == 3) {
-        
-    } else if (indexPath.row == 4) {
-        
-    } else if (indexPath.row == 5) {
-        
-    }
+   // NSString *selectedItem = [self.citiesListArray[indexPath.section] objectAtIndex:indexPath.row];
+  //  [self.array addObject:selectedItem];
+
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
@@ -389,13 +377,13 @@ NSString *const ClocksUserSet5 = @"ClocksUserSetKey5";
         addcontroller *ac = [segue destinationViewController];
         ac.delegate = self;
     }
- /*   else  if ([segue.identifier isEqualToString:@"bigClock"]) {
-        NSString *indexPaths = [self.collectionView indexPathsForSelectedItems];
+    else  if ([segue.identifier isEqualToString:@"bigClock"]) {
+        NSArray *indexPaths = [self.collectionView indexPathsForSelectedItems];
         ZoomViewController *destViewController = segue.destinationViewController;
         NSIndexPath *indexPath = [indexPaths objectAtIndex:0];
-        destViewController.clockLabel = [_clocklabel1[indexPath.section] objectAtIndex:indexPath.row];
+        destViewController.labelClock = [self.citiesListArray[indexPath.section] objectAtIndex:indexPath.row];
         [self.collectionView deselectItemAtIndexPath:indexPath animated:NO];
-    } */
+    }
 
 }
 
