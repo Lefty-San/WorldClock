@@ -10,7 +10,7 @@
 
 @implementation ZoomViewController
 
-@synthesize clockView;
+@synthesize clockView, timeZone;
 
 - (void)viewDidLoad
 {
@@ -21,6 +21,7 @@
 	[clockView setHourHandImage:[UIImage imageNamed:@"ClockHourHand.png"].CGImage];
 	[clockView setMinHandImage:[UIImage imageNamed:@"ClockMinuteHand.png"].CGImage];
 	[clockView setSecHandImage:[UIImage imageNamed:@"ClockSecondHand.png"].CGImage];
+
     
     self.clockLabel.text = _labelClock;
    // clockLabel = [self.clockLabel text];
@@ -38,7 +39,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
 	//start the clock at current time
-//	[clockView start];
+	[clockView start:timeZone];
     
 }
 

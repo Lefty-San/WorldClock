@@ -19,6 +19,7 @@
 @property (weak, nonatomic) NSMutableArray *cityArray;
 @property (nonatomic, strong) IBOutlet ClockSetup *clockView;
 @property (strong, nonatomic) NSString *labelClock;
+@property (strong, nonatomic) NSString *timeZone;
 
 - (IBAction)Style1:(id)sender;
 - (IBAction)Style2:(id)sender;

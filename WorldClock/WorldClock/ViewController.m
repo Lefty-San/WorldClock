@@ -200,6 +200,10 @@ NSString *const ClocksUserSet5 = @"ClocksUserSetKey5"; */
         NSIndexPath *indexPath = [indexPaths objectAtIndex:0];
         NSString *cityName = [self.citiesListArray objectAtIndex:indexPath.row];
         destViewController.labelClock = cityName;
+        
+        NSString *timeZone = [self.timezoneListArray objectAtIndex:indexPath.row];
+        destViewController.timeZone = timeZone;
+        
         [self.collectionView deselectItemAtIndexPath:indexPath animated:NO];
     }
 
