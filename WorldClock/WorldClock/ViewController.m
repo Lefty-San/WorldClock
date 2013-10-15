@@ -109,10 +109,11 @@ NSString *const ClocksUserSet5 = @"ClocksUserSetKey5"; */
 
 -(void) didselectwith:(addcontroller *)controller cities: (NSString *) cities citytimezones: (NSString *) citytimezones{
     
-    NSLog(@">>>>>>>>>>>>>%@",citytimezones);
-    NSLog(@">>>>>>>>>>>>>%@",cities);
+    NSLog(@"%@",citytimezones);
+    NSLog(@"%@",cities);
     
     [self.timezoneListArray addObject:citytimezones];
+    [self.citiesListArray addObject:cities];
     
     NSLog(@"%@",citytimezones);
     [self.collectionView reloadData];
