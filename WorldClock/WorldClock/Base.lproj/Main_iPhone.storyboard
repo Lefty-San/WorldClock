@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="12F37" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Geg-YJ-QNV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Geg-YJ-QNV">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
     </dependencies>
@@ -173,6 +173,18 @@
                                         <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Vr-n7-T6X" customClass="ClockSetup">
                                             <rect key="frame" x="0.0" y="20" width="147" height="106"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1jH-Qw-h02">
+                                                    <rect key="frame" x="125" y="-5" width="22" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="X">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="deletecell:" destination="moj-aQ-MbE" eventType="touchUpInside" id="uKf-xT-uJm"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                         </view>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="htk-v9-k2Q">
@@ -188,6 +200,7 @@
                                 <connections>
                                     <outlet property="clockLabel" destination="htk-v9-k2Q" id="jUQ-gG-dV9"/>
                                     <outlet property="clockView" destination="8Vr-n7-T6X" id="wDl-rv-6qY"/>
+                                    <outlet property="deletecell" destination="1jH-Qw-h02" id="NXs-qS-PcU"/>
                                     <segue destination="T40-ef-KFQ" kind="push" id="PDt-xe-NtG"/>
                                 </connections>
                             </collectionViewCell>
@@ -200,7 +213,7 @@
                     <navigationItem key="navigationItem" title="World Clock" id="sEB-do-i8B">
                         <barButtonItem key="rightBarButtonItem" title="+" id="kKi-AG-hFp">
                             <connections>
-                                <segue destination="qWp-bL-UmE" kind="modal" id="mEm-4C-ZVF"/>
+                                <segue destination="qWp-bL-UmE" kind="modal" identifier="citiesListSegue" id="mEm-4C-ZVF"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

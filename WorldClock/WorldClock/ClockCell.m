@@ -42,4 +42,6 @@
 }
 */
 
+- (IBAction)deletecell:(id)sender {
+}
 @end

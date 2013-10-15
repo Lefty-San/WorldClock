@@ -9,8 +9,9 @@
 #import "ViewController.h"
 #import "ZoomViewController.h"
 #import  "ClockCell.h"
+#import "addcontroller.h"
 
-@interface ViewController () {
+@interface ViewController ()<AddControllerDelegate> {
     
     NSArray *clockArray;
 
@@ -57,11 +58,11 @@ NSString *const ClocksUserSet5 = @"ClocksUserSetKey5";
     
 	// Do any additional setup after loading the view, typically from a nib.
 
-   // self.citiesListArray = [[NSMutableArray alloc]initWithCapacity:6];
+    self.citiesListArray = [[NSMutableArray alloc]initWithCapacity:6];
    
     NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
    
-   // NSLog(@"%d", count);
+   //NSLog(@"%d", count);
     _clocklabel1 = [defaults objectForKey:@"ClocksUserSet"];
     _clocklabel2 = [defaults objectForKey:@"ClocksUserSet1"];
     _clocklabel3 = [defaults objectForKey:@"ClocksUserSet2"];
@@ -256,125 +257,106 @@ NSString *const ClocksUserSet5 = @"ClocksUserSetKey5";
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-//-(void) didselectwith:(addcontroller *)controller cities:(NSString *)cities{
+-(void) didselectwith:(addcontroller *)controller cities:(NSString *)cities{
     
-  //  [self.citiesListArray addObject:cities];
+    [self.citiesListArray addObject:cities];
+    [self.collectionView reloadData];
    
     
-/*    if (self.citiesListArray.count == 1) {
-        
-        if(self.clocklabel.text !=nil && self.clocklabela.text !=nil && self.clocklabelb.text != nil && self.clocklabelc.text != nil && self.clocklabeld.text != nil && self.clocklabele.text != nil){
-            UIAlertView *alert1 = [[UIAlertView alloc] initWithTitle:@"Can not add any more cities" message:@"Press and hold to delete one city" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
-            [alert1 show];
-        }
-        
-        if(self.clocklabel.text == nil){
-            self.clocklabel.text = [self.citiesListArray objectAtIndex:0];
-            //save here
-            
-            [[NSUserDefaults standardUserDefaults]setObject:self.clocklabel.text forKey:ClocksUserSet];
-            [[NSUserDefaults standardUserDefaults]synchronize];
-        }
-        
-    }
-    if (self.citiesListArray.count == 2) {
-        if(self.clocklabel.text !=nil && self.clocklabela.text !=nil && self.clocklabelb.text != nil && self.clocklabelc.text != nil && self.clocklabeld.text != nil && self.clocklabele.text != nil){
-            UIAlertView *alert1 = [[UIAlertView alloc] initWithTitle:@"Can not add any more cities" message:@"Press and hold to delete one city" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
-            [alert1 show];
-        }
-        if(self.clocklabela.text == nil){
-        self.clocklabela.text = [self.citiesListArray objectAtIndex:1];
-        [[NSUserDefaults standardUserDefaults]setObject:self.clocklabela.text forKey:ClocksUserSet1];
-        [[NSUserDefaults standardUserDefaults]synchronize];
-        }
-    }
-    if (self.citiesListArray.count == 3) {
-        if(self.clocklabel.text !=nil && self.clocklabela.text !=nil && self.clocklabelb.text != nil && self.clocklabelc.text != nil && self.clocklabeld.text != nil && self.clocklabele.text != nil){
-            UIAlertView *alert1 = [[UIAlertView alloc] initWithTitle:@"Can not add any more cities" message:@"Press and hold to delete one city" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
-            [alert1 show];
-        }
-        if(self.clocklabelb.text == nil){
-        self.clocklabelb.text = [self.citiesListArray objectAtIndex:2];
-        [[NSUserDefaults standardUserDefaults]setObject:self.clocklabelb.text forKey:ClocksUserSet2];
-        [[NSUserDefaults standardUserDefaults]synchronize];
-    
-        }
-    }
-    if (self.citiesListArray.count == 4) {
-        if(self.clocklabel.text !=nil && self.clocklabela.text !=nil && self.clocklabelb.text != nil && self.clocklabelc.text != nil && self.clocklabeld.text != nil && self.clocklabele.text != nil){
-            UIAlertView *alert1 = [[UIAlertView alloc] initWithTitle:@"Can not add any more cities" message:@"Press and hold to delete one city" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
-            [alert1 show];
-        }
-        if(self.clocklabelc.text == nil){
-        self.clocklabelc.text = [self.citiesListArray objectAtIndex:3];
-        [[NSUserDefaults standardUserDefaults]setObject:self.clocklabelc.text forKey:ClocksUserSet3];
-        [[NSUserDefaults standardUserDefaults]synchronize];
-        }
-    }
-    if (self.citiesListArray.count == 5) {
-        if(self.clocklabel.text !=nil && self.clocklabela.text !=nil && self.clocklabelb.text != nil && self.clocklabelc.text != nil && self.clocklabeld.text != nil && self.clocklabele.text != nil){
-            UIAlertView *alert1 = [[UIAlertView alloc] initWithTitle:@"Can not add any more cities" message:@"Press and hold to delete one city" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
-            [alert1 show];
-        }
-        if(self.clocklabeld.text == nil){
-        self.clocklabeld.text = [self.citiesListArray objectAtIndex:4];
-        [[NSUserDefaults standardUserDefaults]setObject:self.clocklabeld.text forKey:ClocksUserSet4];
-        [[NSUserDefaults standardUserDefaults]synchronize];
-        }
-    }
-    if (self.citiesListArray.count == 6) {
-        if(self.clocklabel.text !=nil && self.clocklabela.text !=nil && self.clocklabelb.text != nil && self.clocklabelc.text != nil && self.clocklabeld.text != nil && self.clocklabele.text != nil){
-            UIAlertView *alert1 = [[UIAlertView alloc] initWithTitle:@"Can not add any more cities" message:@"Press and hold to delete one city" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
-            [alert1 show];
-        }
-        if(self.clocklabele.text == nil){
-        self.clocklabele.text = [self.citiesListArray objectAtIndex:5];
-        [[NSUserDefaults standardUserDefaults]setObject:self.clocklabele.text forKey:ClocksUserSet5];
-        [[NSUserDefaults standardUserDefaults]synchronize];
-        }
-    } */
- /*   if (self.citiesListArray.count > 6){
-        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Can not add more cities"
-                                                          message:@"press and hold to delete one City"
-                                                         delegate:self
-                                                cancelButtonTitle:@"Ok"
-                                                otherButtonTitles: nil];
-        
-        [alert show];
-    }
-    
-    
-    NSLog(@"%@", cities);
-    [controller dismissViewControllerAnimated:YES completion:nil];
-} */
+//    if (self.citiesListArray.count == 1) {
+//        
+//                
+//        if(self.clocklabel.text == nil){
+//            self.clocklabel.text = [self.citiesListArray objectAtIndex:0];
+//            //save here
+//            
+//            [[NSUserDefaults standardUserDefaults]setObject:self.clocklabel.text forKey:ClocksUserSet];
+//            [[NSUserDefaults standardUserDefaults]synchronize];
+//        }
+//        
+//    }
+//    if (self.citiesListArray.count == 2) {
+//        if(self.clocklabel.text !=nil && self.clocklabela.text !=nil && self.clocklabelb.text != nil && self.clocklabelc.text != nil && self.clocklabeld.text != nil && self.clocklabele.text != nil){
+//            UIAlertView *alert1 = [[UIAlertView alloc] initWithTitle:@"Can not add any more cities" message:@"Press and hold to delete one city" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+//            [alert1 show];
+//        }
+//        if(self.clocklabela.text == nil){
+//        self.clocklabela.text = [self.citiesListArray objectAtIndex:1];
+//        [[NSUserDefaults standardUserDefaults]setObject:self.clocklabela.text forKey:ClocksUserSet1];
+//        [[NSUserDefaults standardUserDefaults]synchronize];
+//        }
+//    }
+//    if (self.citiesListArray.count == 3) {
+//        if(self.clocklabel.text !=nil && self.clocklabela.text !=nil && self.clocklabelb.text != nil && self.clocklabelc.text != nil && self.clocklabeld.text != nil && self.clocklabele.text != nil){
+//            UIAlertView *alert1 = [[UIAlertView alloc] initWithTitle:@"Can not add any more cities" message:@"Press and hold to delete one city" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+//            [alert1 show];
+//        }
+//        if(self.clocklabelb.text == nil){
+//        self.clocklabelb.text = [self.citiesListArray objectAtIndex:2];
+//        [[NSUserDefaults standardUserDefaults]setObject:self.clocklabelb.text forKey:ClocksUserSet2];
+//        [[NSUserDefaults standardUserDefaults]synchronize];
+//    
+//        }
+//    }
+//    if (self.citiesListArray.count == 4) {
+//        if(self.clocklabel.text !=nil && self.clocklabela.text !=nil && self.clocklabelb.text != nil && self.clocklabelc.text != nil && self.clocklabeld.text != nil && self.clocklabele.text != nil){
+//            UIAlertView *alert1 = [[UIAlertView alloc] initWithTitle:@"Can not add any more cities" message:@"Press and hold to delete one city" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+//            [alert1 show];
+//        }
+//        if(self.clocklabelc.text == nil){
+//        self.clocklabelc.text = [self.citiesListArray objectAtIndex:3];
+//        [[NSUserDefaults standardUserDefaults]setObject:self.clocklabelc.text forKey:ClocksUserSet3];
+//        [[NSUserDefaults standardUserDefaults]synchronize];
+//        }
+//    }
+//    if (self.citiesListArray.count == 5) {
+//        if(self.clocklabel.text !=nil && self.clocklabela.text !=nil && self.clocklabelb.text != nil && self.clocklabelc.text != nil && self.clocklabeld.text != nil && self.clocklabele.text != nil){
+//            UIAlertView *alert1 = [[UIAlertView alloc] initWithTitle:@"Can not add any more cities" message:@"Press and hold to delete one city" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+//            [alert1 show];
+//        }
+//        if(self.clocklabeld.text == nil){
+//        self.clocklabeld.text = [self.citiesListArray objectAtIndex:4];
+//        [[NSUserDefaults standardUserDefaults]setObject:self.clocklabeld.text forKey:ClocksUserSet4];
+//        [[NSUserDefaults standardUserDefaults]synchronize];
+//        }
+//    }
+//    if (self.citiesListArray.count == 6) {
+//        if(self.clocklabel.text !=nil && self.clocklabela.text !=nil && self.clocklabelb.text != nil && self.clocklabelc.text != nil && self.clocklabeld.text != nil && self.clocklabele.text != nil){
+//            UIAlertView *alert1 = [[UIAlertView alloc] initWithTitle:@"Can not add any more cities" message:@"Press and hold to delete one city" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+//            [alert1 show];
+//        }
+//        if(self.clocklabele.text == nil){
+//        self.clocklabele.text = [self.citiesListArray objectAtIndex:5];
+//        [[NSUserDefaults standardUserDefaults]setObject:self.clocklabele.text forKey:ClocksUserSet5];
+//        [[NSUserDefaults standardUserDefaults]synchronize];
+//        }
+//    }
+//    if (self.citiesListArray.count > 6){
+//        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Can not add more cities"
+//                                                          message:@"press and hold to delete one City"
+//                                                         delegate:self
+//                                                cancelButtonTitle:@"Ok"
+//                                                otherButtonTitles: nil];
+//        
+//        [alert show];
+//    }
+//    
+//    
+//    NSLog(@"%@", cities);
+//    [controller dismissViewControllerAnimated:YES completion:nil];
+}
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return _z;
+    return self.citiesListArray.count;
 }
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *identifier = @"Cell";
     
     ClockCell *cell = (ClockCell*)[collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
-    if (indexPath.row == 0) {
-        cell.clockLabel.text = _clocklabel1;
-
-    }
-    else if (indexPath.row==1) {
-        cell.clockLabel.text = _clocklabel2;
-    }
-    else if (indexPath.row==2) {
-        cell.clockLabel.text = _clocklabel3;
-    }
-    else if (indexPath.row==3) {
-        cell.clockLabel.text = _clocklabel4;
-    }
-    else if (indexPath.row==4) {
-        cell.clockLabel.text = _clocklabel5;
-    }
-    else if (indexPath.row==5) {
-        cell.clockLabel.text = _clocklabel6;
-    } 
-   // cell.clockLabel.text = [@"objectAtIndex:indexPath.row];
+    [cell.deletecell addTarget:self action:@selector(delete:) forControlEvents:UIControlEventTouchUpInside];
+   
+    NSString *labels = [self.citiesListArray objectAtIndex:indexPath.row];
     
+    cell.clockLabel.text = labels;
     [cell.clockView setClockBackgroundImage:[UIImage imageNamed:@"ClockFaceAlpha.png"].CGImage];
 	[cell.clockView setHourHandImage:[UIImage imageNamed:@"ClockHourHand.png"].CGImage];
 	[cell.clockView setMinHandImage:[UIImage imageNamed:@"ClockMinuteHand.png"].CGImage];
@@ -383,13 +365,33 @@ NSString *const ClocksUserSet5 = @"ClocksUserSetKey5";
     
     
     [cell.clockView start];
-   // [cell.clockView clockLabel];
-   // _zoomView = (UIView *)[Cell viewWithTag:100];
-    
-  //  _zoomView = [objectAtIndex:indexPath.row];
-    // cell.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"photo-frame.png"]];
+  
     
     return cell;
+}
+
+- (void)delete:(UIButton *)sender
+
+{
+    
+    NSIndexPath *indexPath = [self.collectionView indexPathForCell:(ClockCell *)sender.superview.superview];
+    
+    
+    
+    [self.citiesListArray removeObjectAtIndex:indexPath.row];
+    
+    [self.collectionView reloadData];
+    
+    
+    
+    NSLog(@"delete but pressed");
+    
+    
+    
+    NSLog(@"%@",self.citiesListArray);
+    
+    
+    
 }
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -397,7 +399,7 @@ NSString *const ClocksUserSet5 = @"ClocksUserSetKey5";
     if (indexPath.row==0) {
         
     } else if (indexPath.row == 1) {
-        ZoomViewController *zoom = [[ZoomViewController alloc] initWithNibName:nil bundle:nil];
+       // ZoomViewController *zoom = [[ZoomViewController alloc] initWithNibName:nil bundle:nil];
     
         
     } else if (indexPath.row == 2) {
@@ -412,7 +414,7 @@ NSString *const ClocksUserSet5 = @"ClocksUserSetKey5";
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    if([segue.identifier isEqualToString:@"addcontrollersegue"]){
+    if([segue.identifier isEqualToString:@"citiesListSegue"]){
         addcontroller *ac = [segue destinationViewController];
         ac.delegate = self;
     }
@@ -430,7 +432,7 @@ NSString *const ClocksUserSet5 = @"ClocksUserSetKey5";
 {
 
     if (indexPath.row == 0) {
-        NSString *value =_clocklabel1;
+      //  NSString *value =_clocklabel1;
      //   [self.delegate didselectwith: self.valuevalue];
 
     }

@@ -946,20 +946,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    /* UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"City Selected"
-     message:@"..."
-     delegate:self
-     cancelButtonTitle:@"Ok"
-     otherButtonTitles:nil];
-     
-     [alert show];
-     */
-    
-    
-    //  NSString *selectedValue = [cities objectAtIndex:indexPath.row];
-    //[self.delegate passItemBack:self didFinishWithItem:[selectedValue]];
-    //NSLog(selectedValue);
-   // NSString *value = [cities objectAtIndex:indexPath.row];
+   /*
     NSString *value = [cities objectAtIndex:indexPath.row];
     NSString *gmt = [citytimezones objectAtIndex:indexPath.row];
    
@@ -1091,12 +1078,13 @@
      [_defaults synchronize];
   //  NSString *test = [_defaults objectForKey:@"ClocksUserSet1"];
   //  NSLog(@"%@", test);
+    */
   
-//   [self.delegate didselectwith:self cities:[self.tableView cellForRowAtIndexPath:indexPath ].textLabel.text];
+   [self.delegate didselectwith:self cities:[self.tableView cellForRowAtIndexPath:indexPath ].textLabel.text];
     
     
     //[self.delegate didselectwith1:self cities:[self.tableView cellForRowAtIndexPath:indexPath ].textLabel.text];
-    //[self dismissViewControllerAnimated:YES completion:nil];
+    [self dismissViewControllerAnimated:YES completion:nil];
     
     
     

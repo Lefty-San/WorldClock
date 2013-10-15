@@ -12,5 +12,7 @@
 @interface ClockCell : UICollectionViewCell
 @property (weak, nonatomic) IBOutlet ClockSetup *clockView;
 @property (weak, nonatomic) IBOutlet UILabel *clockLabel;
+@property (weak, nonatomic) IBOutlet UIButton *deletecell;
+- (IBAction)deletecell:(id)sender;
 
 @end
