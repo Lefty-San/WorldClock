@@ -16,8 +16,6 @@
     
 	timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateClock:) userInfo:nil repeats:YES];
     
-    /* gmt1 */
-    
     if ([time isEqual:@"(GMT-1)"]) {
         zone = 6*60*60;
         
@@ -90,6 +88,8 @@
     else {
         zone = 7*60*60;
     }
+    NSLog(@"zone= %f", zone);
+    
 }
 
 - (void)stop
@@ -106,7 +106,7 @@ float Degrees2Radians(float degrees) { return degrees * M_PI / 180; }
     //    NSLog(@"%@",newYorkTime);
     
     //break apart the time hh  mm   ss
-    NSCalendar *calendar = [NSCalendar currentCalendar];    
+    NSCalendar *calendar = [NSCalendar currentCalendar];
     NSDateComponents *dateComponents = [calendar components:(NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit)fromDate:newYorkTime];
     
 	NSInteger seconds = [dateComponents second];
