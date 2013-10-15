@@ -14,82 +14,82 @@
 {
     NSLog(@"time= %@", time);
     
-	timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateClock:) userInfo:nil repeats:YES];
     
     if ([time isEqual:@"(GMT-1)"]) {
-        zone = 6*60*60;
+        self.zone = 6*60*60;
         
     }
     
     else if ([time isEqual:@"(GMT-2)"]) {
-        zone = 5*60*60;
+        self.zone = 5*60*60;
         
     }
     else if ([time isEqual:@"(GMT-3)"]) {
-        zone = 4*60*60;
+        self.zone = 4*60*60;
         
     }
     else if ([time isEqual:@"(GMT-4)"]) {
-        zone = 3*60*60;
+        self.zone = 3*60*60;
         
     }
     else if ([time isEqual:@"(GMT-5)"]) {
-        zone = 2*60*60;
+        self.zone = 2*60*60;
         
     }
     else if ([time isEqual:@"(GMT-6)"]) {
-        zone = 60*60;
+        self.zone = 60*60;
         
     }
     else if ([time isEqual:@"(MDT)"]) {
-        zone = 0;
+        self.zone = 0;
         
     }
     else if ([time isEqual:@"(GMT+1)"]) {
-        zone = 7*60*60;
+        self.zone = 7*60*60;
         
     }
     else if ([time isEqual:@"(GMT+2)"]) {
-        zone = 8*60*60;
+        self.zone = 8*60*60;
         
     }
     else if ([time isEqual:@"(GMT+3)"]) {
-        zone = 9*60*60;
+        self.zone = 9*60*60;
         
     }
     else if ([time isEqual:@"(GMT+4)"]) {
-        zone = 10*60*60;
+        self.zone = 10*60*60;
         
     }
     else if ([time isEqual:@"(GMT+5)"]) {
-        zone = 11*60*60;
+        self.zone = 11*60*60;
         
     }
     else if ([time isEqual:@"(GMT+6)"]) {
-        zone = 12*60*60;
-        
+        self.zone = 12*60*60;
+       
     }
     else if ([time isEqual:@"(GMT+7)"]) {
-        zone = 13*60*60;
+        self.zone = 13*60*60;
         
     }
     else if ([time isEqual:@"(GMT+8)"]) {
-        zone = 14*60*60;
+        self.zone = 14*60*60;
         
     }
     else if ([time isEqual:@"(GMT+9)"]) {
-        zone = 15*60*60;
+        self.zone = 15*60*60;
         
     }
     else if ([time isEqual:@"(GMT+10)"]) {
-        zone = 16*60*60;
+        self.zone = 16*60*60;
         
     }
     else {
-        zone = 6*60*60;
+        self.zone = 6*60*60;
     }
-    NSLog(@"zone= %f", zone);
-    
+    NSLog(@"zone= %d", self.zone);
+    timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateClock:) userInfo:nil repeats:YES];
+
 }
 
 - (void)stop
@@ -102,7 +102,7 @@ float Degrees2Radians(float degrees) { return degrees * M_PI / 180; }
 
 - (void) updateClock:(NSTimer *)theTimer{
     
-    NSDate *newYorkTime = [NSDate dateWithTimeIntervalSinceNow:zone];
+    NSDate *newYorkTime = [NSDate dateWithTimeIntervalSinceNow:self.zone];
     //    NSLog(@"%@",newYorkTime);
     
     //break apart the time hh  mm   ss

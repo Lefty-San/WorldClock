@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
 
-double zone;
+//double zone;
 
 @interface ClockSetup : UIView {
     
@@ -20,7 +20,7 @@ double zone;
     NSTimer *timer;
 }
 
-
+@property (nonatomic,assign) NSInteger zone;
 //basic methods
 - (void)start:(NSString*)time;
 - (void)stop;

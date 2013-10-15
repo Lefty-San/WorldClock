@@ -15,10 +15,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-//        NSString *clock = @"Afghanistan";
-//        _clockLabel.text = clock;
-//        clock = [self.clockLabel text];
-//        NSLog(@"kfldsfsl");
+        
     }
     return self;
 }
