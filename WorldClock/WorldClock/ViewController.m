@@ -23,12 +23,12 @@
 
 @end
 
-NSString *const ClocksUserSet = @"ClocksUserSetKey";
+/*NSString *const ClocksUserSet = @"ClocksUserSetKey";
 NSString *const ClocksUserSet1 = @"ClocksUserSetKey1";
 NSString *const ClocksUserSet2 = @"ClocksUserSetKey2";
 NSString *const ClocksUserSet3 = @"ClocksUserSetKey3";
 NSString *const ClocksUserSet4 = @"ClocksUserSetKey4";
-NSString *const ClocksUserSet5 = @"ClocksUserSetKey5";
+NSString *const ClocksUserSet5 = @"ClocksUserSetKey5"; */
 
 @implementation ViewController
 //@synthesize delegate;
@@ -50,14 +50,7 @@ NSString *const ClocksUserSet5 = @"ClocksUserSetKey5";
     [super viewDidLoad];
     
     self.collectionView.backgroundColor = [UIColor whiteColor];
-    
-   //long press
-    UILongPressGestureRecognizer *lpgr = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(handleLongPress:)];
-    lpgr.minimumPressDuration = .5; //seconds
-    lpgr.delegate = self;
-    [self.collectionView addGestureRecognizer:lpgr];
-    
-	// Do any additional setup after loading the view, typically from a nib.
+   
 
     self.citiesListArray = [[NSMutableArray alloc]initWithCapacity:6];
     self.timezoneListArray = [[NSMutableArray alloc]initWithCapacity:6];
@@ -71,45 +64,17 @@ NSString *const ClocksUserSet5 = @"ClocksUserSetKey5";
     _clocklabel3 = [defaults objectForKey:@"ClocksUserSet2"];
     _clocklabel4 = [defaults objectForKey:@"ClocksUserSet3"];
     _clocklabel5 = [defaults objectForKey:@"ClocksUserSet4"];
-    _clocklabel6 = [defaults objectForKey:@"ClocksUserSet5"]; */
+    _clocklabel6 = [defaults objectForKey:@"ClocksUserSet5"];
     
     _gmt1 = [defaults objectForKey:@"ClocksUserSetGMT"];
     _gmt2 = [defaults objectForKey:@"ClocksUserSet1GMT"];
     _gmt3 = [defaults objectForKey:@"ClocksUserSet2GMT"];
     _gmt4 = [defaults objectForKey:@"ClocksUserSet3GMT"];
     _gmt5 = [defaults objectForKey:@"ClocksUserSet4GMT"];
-    _gmt6 = [defaults objectForKey:@"ClocksUserSet5GMT"];
+    _gmt6 = [defaults objectForKey:@"ClocksUserSet5GMT"]; */
    
 }
     
--(void)handleLongPress:(UILongPressGestureRecognizer *)gestureRecognizer
-{
-    if (gestureRecognizer.state != UIGestureRecognizerStateEnded) {
-        return;
-    }
-    CGPoint p = [gestureRecognizer locationInView:self.collectionView];
-    
-    NSIndexPath *indexPath = [self.collectionView indexPathForItemAtPoint:p];
-    if (indexPath == nil){
-        NSLog(@"couldn't find index path");
-    } else {
-        // get the cell at indexPath (the one you long pressed)
-        UICollectionViewCell* cell = [self.collectionView cellForItemAtIndexPath:indexPath];
-        // do stuff with the cell
-        
-        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Clock Deleted"
-                                                          message:@""
-                                                         delegate:self
-                                             cancelButtonTitle:@"Ok"
-                                                otherButtonTitles:nil];
-        
-        [alert show];
-        
-        
-        
-        [cell removeFromSuperview];
-    }
-}
 
 
 /*-(void) LabelLongPressed5:(UILongPressGestureRecognizer *)recognizer  {
@@ -141,6 +106,19 @@ NSString *const ClocksUserSet5 = @"ClocksUserSetKey5";
     
 
 }
+
+-(void) didselectwith:(addcontroller *)controller cities: (NSString *) cities citytimezones: (NSString *) citytimezones{
+    
+    NSLog(@">>>>>>>>>>>>>%@",citytimezones);
+    NSLog(@">>>>>>>>>>>>>%@",cities);
+    
+    [self.timezoneListArray addObject:citytimezones];
+    
+    NSLog(@"%@",citytimezones);
+    [self.collectionView reloadData];
+    
+}
+
 -(void) didselectwith1:(addcontroller *)controller citytimezones:(NSString *)citytimezones{
     
     [self.timezoneListArray addObject:citytimezones];

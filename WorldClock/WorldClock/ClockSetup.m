@@ -22,12 +22,12 @@
     _clockGMT5 = [defaults objectForKey:@"ClocksUserSet4GMT"];
     _clockGMT6 = [defaults objectForKey:@"ClocksUserSet5GMT"];
     
-    NSLog(@"gmt1= %@", _clockGMT1);
+   /* NSLog(@"gmt1= %@", _clockGMT1);
     NSLog(@"gmt2= %@", _clockGMT2);
     NSLog(@"gmt3= %@", _clockGMT3);
     NSLog(@"gmt4= %@", _clockGMT4);
     NSLog(@"gmt5= %@", _clockGMT5);
-    NSLog(@"gmt6= %@", _clockGMT6);
+    NSLog(@"gmt6= %@", _clockGMT6); */
     
     /**** zone is declared in .h ****/
     

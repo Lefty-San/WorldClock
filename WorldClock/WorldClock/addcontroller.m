@@ -946,144 +946,19 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-   /*
-    NSString *value = [cities objectAtIndex:indexPath.row];
-    NSString *gmt = [citytimezones objectAtIndex:indexPath.row];
-   
-    _clocklabel1 = [_defaults objectForKey:@"ClocksUserSet"];
-    _clocklabel2 = [_defaults objectForKey:@"ClocksUserSet1"];
-    _clocklabel3 = [_defaults objectForKey:@"ClocksUserSet2"];
-    _clocklabel4 = [_defaults objectForKey:@"ClocksUserSet3"];
-    _clocklabel5 = [_defaults objectForKey:@"ClocksUserSet4"];
-    _clocklabel6 = [_defaults objectForKey:@"ClocksUserSet5"];
-    NSLog(@"trial %@", _clocklabel4);
-    
-  //  NSLog(@"%@", value);
-    if (_clocklabel1 != NULL) {
-        if ([_clocklabel1 isEqual:@""]) {
-            [_defaults setObject:value forKey:@"ClocksUserSet"];
-            [_defaults setObject:gmt forKey:@"ClocksUserSetGMT"];
-        }
-    }
-    else {
-        [_defaults setObject:value forKey:@"ClocksUserSet"];
-        [_defaults setObject:gmt forKey:@"ClocksUserSetGMT"];
-    }
-    if (_clocklabel2 != NULL) {
-        if ([_clocklabel2 isEqual:@""]) {
-            [_defaults setObject:value forKey:@"ClocksUserSet1"];
-            [_defaults setObject:gmt forKey:@"ClocksUserSet1GMT"];
-        }
-    }
-    else {
-        [_defaults setObject:value forKey:@"ClocksUserSet1"];
-        [_defaults setObject:gmt forKey:@"ClocksUserSet1GMT"];
-    }
-    if (_clocklabel3 != NULL){
-        if ([_clocklabel3 isEqual:@""]) {
-            [_defaults setObject:value forKey:@"ClocksUserSet2"];
-            [_defaults setObject:gmt forKey:@"ClocksUserSet2GMT"];
-        }
-    }
-    else {
-        [_defaults setObject:value forKey:@"ClocksUserSet2"];
-        [_defaults setObject:gmt forKey:@"ClocksUserSet2GMT"];
-    }
-    if (_clocklabel4 != NULL) {
-        if ([_clocklabel4 isEqual:@""]) {
-            [_defaults setObject:value forKey:@"ClocksUserSet3"];
-            [_defaults setObject:gmt forKey:@"ClocksUserSet3GMT"];
-        }
-    }
-    else {
-        [_defaults setObject:value forKey:@"ClocksUserSet3"];
-         [_defaults setObject:gmt forKey:@"ClocksUserSet3GMT"];
-    }
-    if (_clocklabel5 != NULL) {
-        if ([_clocklabel5 isEqual:@""]) {
-            [_defaults setObject:value forKey:@"ClocksUserSet4"];
-            [_defaults setObject:gmt forKey:@"ClocksUserSet4GMT"];
-        }
-    }
-    else {
-        [_defaults setObject:value forKey:@"ClocksUserSet4"];
-        [_defaults setObject:gmt forKey:@"ClocksUserSet4GMT"];
-    }
-    if (_clocklabel6 != NULL) {
-        if ([_clocklabel6 isEqual:@""]) {
-            [_defaults setObject:value forKey:@"ClocksUserSet5"];
-            [_defaults setObject:gmt forKey:@"ClocksUserSet5GMT"];
-        }
-    }
-    else {
-        [_defaults setObject:value forKey:@"ClocksUserSet5"];
-        [_defaults setObject:gmt forKey:@"ClocksUserSet5GMT"];
-    }
-    _clocklabel1 = [_defaults objectForKey:@"ClocksUserSet"];
-    _clocklabel2 = [_defaults objectForKey:@"ClocksUserSet1"];
-    _clocklabel3 = [_defaults objectForKey:@"ClocksUserSet2"];
-    _clocklabel4 = [_defaults objectForKey:@"ClocksUserSet3"];
-    _clocklabel5 = [_defaults objectForKey:@"ClocksUserSet4"];
-    _clocklabel6 = [_defaults objectForKey:@"ClocksUserSet5"];
-    
-  //  if (_clocklabel1==_clocklabel2) {
-   //     [_defaults setObject:@"" forKey:@"ClocksUserSet"];
-  //  }
-    if (_clocklabel2==_clocklabel1) {
-        [_defaults setObject:@"" forKey:@"ClocksUserSet1"];
-        [_defaults setObject:@"" forKey:@"ClocksUserSet1GMT"];
-    }
-    if (_clocklabel3==_clocklabel2) {
-        [_defaults setObject:@"" forKey:@"ClocksUserSet2"];
-        [_defaults setObject:@"" forKey:@"ClocksUserSet2GMT"];
-    }
-    if (_clocklabel4==_clocklabel3) {
-        [_defaults setObject:@"" forKey:@"ClocksUserSet3"];
-        [_defaults setObject:@"" forKey:@"ClocksUserSet3GMT"];
-        NSLog(@"other");
-    }
-    if (_clocklabel5==_clocklabel4) {
-        [_defaults setObject:@"" forKey:@"ClocksUserSet4"];
-        [_defaults setObject:@"" forKey:@"ClocksUserSet4GMT"];
-    }
-    if (_clocklabel6==_clocklabel5) {
-        [_defaults setObject:@"" forKey:@"ClocksUserSet5"];
-        [_defaults setObject:@"" forKey:@"ClocksUserSet5GMT"];
-    }
- //   if ([_clocklabel1 isEqual:@""]) {
-  //      [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"ClocksUserSet"];
-  //  }
-    if ([_clocklabel2 isEqual:@""]) {
-        [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"ClocksUserSet1"];
-        [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"ClocksUserSet1GMT"];
-    }
-    if ([_clocklabel3 isEqual:@""]) {
-        [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"ClocksUserSet2"];
-        [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"ClocksUserSet2GMT"];
-    }
-    if ([_clocklabel4 isEqual:@""]) {
-        [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"ClocksUserSet3"];
-        [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"ClocksUserSet3GMT"];
-    }
-    if ([_clocklabel5 isEqual:@""]) {
-        [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"ClocksUserSet4"];
-        [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"ClocksUserSet4GMT"];
-    }
-    if ([_clocklabel6 isEqual:@""]) {
-        [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"ClocksUserSet5"];
-        [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"ClocksUserSet5GMT"];
-    }
-    
-
-     [_defaults synchronize];
-  //  NSString *test = [_defaults objectForKey:@"ClocksUserSet1"];
-  //  NSLog(@"%@", test);
-    */
   
-   [self.delegate didselectwith:self cities:[self.tableView cellForRowAtIndexPath:indexPath ].textLabel.text];
+  
+    UITableViewCell  *cell = [tableView cellForRowAtIndexPath:indexPath];
     
+    NSString *cityName = cell.textLabel.text;
+    NSString *timeZone = cell.detailTextLabel.text;
     
-    [self.delegate didselectwith1:self citytimezones:[self.tableView cellForRowAtIndexPath:indexPath ].textLabel.text];
+    [self.delegate didselectwith:self cities:cityName citytimezones:timeZone];
+    
+//   [self.delegate didselectwith:self cities:[self.tableView cellForRowAtIndexPath:indexPath ].textLabel.text];
+//    
+//    
+//    [self.delegate didselectwith1:self citytimezones:[self.tableView cellForRowAtIndexPath:indexPath ].textLabel.text];
     [self dismissViewControllerAnimated:YES completion:nil];
     
     
