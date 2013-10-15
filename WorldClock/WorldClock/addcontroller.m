@@ -460,7 +460,7 @@
                      @"(GMT+12)",
                      @"(GMT+12)",
                      nil];
-	// Do any additional setup after loading the view.
+
     cities = [NSArray arrayWithObjects:@"Abidjan",
               @"Accra",
               @"Addis Ababa",

@@ -63,25 +63,18 @@ NSString *const ClocksUserSet5 = @"ClocksUserSetKey5"; */
     
     (NSLog(@"%@", self.temp));
    
-   
-   /*//NSLog(@"%d", count);
-    _clocklabel1 = [defaults objectForKey:@"ClocksUserSet"];
-    _clocklabel2 = [defaults objectForKey:@"ClocksUserSet1"];
-    _clocklabel3 = [defaults objectForKey:@"ClocksUserSet2"];
-    _clocklabel4 = [defaults objectForKey:@"ClocksUserSet3"];
-    _clocklabel5 = [defaults objectForKey:@"ClocksUserSet4"];
-    _clocklabel6 = [defaults objectForKey:@"ClocksUserSet5"];
-    
-    _gmt1 = [defaults objectForKey:@"ClocksUserSetGMT"];
-    _gmt2 = [defaults objectForKey:@"ClocksUserSet1GMT"];
-    _gmt3 = [defaults objectForKey:@"ClocksUserSet2GMT"];
-    _gmt4 = [defaults objectForKey:@"ClocksUserSet3GMT"];
-    _gmt5 = [defaults objectForKey:@"ClocksUserSet4GMT"];
-    _gmt6 = [defaults objectForKey:@"ClocksUserSet5GMT"]; */
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(appWillResignActive)
+                                                 name:UIApplicationWillResignActiveNotification
+                                               object:nil];
    
 }
     
 
+
+-(void)appWillResignActive{
+  // store data here
+}
 
 /*-(void) LabelLongPressed5:(UILongPressGestureRecognizer *)recognizer  {
    // [self.clocklabele removeFromSuperview];
