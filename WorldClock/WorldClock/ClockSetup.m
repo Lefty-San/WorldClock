@@ -15,11 +15,11 @@
 	timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateClock:) userInfo:nil repeats:YES];
     
     NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
-    NSLog(@"gmt1= %@", _clockGMT1);
-    NSLog(@"gmt2= %@", _clockGMT2);
-    NSLog(@"gmt3= %@", _clockGMT3);
-    NSLog(@"gmt4= %@", _clockGMT4);
-    NSLog(@"gmt5= %@", _clockGMT5);
+    _clockGMT1 = [defaults objectForKey:@"ClocksUserSetGMT"];
+    _clockGMT2 = [defaults objectForKey:@"ClocksUserSet1GMT"];
+    _clockGMT3 = [defaults objectForKey:@"ClocksUserSet2GMT"];
+    _clockGMT4 = [defaults objectForKey:@"ClocksUserSet3GMT"];
+    _clockGMT5 = [defaults objectForKey:@"ClocksUserSet4GMT"];
     _clockGMT6 = [defaults objectForKey:@"ClocksUserSet5GMT"];
     
     NSLog(@"gmt1= %@", _clockGMT1);
@@ -27,7 +27,7 @@
     NSLog(@"gmt3= %@", _clockGMT3);
     NSLog(@"gmt4= %@", _clockGMT4);
     NSLog(@"gmt5= %@", _clockGMT5);
-    
+    NSLog(@"gmt6= %@", _clockGMT6);
     
     /**** zone is declared in .h ****/
     
