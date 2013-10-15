@@ -14,5 +14,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *clockLabel;
 @property (weak, nonatomic) IBOutlet UIButton *deletecell;
 - (IBAction)deletecell:(id)sender;
+@property (weak, nonatomic) IBOutlet UILabel *timezoneLabel;
 
 @end
