@@ -21,6 +21,7 @@
 @property NSMutableArray *citiesListArray;
 @property NSMutableArray *timezoneListArray;
 @property NSArray *temp;
+@property NSArray *tempGMT;
 
 @end
 
@@ -56,16 +57,12 @@ NSString *const ClocksUserSet5 = @"ClocksUserSetKey5"; */
    // self.citiesListArray = [defaults arrayForKey:@"clocksuserset"];
     self.temp = [defaults arrayForKey:@"clocksuserset"];
     self.citiesListArray = [[NSMutableArray alloc]initWithArray:self.temp];
-    NSLog(@"sdlfjlsdfj%@", self.citiesListArray);
-  //  self.citiesListArray = [NSMutableArray arrayWithArray:[[NSUserDefaults standardUserDefaults] arrayForKey:@"clocksuserset"]];
+    self.tempGMT = [defaults arrayForKey:@"clocksGMT"];
+    self.timezoneListArray = [[NSMutableArray alloc] initWithArray:self.tempGMT];
     
 //    self.citiesListArray = [[NSMutableArray alloc]initWithCapacity:6];
  //   self.timezoneListArray = [[NSMutableArray alloc]initWithCapacity:6];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(appHasGoneInForeground)
-                                                 name:UIApplicationWillEnterForegroundNotification
-                                               object:nil];
+
 
     
   //  NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -80,12 +77,7 @@ NSString *const ClocksUserSet5 = @"ClocksUserSetKey5"; */
 
     
 }
--(void)appHasGoneInForeground{
-    NSUserDefaults *standardUserDefaults = [NSUserDefaults standardUserDefaults];
-    
-    [standardUserDefaults setObject:self.citiesListArray forKey:@"clocksuserset"];
-    [standardUserDefaults synchronize];
-}
+
 
 
 /*-(void) LabelLongPressed5:(UILongPressGestureRecognizer *)recognizer  {
@@ -168,6 +160,7 @@ NSString *const ClocksUserSet5 = @"ClocksUserSetKey5"; */
     [cell.clockView start:timezonelabels];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setObject:self.citiesListArray forKey:@"clocksuserset"];
+    [defaults setObject:self.timezoneListArray forKey:@"clocksGMT"];
     [defaults synchronize];
     return cell;
 }
