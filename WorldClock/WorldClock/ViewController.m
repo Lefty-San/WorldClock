@@ -59,8 +59,8 @@ NSString *const ClocksUserSet5 = @"ClocksUserSetKey5"; */
     NSLog(@"sdlfjlsdfj%@", self.citiesListArray);
   //  self.citiesListArray = [NSMutableArray arrayWithArray:[[NSUserDefaults standardUserDefaults] arrayForKey:@"clocksuserset"]];
     
-    self.citiesListArray = [[NSMutableArray alloc]initWithCapacity:6];
-    self.timezoneListArray = [[NSMutableArray alloc]initWithCapacity:6];
+//    self.citiesListArray = [[NSMutableArray alloc]initWithCapacity:6];
+ //   self.timezoneListArray = [[NSMutableArray alloc]initWithCapacity:6];
     
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(appHasGoneInForeground)
