@@ -18,7 +18,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *clockLabel;
 @property (weak, nonatomic) NSMutableArray *cityArray;
 @property (nonatomic, strong) IBOutlet ClockSetup *clockView;
-@property (weak, nonatomic) NSString *labelClock; 
+@property (strong, nonatomic) NSString *labelClock;
 
 - (IBAction)Style1:(id)sender;
 - (IBAction)Style2:(id)sender;

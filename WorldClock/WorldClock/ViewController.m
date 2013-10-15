@@ -19,7 +19,8 @@
 
 // Smart Message
 @property NSMutableArray *citiesListArray;
-@property NSMutableArray *array;
+@property NSMutableArray *timezoneListArray;
+@property NSMutableArray *temp;
 
 @end
 
@@ -59,11 +60,16 @@ NSString *const ClocksUserSet5 = @"ClocksUserSetKey5";
     
 	// Do any additional setup after loading the view, typically from a nib.
 
-    self.citiesListArray = [[NSMutableArray alloc]initWithCapacity:6];
+    self.citiesListArray = [NSMutableArray arrayWithArray:[[NSUserDefaults standardUserDefaults] objectForKey:@"clocksuserset"]];
+    
+    //self.citiesListArray = [[NSMutableArray alloc]initWithCapacity:6];
     self.timezoneListArray = [[NSMutableArray alloc]initWithCapacity:6];
-    [[NSUserDefaults standardUserDefaults]setObject:self.citiesListArray forKey:@"clocksuserset"];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:self.citiesListArray forKey:@"clocksuserset"];
+    [defaults synchronize];
+    
+    (NSLog(@"%@", self.temp));
    
-    NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
    
    /*//NSLog(@"%d", count);
     _clocklabel1 = [defaults objectForKey:@"ClocksUserSet"];
@@ -168,11 +174,8 @@ NSString *const ClocksUserSet5 = @"ClocksUserSetKey5";
 	[cell.clockView setHourHandImage:[UIImage imageNamed:@"ClockHourHand.png"].CGImage];
 	[cell.clockView setMinHandImage:[UIImage imageNamed:@"ClockMinuteHand.png"].CGImage];
 	[cell.clockView setSecHandImage:[UIImage imageNamed:@"ClockSecondHand.png"].CGImage];
+    [cell.clockView start:labels];
     
-    
-    
-    [cell.clockView start];
-  
     
     return cell;
 }
@@ -216,7 +219,8 @@ NSString *const ClocksUserSet5 = @"ClocksUserSetKey5";
         NSArray *indexPaths = [self.collectionView indexPathsForSelectedItems];
         ZoomViewController *destViewController = segue.destinationViewController;
         NSIndexPath *indexPath = [indexPaths objectAtIndex:0];
-        destViewController.labelClock = [self.citiesListArray[indexPath.section] objectAtIndex:indexPath.row];
+        NSString *cityName = [self.citiesListArray objectAtIndex:indexPath.row];
+        destViewController.labelClock = cityName;
         [self.collectionView deselectItemAtIndexPath:indexPath animated:NO];
     }
 

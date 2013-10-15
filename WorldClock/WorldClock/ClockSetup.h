@@ -22,7 +22,7 @@ double zone;
 
 
 //basic methods
-- (void)start;
+- (void)start:(NSString*)time;
 - (void)stop;
 
 //customize appearence
