@@ -38,7 +38,6 @@
 - (void)viewWillAppear:(BOOL)animated
 {
 	//start the clock at current time
-//	[clockView start];
     
 }
 
