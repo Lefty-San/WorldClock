@@ -11,8 +11,8 @@
 
 @protocol AddControllerDelegate <NSObject>
 
--(void) didselectwith:(addcontroller *)controller cities: (NSString *) cities;
--(void) didselectwith1:(addcontroller *)controller citytimezones: (NSString *) citytimezones;
+-(void) didselectwith:(addcontroller *)controller cities: (NSString *) cities citytimezones: (NSString *) citytimezones;
+//-(void) didselectwith1:(addcontroller *)controller citytimezones: (NSString *) citytimezones;
 //-(void) didselectwith1:(addcontroller *)controller cities: (NSString *) cities;
 
 @end
