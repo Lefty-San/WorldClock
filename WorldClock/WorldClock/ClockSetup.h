@@ -31,11 +31,5 @@ double zone;
 - (void)setSecHandImage:(CGImageRef)image;
 - (void)setClockBackgroundImage:(CGImageRef)image;
 
-@property (nonatomic, retain) NSString * clockGMT1;
-@property (nonatomic, retain) NSString * clockGMT2;
-@property (nonatomic, retain) NSString * clockGMT3;
-@property (nonatomic, retain) NSString * clockGMT4;
-@property (nonatomic, retain) NSString * clockGMT5;
-@property (nonatomic, retain) NSString * clockGMT6;
 
 @end

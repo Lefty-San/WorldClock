@@ -12,19 +12,13 @@
 
 - (void)start:(NSString*)time
 {
-	timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateClock:) userInfo:nil repeats:YES];
+    NSLog(@"time= %@", time);
     
-    NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
-    _clockGMT1 = [defaults objectForKey:@"ClocksUserSetGMT"];
-    _clockGMT2 = [defaults objectForKey:@"ClocksUserSet1GMT"];
-    _clockGMT3 = [defaults objectForKey:@"ClocksUserSet2GMT"];
-    _clockGMT4 = [defaults objectForKey:@"ClocksUserSet3GMT"];
-    _clockGMT5 = [defaults objectForKey:@"ClocksUserSet4GMT"];
-    _clockGMT6 = [defaults objectForKey:@"ClocksUserSet5GMT"];
+	timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateClock:) userInfo:nil repeats:YES];
     
     /* gmt1 */
     
-    if ([_clockGMT1 isEqual:@"(GMT-1)"]) {
+    if ([time isEqual:@"(GMT-1)"]) {
         zone = 6*60*60;
         
     }
@@ -32,449 +26,73 @@
         zone = 7*60*60;
         
     }
-    else if ([_clockGMT1 isEqual:@"(GMT-2)"]) {
+    else if ([time isEqual:@"(GMT-2)"]) {
         zone = 5*60*60;
         
     }
-    else if ([_clockGMT1 isEqual:@"(GMT-3)"]) {
+    else if ([time isEqual:@"(GMT-3)"]) {
         zone = 4*60*60;
         
     }
-    else if ([_clockGMT1 isEqual:@"(GMT-4)"]) {
+    else if ([time isEqual:@"(GMT-4)"]) {
         zone = 3*60*60;
         
     }
-    else if ([_clockGMT1 isEqual:@"(GMT-5)"]) {
+    else if ([time isEqual:@"(GMT-5)"]) {
         zone = 2*60*60;
         
     }
-    else if ([_clockGMT1 isEqual:@"(GMT-6)"]) {
+    else if ([time isEqual:@"(GMT-6)"]) {
         zone = 60*60;
         
     }
-    else if ([_clockGMT1 isEqual:@"(MDT)"]) {
+    else if ([time isEqual:@"(MDT)"]) {
         zone = 0;
         
     }
-    else if ([_clockGMT1 isEqual:@"(GMT+1)"]) {
+    else if ([time isEqual:@"(GMT+1)"]) {
         zone = 8*60*60;
         
     }
-    else if ([_clockGMT1 isEqual:@"(GMT+2)"]) {
+    else if ([time isEqual:@"(GMT+2)"]) {
         zone = 9*60*60;
         
     }
-    else if ([_clockGMT1 isEqual:@"(GMT+3)"]) {
+    else if ([time isEqual:@"(GMT+3)"]) {
         zone = 10*60*60;
         
     }
-    else if ([_clockGMT1 isEqual:@"(GMT+4)"]) {
+    else if ([time isEqual:@"(GMT+4)"]) {
         zone = 11*60*60;
         
     }
-    else if ([_clockGMT1 isEqual:@"(GMT+5)"]) {
+    else if ([time isEqual:@"(GMT+5)"]) {
         zone = 12*60*60;
         
     }
-    else if ([_clockGMT1 isEqual:@"(GMT+6)"]) {
+    else if ([time isEqual:@"(GMT+6)"]) {
         zone = 13*60*60;
         
     }
-    else if ([_clockGMT1 isEqual:@"(GMT+7)"]) {
+    else if ([time isEqual:@"(GMT+7)"]) {
         zone = 14*60*60;
         
     }
-    else if ([_clockGMT1 isEqual:@"(GMT+8)"]) {
+    else if ([time isEqual:@"(GMT+8)"]) {
         zone = 15*60*60;
         
     }
-    else if ([_clockGMT1 isEqual:@"(GMT+9)"]) {
+    else if ([time isEqual:@"(GMT+9)"]) {
         zone = 16*60*60;
         
     }
-    else if ([_clockGMT1 isEqual:@"(GMT+10)"]) {
-        zone = 17*60*60;
-        
-    }
-    
-    /* gmt2 */
-    
-    else if ([_clockGMT2 isEqual:@"(GMT-1)"]) {
-        zone = 6*60*60;
-        
-    }
-    else if ([_clockGMT3 isEqual:@"(GMT"]) {
-        zone = 7*60*60;
-        
-    }
-    else if ([_clockGMT2 isEqual:@"(GMT-2)"]) {
-        zone = 5*60*60;
-        
-    }
-    else if ([_clockGMT2 isEqual:@"(GMT-3)"]) {
-        zone = 4*60*60;
-        
-    }
-    else if ([_clockGMT2 isEqual:@"(GMT-4)"]) {
-        zone = 3*60*60;
-        
-    }
-    else if ([_clockGMT2 isEqual:@"(GMT-5)"]) {
-        zone = 2*60*60;
-        
-    }
-    else if ([_clockGMT2 isEqual:@"(GMT-6)"]) {
-        zone = 60*60;
-        
-    }
-    else if ([_clockGMT2 isEqual:@"(MDT)"]) {
-        zone = 0;
-        
-    }
-    else if ([_clockGMT2 isEqual:@"(GMT+1)"]) {
-        zone = 8*60*60;
-        
-    }
-    else if ([_clockGMT2 isEqual:@"(GMT+2)"]) {
-        zone = 9*60*60;
-        
-    }
-    else if ([_clockGMT2 isEqual:@"(GMT+3)"]) {
-        zone = 10*60*60;
-        
-    }
-    else if ([_clockGMT2 isEqual:@"(GMT+4)"]) {
-        zone = 11*60*60;
-        
-    }
-    else if ([_clockGMT2 isEqual:@"(GMT+5)"]) {
-        zone = 12*60*60;
-        
-    }
-    else if ([_clockGMT2 isEqual:@"(GMT+6)"]) {
-        zone = 13*60*60;
-        
-    }
-    else if ([_clockGMT2 isEqual:@"(GMT+7)"]) {
-        zone = 14*60*60;
-        
-    }
-    else if ([_clockGMT2 isEqual:@"(GMT+8)"]) {
-        zone = 15*60*60;
-        
-    }
-    else if ([_clockGMT2 isEqual:@"(GMT+9)"]) {
-        zone = 16*60*60;
-        
-    }
-    else if ([_clockGMT2 isEqual:@"(GMT+10)"]) {
-        zone = 17*60*60;
-        
-    }
-    /* gmt3 */
-    
-    else if ([_clockGMT3 isEqual:@"(GMT-1)"]) {
-        zone = 6*60*60;
-        
-    }
-    else if ([_clockGMT3 isEqual:@"(GMT"]) {
-        zone = 7*60*60;
-        
-    }
-    else if ([_clockGMT3 isEqual:@"(GMT-2)"]) {
-        zone = 5*60*60;
-        
-    }
-    else if ([_clockGMT3 isEqual:@"(GMT-3)"]) {
-        zone = 4*60*60;
-        
-    }
-    else if ([_clockGMT3 isEqual:@"(GMT-4)"]) {
-        zone = 3*60*60;
-        
-    }
-    else if ([_clockGMT3 isEqual:@"(GMT-5)"]) {
-        zone = 2*60*60;
-        
-    }
-    else if ([_clockGMT3 isEqual:@"(GMT-6)"]) {
-        zone = 60*60;
-        
-    }
-    else if ([_clockGMT3 isEqual:@"(MDT)"]) {
-        zone = 0;
-        
-    }
-    else if ([_clockGMT3 isEqual:@"(GMT+1)"]) {
-        zone = 8*60*60;
-        
-    }
-    else if ([_clockGMT3 isEqual:@"(GMT+2)"]) {
-        zone = 9*60*60;
-        
-    }
-    else if ([_clockGMT3 isEqual:@"(GMT+3)"]) {
-        zone = 10*60*60;
-        
-    }
-    else if ([_clockGMT3 isEqual:@"(GMT+4)"]) {
-        zone = 11*60*60;
-        
-    }
-    else if ([_clockGMT3 isEqual:@"(GMT+5)"]) {
-        zone = 12*60*60;
-        
-    }
-    else if ([_clockGMT3 isEqual:@"(GMT+6)"]) {
-        zone = 13*60*60;
-        
-    }
-    else if ([_clockGMT3 isEqual:@"(GMT+7)"]) {
-        zone = 14*60*60;
-        
-    }
-    else if ([_clockGMT3 isEqual:@"(GMT+8)"]) {
-        zone = 15*60*60;
-        
-    }
-    else if ([_clockGMT3 isEqual:@"(GMT+9)"]) {
-        zone = 16*60*60;
-        
-    }
-    else if ([_clockGMT3 isEqual:@"(GMT+10)"]) {
-        zone = 17*60*60;
-        
-    }
-    
-    /* gmt4 */
-    
-    else if ([_clockGMT4 isEqual:@"(GMT-1)"]) {
-        zone = 6*60*60;
-        
-    }
-    else if ([_clockGMT4 isEqual:@"(GMT"]) {
-        zone = 7*60*60;
-        
-    }
-    else if ([_clockGMT4 isEqual:@"(GMT-2)"]) {
-        zone = 5*60*60;
-        
-    }
-    else if ([_clockGMT4 isEqual:@"(GMT-3)"]) {
-        zone = 4*60*60;
-        
-    }
-    else if ([_clockGMT4 isEqual:@"(GMT-4)"]) {
-        zone = 3*60*60;
-        
-    }
-    else if ([_clockGMT4 isEqual:@"(GMT-5)"]) {
-        zone = 2*60*60;
-        
-    }
-    else if ([_clockGMT4 isEqual:@"(GMT-6)"]) {
-        zone = 60*60;
-        
-    }
-    else if ([_clockGMT4 isEqual:@"(MDT)"]) {
-        zone = 0;
-        
-    }
-    else if ([_clockGMT4 isEqual:@"(GMT+1)"]) {
-        zone = 8*60*60;
-        
-    }
-    else if ([_clockGMT4 isEqual:@"(GMT+2)"]) {
-        zone = 9*60*60;
-        
-    }
-    else if ([_clockGMT4 isEqual:@"(GMT+3)"]) {
-        zone = 10*60*60;
-        
-    }
-    else if ([_clockGMT4 isEqual:@"(GMT+4)"]) {
-        zone = 11*60*60;
-        
-    }
-    else if ([_clockGMT4 isEqual:@"(GMT+5)"]) {
-        zone = 12*60*60;
-        
-    }
-    else if ([_clockGMT4 isEqual:@"(GMT+6)"]) {
-        zone = 13*60*60;
-        
-    }
-    else if ([_clockGMT4 isEqual:@"(GMT+7)"]) {
-        zone = 14*60*60;
-        
-    }
-    else if ([_clockGMT4 isEqual:@"(GMT+8)"]) {
-        zone = 15*60*60;
-        
-    }
-    else if ([_clockGMT4 isEqual:@"(GMT+9)"]) {
-        zone = 16*60*60;
-        
-    }
-    else if ([_clockGMT4 isEqual:@"(GMT+10)"]) {
-        zone = 17*60*60;
-        
-    }
-    
-    /* gmt5 */
-    
-    else if ([_clockGMT5 isEqual:@"(GMT-1)"]) {
-        zone = 6*60*60;
-        
-    }
-    else if ([_clockGMT5 isEqual:@"(GMT"]) {
-        zone = 7*60*60;
-        
-    }
-    else if ([_clockGMT5 isEqual:@"(GMT-2)"]) {
-        zone = 5*60*60;
-        
-    }
-    else if ([_clockGMT5 isEqual:@"(GMT-3)"]) {
-        zone = 4*60*60;
-        
-    }
-    else if ([_clockGMT5 isEqual:@"(GMT-4)"]) {
-        zone = 3*60*60;
-        
-    }
-    else if ([_clockGMT5 isEqual:@"(GMT-5)"]) {
-        zone = 2*60*60;
-        
-    }
-    else if ([_clockGMT5 isEqual:@"(GMT-6)"]) {
-        zone = 60*60;
-        
-    }
-    else if ([_clockGMT5 isEqual:@"(MDT)"]) {
-        zone = 0;
-        
-    }
-    else if ([_clockGMT5 isEqual:@"(GMT+1)"]) {
-        zone = 8*60*60;
-        
-    }
-    else if ([_clockGMT5 isEqual:@"(GMT+2)"]) {
-        zone = 9*60*60;
-        
-    }
-    else if ([_clockGMT5 isEqual:@"(GMT+3)"]) {
-        zone = 10*60*60;
-        
-    }
-    else if ([_clockGMT5 isEqual:@"(GMT+4)"]) {
-        zone = 11*60*60;
-        
-    }
-    else if ([_clockGMT5 isEqual:@"(GMT+5)"]) {
-        zone = 12*60*60;
-        
-    }
-    else if ([_clockGMT5 isEqual:@"(GMT+6)"]) {
-        zone = 13*60*60;
-        
-    }
-    else if ([_clockGMT5 isEqual:@"(GMT+7)"]) {
-        zone = 14*60*60;
-        
-    }
-    else if ([_clockGMT5 isEqual:@"(GMT+8)"]) {
-        zone = 15*60*60;
-        
-    }
-    else if ([_clockGMT5 isEqual:@"(GMT+9)"]) {
-        zone = 16*60*60;
-        
-    }
-    else if ([_clockGMT5 isEqual:@"(GMT+10)"]) {
-        zone = 17*60*60;
-        
-    }
-    
-    /* gmt6 */
-    
-    else if ([_clockGMT6 isEqual:@"(GMT-1)"]) {
-        zone = 6*60*60;
-        
-    }
-    else if ([_clockGMT6 isEqual:@"(GMT"]) {
-        zone = 7*60*60;
-        
-    }
-    else if ([_clockGMT6 isEqual:@"(GMT-2)"]) {
-        zone = 5*60*60;
-        
-    }
-    else if ([_clockGMT6 isEqual:@"(GMT-3)"]) {
-        zone = 4*60*60;
-        
-    }
-    else if ([_clockGMT6 isEqual:@"(GMT-4)"]) {
-        zone = 3*60*60;
-        
-    }
-    else if ([_clockGMT6 isEqual:@"(GMT-5)"]) {
-        zone = 2*60*60;
-        
-    }
-    else if ([_clockGMT6 isEqual:@"(GMT-6)"]) {
-        zone = 60*60;
-        
-    }
-    else if ([_clockGMT6 isEqual:@"(MDT)"]) {
-        zone = 0;
-        
-    }
-    else if ([_clockGMT6 isEqual:@"(GMT+1)"]) {
-        zone = 8*60*60;
-        
-    }
-    else if ([_clockGMT6 isEqual:@"(GMT+2)"]) {
-        zone = 9*60*60;
-        
-    }
-    else if ([_clockGMT6 isEqual:@"(GMT+3)"]) {
-        zone = 10*60*60;
-        
-    }
-    else if ([_clockGMT6 isEqual:@"(GMT+4)"]) {
-        zone = 11*60*60;
-        
-    }
-    else if ([_clockGMT6 isEqual:@"(GMT+5)"]) {
-        zone = 12*60*60;
-        
-    }
-    else if ([_clockGMT6 isEqual:@"(GMT+6)"]) {
-        zone = 13*60*60;
-        
-    }
-    else if ([_clockGMT6 isEqual:@"(GMT+7)"]) {
-        zone = 14*60*60;
-        
-    }
-    else if ([_clockGMT6 isEqual:@"(GMT+8)"]) {
-        zone = 15*60*60;
-        
-    }
-    else if ([_clockGMT6 isEqual:@"(GMT+9)"]) {
-        zone = 16*60*60;
-        
-    }
-    else if ([_clockGMT6 isEqual:@"(GMT+10)"]) {
+    else if ([time isEqual:@"(GMT+10)"]) {
         zone = 17*60*60;
         
     }
     else {
         zone = 7*60*60;
-        
     }
-    
 }
 
 - (void)stop
