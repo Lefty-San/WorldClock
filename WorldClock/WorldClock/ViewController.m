@@ -20,7 +20,7 @@
 // Smart Message
 @property NSMutableArray *citiesListArray;
 @property NSMutableArray *timezoneListArray;
-@property NSMutableArray *temp;
+@property NSArray *temp;
 
 @end
 
@@ -49,38 +49,43 @@ NSString *const ClocksUserSet5 = @"ClocksUserSetKey5"; */
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
     self.collectionView.backgroundColor = [UIColor whiteColor];
    
-
-    self.citiesListArray = [NSMutableArray arrayWithArray:[[NSUserDefaults standardUserDefaults] objectForKey:@"clocksuserset"]];
+   // self.citiesListArray = [defaults arrayForKey:@"clocksuserset"];
+    self.temp = [defaults arrayForKey:@"clocksuserset"];
+    self.citiesListArray = [[NSMutableArray alloc]initWithArray:self.temp];
+    NSLog(@"sdlfjlsdfj%@", self.citiesListArray);
+  //  self.citiesListArray = [NSMutableArray arrayWithArray:[[NSUserDefaults standardUserDefaults] arrayForKey:@"clocksuserset"]];
     
-    //self.citiesListArray = [[NSMutableArray alloc]initWithCapacity:6];
+    self.citiesListArray = [[NSMutableArray alloc]initWithCapacity:6];
     self.timezoneListArray = [[NSMutableArray alloc]initWithCapacity:6];
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setObject:self.citiesListArray forKey:@"clocksuserset"];
-    [defaults synchronize];
     
-    (NSLog(@"%@", self.temp));
-   
-   
-   /*//NSLog(@"%d", count);
-    _clocklabel1 = [defaults objectForKey:@"ClocksUserSet"];
-    _clocklabel2 = [defaults objectForKey:@"ClocksUserSet1"];
-    _clocklabel3 = [defaults objectForKey:@"ClocksUserSet2"];
-    _clocklabel4 = [defaults objectForKey:@"ClocksUserSet3"];
-    _clocklabel5 = [defaults objectForKey:@"ClocksUserSet4"];
-    _clocklabel6 = [defaults objectForKey:@"ClocksUserSet5"];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(appHasGoneInForeground)
+                                                 name:UIApplicationWillEnterForegroundNotification
+                                               object:nil];
+
     
-    _gmt1 = [defaults objectForKey:@"ClocksUserSetGMT"];
-    _gmt2 = [defaults objectForKey:@"ClocksUserSet1GMT"];
-    _gmt3 = [defaults objectForKey:@"ClocksUserSet2GMT"];
-    _gmt4 = [defaults objectForKey:@"ClocksUserSet3GMT"];
-    _gmt5 = [defaults objectForKey:@"ClocksUserSet4GMT"];
-    _gmt6 = [defaults objectForKey:@"ClocksUserSet5GMT"]; */
+  //  NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+   // [defaults setObject:self.citiesListArray forKey:@"clocksuserset"];
+   // [defaults synchronize];
    
 }
+-(void)viewDidAppear:(BOOL)animated
+{
+   // NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+   // NSMutableArray *array = [defaults arrayForKey:@"clocksuserset"];
+
     
+}
+-(void)appHasGoneInForeground{
+    NSUserDefaults *standardUserDefaults = [NSUserDefaults standardUserDefaults];
+    
+    [standardUserDefaults setObject:self.citiesListArray forKey:@"clocksuserset"];
+    [standardUserDefaults synchronize];
+}
 
 
 /*-(void) LabelLongPressed5:(UILongPressGestureRecognizer *)recognizer  {
@@ -135,6 +140,11 @@ NSString *const ClocksUserSet5 = @"ClocksUserSetKey5"; */
     
     
 }
+
+
+
+
+
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     return self.citiesListArray.count;
 }
@@ -144,7 +154,9 @@ NSString *const ClocksUserSet5 = @"ClocksUserSetKey5"; */
     ClockCell *cell = (ClockCell*)[collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
     [cell.deletecell addTarget:self action:@selector(delete:) forControlEvents:UIControlEventTouchUpInside];
    
-    NSString *labels = [self.citiesListArray objectAtIndex:indexPath.row];
+   NSString *labels = [self.citiesListArray objectAtIndex:indexPath.row];
+    //NSString *labels = [self.temp objectAtIndex:indexPath.row];
+    //NSLog(@"jkh %@", labels);
     NSString *timezonelabels = [self.timezoneListArray objectAtIndex:indexPath.row];
     
     cell.clockLabel.text = labels;
@@ -154,8 +166,9 @@ NSString *const ClocksUserSet5 = @"ClocksUserSetKey5"; */
 	[cell.clockView setMinHandImage:[UIImage imageNamed:@"ClockMinuteHand.png"].CGImage];
 	[cell.clockView setSecHandImage:[UIImage imageNamed:@"ClockSecondHand.png"].CGImage];
     [cell.clockView start:timezonelabels];
-    
-    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:self.citiesListArray forKey:@"clocksuserset"];
+    [defaults synchronize];
     return cell;
 }
 
