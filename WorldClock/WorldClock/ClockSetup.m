@@ -22,10 +22,7 @@
         zone = 6*60*60;
         
     }
-    else if ([_clockGMT3 isEqual:@"(GMT"]) {
-        zone = 7*60*60;
-        
-    }
+    
     else if ([time isEqual:@"(GMT-2)"]) {
         zone = 5*60*60;
         
