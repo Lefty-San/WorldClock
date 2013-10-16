@@ -29,14 +29,10 @@
 
 - (void)viewDidLoad
 {
-    
-       
-    [super viewDidLoad];
-    
-    _defaults = [NSUserDefaults standardUserDefaults];
-    
 
-    
+
+    [super viewDidLoad];
+
     citytimezones = [NSArray arrayWithObjects:
                      @"(GMT)",
                      @"(GMT)",
@@ -888,38 +884,33 @@
 {
     if (tableView == self.searchDisplayController.searchResultsTableView) {
         return [searchResults count];
-        
+
     } else {
         return [cities count];
         return [citytimezones count];
-        
+
     }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *simpleTableIdentifier = @"citycell";
-    
+
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
-    
-    //cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    
-    
+
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:simpleTableIdentifier];
-       // cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     }
-    
+
     if (tableView == self.searchDisplayController.searchResultsTableView) {
         cell.textLabel.text = [searchResults objectAtIndex:indexPath.row];
     } else {
         cell.textLabel.text = [cities objectAtIndex:indexPath.row];
         cell.detailTextLabel.text = [citytimezones objectAtIndex:indexPath.row];
    }
-    
-    
+
     return cell;
-    
+
 }
 - (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView
 {
@@ -946,23 +937,16 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-  
-  
+ 
     UITableViewCell  *cell = [tableView cellForRowAtIndexPath:indexPath];
-    
+
     NSString *cityName = cell.textLabel.text;
     NSString *timeZone = cell.detailTextLabel.text;
-    
+
     [self.delegate didselectwith:self cities:cityName citytimezones:timeZone];
-    
-//   [self.delegate didselectwith:self cities:[self.tableView cellForRowAtIndexPath:indexPath ].textLabel.text];
-//    
-//    
-//    [self.delegate didselectwith1:self citytimezones:[self.tableView cellForRowAtIndexPath:indexPath ].textLabel.text];
+
     [self dismissViewControllerAnimated:YES completion:nil];
-    
-    
-    
+
 }
 
 - (void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope
@@ -970,7 +954,7 @@
     NSPredicate *resultPredicate = [NSPredicate
                                     predicateWithFormat:@"SELF contains[cd] %@",
                                     searchText];
-    
+
     searchResults = [cities filteredArrayUsingPredicate:resultPredicate];
     //searchResults = [citytimezones filteredArrayUsingPredicate:resultPredicate];
 }
@@ -982,7 +966,7 @@ shouldReloadTableForSearchString:(NSString *)searchString
                                scope:[[self.searchDisplayController.searchBar scopeButtonTitles]
                                       objectAtIndex:[self.searchDisplayController.searchBar
                                                      selectedScopeButtonIndex]]];
-    
+
     return YES;
 }
 

@@ -15,19 +15,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+
     //Clock images for view
     [clockView setClockBackgroundImage:[UIImage imageNamed:@"ClockFaceAlpha.png"].CGImage];
 	[clockView setHourHandImage:[UIImage imageNamed:@"ClockHourHand.png"].CGImage];
 	[clockView setMinHandImage:[UIImage imageNamed:@"ClockMinuteHand.png"].CGImage];
 	[clockView setSecHandImage:[UIImage imageNamed:@"ClockSecondHand.png"].CGImage];
 
-    
     self.clockLabel.text = _labelClock;
-   // clockLabel = [self.clockLabel text];
 
-    
-    
 }
 
 - (void)didReceiveMemoryWarning
@@ -40,14 +36,14 @@
 {
 	//start the clock at current time
 	[clockView start:timeZone];
-    
+
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
 	//stop the clock
 	[clockView stop];
-    
+
 }
 
 - (void)viewDidUnload
@@ -65,9 +61,9 @@
 - (void)viewWillLayoutSubviews
 {
 	[super viewWillLayoutSubviews];
-    
+
 	const CGSize size1 = self.clockView.frame.size;
-    
+
     if (UIInterfaceOrientationIsPortrait(self.interfaceOrientation)) {
 		float verticalSeparation = (self.view.bounds.size.height - size1.height)/2.0;
 		self.clockView.frame = CGRectMake((self.view.bounds.size.width - size1.width)/2,
@@ -84,7 +80,7 @@
 }
 
 - (IBAction)Style1:(id)sender {
-    
+
     [clockView setClockBackgroundImage:[UIImage imageNamed:@"ClockFaceAlpha.png"].CGImage];
 	[clockView setHourHandImage:[UIImage imageNamed:@"ClockHourHand.png"].CGImage];
 	[clockView setMinHandImage:[UIImage imageNamed:@"ClockMinuteHand.png"].CGImage];
@@ -93,13 +89,11 @@
 }
 
 - (IBAction)Style2:(id)sender {
-    
-/* TODO - make new clock/s */
 
     [clockView setClockBackgroundImage:[UIImage imageNamed:@"clock-v2Alpha.png"].CGImage];
 	[clockView setHourHandImage:[UIImage imageNamed:@"hour-handV3.png"].CGImage];
 	[clockView setMinHandImage:[UIImage imageNamed:@"minute-handV3.png"].CGImage];
 	[clockView setSecHandImage:[UIImage imageNamed:@"second-handV3.png"].CGImage];
 }
-    
+
 @end

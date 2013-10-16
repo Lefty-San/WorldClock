@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WorldClock/ClockSetup.m"
-            timestampString = "403565580.38447"
+            timestampString = "403635387.294348"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "104"
-            endingLineNumber = "104"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
             landmarkName = "-updateClock:"
             landmarkType = "5">
          </BreakpointContent>

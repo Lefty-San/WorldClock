@@ -9,10 +9,8 @@
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
 
-//double zone;
-
 @interface ClockSetup : UIView {
-    
+
     CALayer *containerLayer;
     CALayer *hourHand;
     CALayer *minHand;
@@ -30,6 +28,5 @@
 - (void)setMinHandImage:(CGImageRef)image;
 - (void)setSecHandImage:(CGImageRef)image;
 - (void)setClockBackgroundImage:(CGImageRef)image;
-
 
 @end

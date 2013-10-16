@@ -12,7 +12,7 @@
 #import "addcontroller.h"
 
 @interface ViewController ()<AddControllerDelegate> {
-    
+
     NSArray *clockArray;
 
 }
@@ -25,16 +25,9 @@
 
 @end
 
-/*NSString *const ClocksUserSet = @"ClocksUserSetKey";
-NSString *const ClocksUserSet1 = @"ClocksUserSetKey1";
-NSString *const ClocksUserSet2 = @"ClocksUserSetKey2";
-NSString *const ClocksUserSet3 = @"ClocksUserSetKey3";
-NSString *const ClocksUserSet4 = @"ClocksUserSetKey4";
-NSString *const ClocksUserSet5 = @"ClocksUserSetKey5"; */
-
 @implementation ViewController
 //@synthesize delegate;
-    
+
     - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
     {
         self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -44,55 +37,25 @@ NSString *const ClocksUserSet5 = @"ClocksUserSetKey5"; */
         return self;
     }
 
-
-
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    
+
     self.collectionView.backgroundColor = [UIColor whiteColor];
-   
-   // self.citiesListArray = [defaults arrayForKey:@"clocksuserset"];
+
     self.temp = [defaults arrayForKey:@"clocksuserset"];
     self.citiesListArray = [[NSMutableArray alloc]initWithArray:self.temp];
     self.tempGMT = [defaults arrayForKey:@"clocksGMT"];
     self.timezoneListArray = [[NSMutableArray alloc] initWithArray:self.tempGMT];
-    
-//    self.citiesListArray = [[NSMutableArray alloc]initWithCapacity:6];
- //   self.timezoneListArray = [[NSMutableArray alloc]initWithCapacity:6];
 
 }
--(void)viewDidAppear:(BOOL)animated
-{
-   // NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-   // NSMutableArray *array = [defaults arrayForKey:@"clocksuserset"];
-
-    
+-(void)viewDidAppear:(BOOL)animated {
 }
 
-
-
--(void)appWillResignActive{
+-(void)appWillResignActive {
   // store data here
 }
-
-/*-(void) LabelLongPressed5:(UILongPressGestureRecognizer *)recognizer  {
-   // [self.clocklabele removeFromSuperview];
-    self.clocklabele.text = @"";
-    NSDictionary *defaultsDict = [[NSUserDefaults standardUserDefaults] dictionaryRepresentation];
-    for (NSString *key in [defaultsDict allKeys])
-        [[NSUserDefaults standardUserDefaults] removeObjectForKey:ClocksUserSet5];
-    
-  //  [[NSUserDefaults standardUserDefaults] synchronize];
-    
-} */
-
-
-
-
-
 
 - (void)didReceiveMemoryWarning
 {
@@ -100,44 +63,31 @@ NSString *const ClocksUserSet5 = @"ClocksUserSetKey5"; */
     // Dispose of any resources that can be recreated.
 }
 -(void) didselectwith:(addcontroller *)controller cities:(NSString *)cities{
-    
+
     [self.citiesListArray addObject:cities];
     [self.collectionView reloadData];
-   
-    
-
 }
 
 -(void) didselectwith:(addcontroller *)controller cities: (NSString *) cities citytimezones: (NSString *) citytimezones{
-    
-    NSLog(@"%@",citytimezones);
-    NSLog(@"%@",cities);
-    
+
     [self.timezoneListArray addObject:citytimezones];
     [self.citiesListArray addObject:cities];
-    
-    NSLog(@"%@",citytimezones);
+
     [self.collectionView reloadData];
-    
+
 }
 
 -(void) didselectwith1:(addcontroller *)controller citytimezones:(NSString *)citytimezones{
-    
+
     [self.timezoneListArray addObject:citytimezones];
-    NSLog(@"%@",citytimezones);
     [self.collectionView reloadData];
-    
-    
-    
+
 }
-
-
-
-
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     return self.citiesListArray.count;
 }
+
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *identifier = @"Cell";
     
@@ -145,10 +95,8 @@ NSString *const ClocksUserSet5 = @"ClocksUserSetKey5"; */
     [cell.deletecell addTarget:self action:@selector(delete:) forControlEvents:UIControlEventTouchUpInside];
    
    NSString *labels = [self.citiesListArray objectAtIndex:indexPath.row];
-    //NSString *labels = [self.temp objectAtIndex:indexPath.row];
-    //NSLog(@"jkh %@", labels);
     NSString *timezonelabels = [self.timezoneListArray objectAtIndex:indexPath.row];
-    
+
     cell.clockLabel.text = labels;
     cell.timezoneLabel.text = timezonelabels;
     [cell.clockView setClockBackgroundImage:[UIImage imageNamed:@"ClockFaceAlpha.png"].CGImage];
@@ -166,30 +114,15 @@ NSString *const ClocksUserSet5 = @"ClocksUserSetKey5"; */
 - (void)delete:(UIButton *)sender
 
 {
-    
+
     NSIndexPath *indexPath = [self.collectionView indexPathForCell:(ClockCell *)sender.superview.superview];
-    
-    
-    
+
     [self.citiesListArray removeObjectAtIndex:indexPath.row];
-    
+
     [self.collectionView reloadData];
-    
-    
-    
-    NSLog(@"delete but pressed");
-    
-    
-    
-    NSLog(@"%@",self.citiesListArray);
-    
-    
-    
+
 }
--(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
-{
-   // NSString *selectedItem = [self.citiesListArray[indexPath.section] objectAtIndex:indexPath.row];
-  //  [self.array addObject:selectedItem];
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
 
 }
 
@@ -204,22 +137,18 @@ NSString *const ClocksUserSet5 = @"ClocksUserSetKey5"; */
         NSIndexPath *indexPath = [indexPaths objectAtIndex:0];
         NSString *cityName = [self.citiesListArray objectAtIndex:indexPath.row];
         destViewController.labelClock = cityName;
-        
+
         NSString *timeZone = [self.timezoneListArray objectAtIndex:indexPath.row];
         destViewController.timeZone = timeZone;
-        
+
         [self.collectionView deselectItemAtIndexPath:indexPath animated:NO];
     }
-
 }
 
 - (void)collectionView:(UICollectionViewCell *)collectionView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
 
     if (indexPath.row == 0) {
-      //  NSString *value =_clocklabel1;
-     //   [self.delegate didselectwith: self.valuevalue];
-
     }
 }
 
